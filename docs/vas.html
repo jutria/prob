@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-01" />
+<meta name="date" content="2022-05-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -106,6 +106,7 @@
 <li class="chapter" data-level="4.3" data-path="vas.html"><a href="vas.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i><b>4.3</b> Função de distribuição acumulada</a>
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="vas.html"><a href="vas.html#algumas-propriedades-da-função-de-distribuição"><i class="fa fa-check"></i><b>4.3.1</b> Algumas propriedades da função de distribuição</a></li>
+<li class="chapter" data-level="4.3.2" data-path="vas.html"><a href="vas.html#propriedades-fundamentais-da-função-de-distribuição"><i class="fa fa-check"></i><b>4.3.2</b> Propriedades fundamentais da função de distribuição</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="valoresperado.html"><a href="valoresperado.html"><i class="fa fa-check"></i><b>5</b> Valor esperado</a>
@@ -120,6 +121,14 @@
 <li class="chapter" data-level="6.1" data-path="fgm.html"><a href="fgm.html#momentos"><i class="fa fa-check"></i><b>6.1</b> Momentos</a></li>
 <li class="chapter" data-level="6.2" data-path="fgm.html"><a href="fgm.html#função-geradora-de-momentos"><i class="fa fa-check"></i><b>6.2</b> Função geradora de momentos</a></li>
 <li class="chapter" data-level="6.3" data-path="fgm.html"><a href="fgm.html#exemplos-de-m_xt-para-algumas-distribuições-comuns"><i class="fa fa-check"></i><b>6.3</b> Exemplos de <span class="math inline">\(M_X(t)\)</span> para algumas distribuições comuns</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="modelos-discretos.html"><a href="modelos-discretos.html"><i class="fa fa-check"></i><b>7</b> Modelos de distribuições discretas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-uniforme-discreta"><i class="fa fa-check"></i><b>7.1</b> Distribuição Uniforme Discreta</a></li>
+<li class="chapter" data-level="7.2" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-de-bernoulli"><i class="fa fa-check"></i><b>7.2</b> Distribuição de Bernoulli</a></li>
+<li class="chapter" data-level="7.3" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-binomial"><i class="fa fa-check"></i><b>7.3</b> Distribuição Binomial</a></li>
+<li class="chapter" data-level="7.4" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-geométrica"><i class="fa fa-check"></i><b>7.4</b> Distribuição Geométrica</a></li>
+<li class="chapter" data-level="7.5" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-binomial-negativa-pascal"><i class="fa fa-check"></i><b>7.5</b> Distribuição Binomial Negativa (Pascal)</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -259,6 +268,13 @@ F(x) = \sum_{y \leq x} p(y).
 <li><p><span class="math inline">\(P(X=x) = P(X\leq x) - P(X &lt; x) = F(x) - F(x^{-})\)</span> (salto de <span class="math inline">\(F\)</span> no ponto <span class="math inline">\(x\)</span>).</p></li>
 <li><p>Para <span class="math inline">\(a,b\in\mathbb R\)</span> com <span class="math inline">\(a &lt; b,\)</span> <span class="math inline">\(P(a&lt; X \leq b) = F(b) - F(a)\)</span>.</p></li>
 </ul>
+</div>
+<div id="propriedades-fundamentais-da-função-de-distribuição" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Propriedades fundamentais da função de distribuição<a href="vas.html#propriedades-fundamentais-da-função-de-distribuição" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>(F1) <span class="math inline">\(F\)</span> é não decrescente: <span class="math inline">\(x&lt;y \Rightarrow F(x) \leq F(y)\)</span>.</p>
+<p>(F2) <span class="math inline">\(F\)</span> é contínua à direita: <span class="math inline">\(x_n\downarrow x \Rightarrow F(x_n) \downarrow F(x)\)</span>.</p>
+<p>(F3) <span class="math inline">\(\lim_{n\to \infty}F(n)=1\)</span> e <span class="math inline">\(\lim_{n\to-\infty} F(n) = 0\)</span>.</p>
+<p>Qualquer função <span class="math inline">\(F: \mathbb R \rightarrow \mathbb R\)</span> satisfazendo as condições (F1), (F2) e (F3) é função de distribuição de alguma variável aleatória.</p>
 
 </div>
 </div>
