@@ -131,6 +131,7 @@
 <li class="chapter" data-level="7.5" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-binomial-negativa-pascal"><i class="fa fa-check"></i><b>7.5</b> Distribuição Binomial Negativa (Pascal)</a></li>
 <li class="chapter" data-level="7.6" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-hipergeométrica"><i class="fa fa-check"></i><b>7.6</b> Distribuição Hipergeométrica</a></li>
 <li class="chapter" data-level="7.7" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-de-poisson"><i class="fa fa-check"></i><b>7.7</b> Distribuição de Poisson</a></li>
+<li class="chapter" data-level="7.8" data-path="modelos-discretos.html"><a href="modelos-discretos.html#aproximação-de-poisson-à-binomial"><i class="fa fa-check"></i><b>7.8</b> Aproximação de Poisson à Binomial</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -533,6 +534,28 @@ P(X\geq 1) = 1- P(X\leq 0) = 1-e^{-1/2} \approx 0,393.
 <div class="solution">
 <p><span id="unlabeled-div-50" class="solution"><em>Solução</em>. </span><span class="math display">\[
 P(X\geq 3) = 1-e^{-5}-5e^{-5} -\frac{5^2e^{-5}}{2!} = 1-\frac{37}{2}e^{-5} \approx 0,8753.  
+\]</span></p>
+</div>
+</div>
+<div id="aproximação-de-poisson-à-binomial" class="section level2 hasAnchor" number="7.8">
+<h2><span class="header-section-number">7.8</span> Aproximação de Poisson à Binomial<a href="modelos-discretos.html#aproximação-de-poisson-à-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Seja <span class="math inline">\(X\sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>), com <span class="math inline">\(n\)</span> grande e <span class="math inline">\(p\)</span> pequeno, de modo que o valor <span class="math inline">\(\lambda = np\)</span> é moderado. E seja <span class="math inline">\(Y\sim\)</span> Poisson(<span class="math inline">\(\lambda=np\)</span>), então para qualquer inteiro <span class="math inline">\(x\)</span> entre 0 e <span class="math inline">\(n\)</span>,</p>
+<p><span class="math display">\[
+P(X=x) \approx P(Y=x) = \frac{e^{-np} (np)^x}{x!}
+\]</span></p>
+<p>Essa aproximação decorre do Teorema de Poisson (1832).</p>
+<div class="remark">
+<p><span id="unlabeled-div-51" class="remark"><em>Observação</em>. </span>Empiricamente, temos as seguintes regras práticas:
+<span class="math inline">\(n\geq 20\)</span> e <span class="math inline">\(p\leq 0,05\)</span> ou <span class="math inline">\(n\geq 100\)</span> e <span class="math inline">\(np \leq 10\)</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-129" class="example"><strong>Exemplo 7.11  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Binomial(100,0.065)
+<span class="math display">\[
+P(X=10) = \binom{100}{10}  (0.065)^{10}(0.935)^{90} \approx 0.05502
+\]</span></p>
+<p>Pela aproximação de Poisson à Binomial, usamos <span class="math inline">\(Y\sim\)</span> Poisson(<span class="math inline">\(100\times 0.065 = 6.5\)</span>), logo</p>
+<p><span class="math display">\[
+P(X=10) \approx P(Y=10) = \frac{e^{-6.5} (6.5)^{10}}{10!}  \approx 0.05578
 \]</span></p>
 </div>
 
