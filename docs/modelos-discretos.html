@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-03" />
+<meta name="date" content="2022-05-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -129,6 +129,8 @@
 <li class="chapter" data-level="7.3" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-binomial"><i class="fa fa-check"></i><b>7.3</b> Distribuição Binomial</a></li>
 <li class="chapter" data-level="7.4" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-geométrica"><i class="fa fa-check"></i><b>7.4</b> Distribuição Geométrica</a></li>
 <li class="chapter" data-level="7.5" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-binomial-negativa-pascal"><i class="fa fa-check"></i><b>7.5</b> Distribuição Binomial Negativa (Pascal)</a></li>
+<li class="chapter" data-level="7.6" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-hipergeométrica"><i class="fa fa-check"></i><b>7.6</b> Distribuição Hipergeométrica</a></li>
+<li class="chapter" data-level="7.7" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-de-poisson"><i class="fa fa-check"></i><b>7.7</b> Distribuição de Poisson</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -442,6 +444,95 @@ Var(X) &amp;= \sum_{i=1}^r Var(X_i) = \frac{r(1-p)}{p^2}.
 <p><span id="unlabeled-div-44" class="solution"><em>Solução</em>. </span><span class="math inline">\(X:\)</span> Número de lançamentos necessários até que a face 6 seja obtida 4 vezes. Então <span class="math inline">\(X\sim\)</span> Binomial Negativa(<span class="math inline">\(r=4,p=1/6\)</span>). Logo
 <span class="math display">\[
 P(X=10) = p(10) =  \binom{10-1}{4-1} (1/6)^4(5/6)^{6} = \binom{9}{3} (1/6)^4(5/6)^{6} \approx 0,0217.
+\]</span></p>
+</div>
+</div>
+<div id="distribuição-hipergeométrica" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Distribuição Hipergeométrica<a href="modelos-discretos.html#distribuição-hipergeométrica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-115" class="definition"><strong>Definição 7.7  </strong></span>Considere uma urna com <span class="math inline">\(N\)</span> bolas das quais <span class="math inline">\(R\leq N\)</span> são vermelhas e <span class="math inline">\(N-R\)</span> são pretas. Suponha que selecionamos uma amostra de tamanho <span class="math inline">\(n\leq N\)</span> sem reposição. A variável aleatória definida como o número de bolas vermelhas selecionadas na amostra tem uma <em>distribuição hipergeométrica</em> de parâmetros <span class="math inline">\(n\)</span>, <span class="math inline">\(R\)</span> e <span class="math inline">\(N\)</span> cuja função de probabilidade é dada por</p>
+<p><span class="math display">\[
+p(x) = \frac{\binom{R}{x} \binom{N-R}{n-x}}{\binom{N}{n}}, \; x=0,1,\ldots n.  
+\]</span>
+<strong>Notação:</strong> <span class="math inline">\(X\sim\)</span> Hipergeométrica(<span class="math inline">\(n,R,N\)</span>).</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-45" class="remark"><em>Observação</em>. </span>Embora tenhamos definido <span class="math inline">\(p(x)\)</span> para qualquer <span class="math inline">\(x\)</span> entre 0 e <span class="math inline">\(n\)</span> simplesmente por mera conveniência, o verdadeiro suporte da distribuição são os valores de <span class="math inline">\(x\)</span> inteiros tais que <span class="math inline">\(\textrm{máx}(0,n-(N-R))\leq x \leq \textrm{mín}(n,R).\)</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-117" class="example"><strong>Exemplo 7.7  </strong></span>Um aluno estuda 12 exercícios, dos quais o professor vai escolher 6 aleatoriamente para uma prova. O estudante sabe resolver 9 dos 12 problemas. Seja <span class="math inline">\(X\)</span> o número de exercícios resolvidos por ele na prova.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Qual a distribuição de <span class="math inline">\(X\)</span>?</p></li>
+<li><p>Calcule a probabilidade de que o aluno resolva ao menos 5 exercícios da prova.</p></li>
+</ol>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-46" class="solution"><em>Solução</em>. </span>Seja X: Número de exercícios resolvidos pelo estudante na prova.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(X\sim\)</span> Hipergeométrica(6,9,12).</p></li>
+<li><p><span class="math inline">\(P(X\geq 5) = p(5) + p(6) = 1/2.\)</span></p></li>
+</ol>
+</div>
+</div>
+<div id="distribuição-de-poisson" class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> Distribuição de Poisson<a href="modelos-discretos.html#distribuição-de-poisson" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-119" class="definition"><strong>Definição 7.8  </strong></span>Uma variável aleatória tem <em>distribuição de Poisson</em> de parâmetro <span class="math inline">\(\lambda &gt;0\)</span> se sua função de probabilidade é
+<span class="math display">\[
+p(x) = \frac{e^{-\lambda} \lambda^x}{x!}, \; x=0,1,2, \ldots
+\]</span>
+<strong>Notação:</strong> <span class="math inline">\(X\sim\)</span> Poisson(<span class="math inline">\(\lambda\)</span>)</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-120" class="example"><strong>Exemplo 7.8  </strong></span>Alguns exemplos de variáveis que podem ser modeladas por uma distribuição de Poisson são:</p>
+<ul>
+<li><p>O número de erros de impressão em uma página.</p></li>
+<li><p>O número de clientes que chegam em uma agência bancária.</p></li>
+<li><p>O número de gols na copa do mundo.</p></li>
+<li><p>O número de partículas <span class="math inline">\(\alpha\)</span> emitidas por um material radioativo em um período de tempo determinado.</p></li>
+</ul>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-47" class="remark"><em>Observação</em>. </span>Geralmente a distribuição de Poisson é usada para modelar uma contagem de indivíduos que se distribuem aleatoriamente no tempo ou no espaço.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-122" class="proposition"><strong>Proposição 7.7  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Poisson(<span class="math inline">\(\lambda\)</span>), temos que
+<span class="math display">\[
+E(X) = \lambda \text{ e } Var(X)=\lambda  
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-48" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
+E(X) &amp;=\sum_{x=0}^\infty x  \frac{e^{-\lambda} \lambda^x}{x!} \\
+&amp;=\sum_{x=1}^\infty \frac{e^{-\lambda} \lambda^x}{(x-1)!}\\
+&amp;= \lambda \sum_{x=1}^\infty \frac{e^{-\lambda} \lambda^{x-1}}{(x-1)!}\\
+&amp;= \lambda \sum_{y=0}^\infty \frac{e^{-\lambda} \lambda^y}{y!}\\
+&amp;=\lambda.
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+E(X^2) &amp;=\sum_{x=0}^\infty x^2  \frac{e^{-\lambda} \lambda^x}{x!} \\
+&amp;=\lambda \sum_{x=1}^\infty x  \frac{e^{-\lambda} \lambda^{x-1}}{(x-1)!} \\
+&amp;= \lambda \sum_{y=0}^\infty (y+1) \frac{e^{-\lambda} \lambda^y}{y!}\\
+&amp;= \lambda \left[\sum_{y=0}^\infty y \frac{e^{-\lambda} \lambda^y}{y!} + \sum_{y=0}^\infty \frac{e^{-\lambda} \lambda^y}{y!} \right]\\
+&amp;=\lambda(\lambda + 1).
+\end{align*}\]</span></p>
+<p>Portanto, <span class="math inline">\(Var(X) = \lambda(\lambda + 1) - \lambda^2 = \lambda\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-124" class="example"><strong>Exemplo 7.9  </strong></span>Suponha que o número de erros tipográficos em uma única página deste livro tenha uma distribuição de Poisson com <span class="math inline">\(\lambda = 1/2\)</span>. Calcule a probabilidade de que exista pelo menos um erro nesta página.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-49" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de erros nesta página, logo
+<span class="math display">\[
+P(X\geq 1) = 1- P(X\leq 0) = 1-e^{-1/2} \approx 0,393.
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-126" class="example"><strong>Exemplo 7.10  </strong></span>O número de partículas que uma fonte radioativa emite por minuto é uma variável aleatória com distribuição de Poisson com média igual a 5. Qual a probabilidade de que pelo menos três partículas sejam emitidas em um minuto.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-50" class="solution"><em>Solução</em>. </span><span class="math display">\[
+P(X\geq 3) = 1-e^{-5}-5e^{-5} -\frac{5^2e^{-5}}{2!} = 1-\frac{37}{2}e^{-5} \approx 0,8753.  
 \]</span></p>
 </div>
 
