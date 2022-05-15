@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-13" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -248,6 +248,45 @@ P(X=1) &amp;=&amp; P(\{\omega\in\Omega: X(\omega)=1\}) \\
 </ul>
 <div id="exemplos" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Exemplos<a href="vas.html#exemplos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="example">
+<p><span id="exm:unnamed-chunk-47" class="example"><strong>Exemplo 4.1  </strong></span>Três bolas são selecionadas aleatoriamente de uma urna que contém 20 bolas numeradas de 1 a 20. Se apostamos que pelo menos uma das bolas retiradas tem o número maior ou igual a 17, qual a probabilidade de ganharmos?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-20" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span> o maior número sorteado. Por exemplo,</p>
+<ul>
+<li><p>Se <span class="math inline">\(\omega = \{3,10,5,\}\)</span>, então <span class="math inline">\(X(\omega) = 10\)</span> (perdemos a aposta).</p></li>
+<li><p>Se <span class="math inline">\(\omega&#39; = \{2,5,16\}\)</span>, então <span class="math inline">\(X(\omega&#39;) = 16\)</span> (ganhamos a aposta).</p></li>
+</ul>
+<p>Agora, suponha que todas as <span class="math inline">\(\binom{20}{3}\)</span> possíveis seleções são igualmente prováveis. Logo, para <span class="math inline">\(x\in \{3,\ldots, 20\}\)</span>
+<span class="math display">\[\begin{align*}
+p(x) = P(X=x) = \frac{\binom{x-1}{2}}{\binom{20}{3}}.
+\end{align*}\]</span></p>
+<p>Finalmente, queremos obter <span class="math inline">\(P(X \geq 17)\)</span>
+<span class="math display">\[\begin{align*}
+P(X\geq 17) &amp;= p(17) + p(18) + p(19) + p(20) \\
+&amp;= \frac{\binom{16}{2}}{\binom{20}{3}} + \frac{\binom{17}{2}}{\binom{20}{3}} + \frac{\binom{18}{2}}{\binom{20}{3}} + \frac{\binom{19}{2}}{\binom{20}{3}}\\
+&amp;\approx 0,105 + 0,119 + 0,134 + 0,150 = 0,508. 
+\end{align*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-49" class="example"><strong>Exemplo 4.2  </strong></span>O número de pessoas que entram em uma academia durante um minuto é uma v.a. discreta <span class="math inline">\(X\)</span> com função de probabilidade dada por
+<span class="math display">\[
+p(k) = \frac{c \, 4^k}{k!}, \; k = 0,1,\ldots
+\]</span>
+Determine:
+(a) o valor de <span class="math inline">\(c\)</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X&gt;2)\)</span>.</li>
+</ol>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-21" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de pessoas que entram naquela academia durante um minuto. Logo</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\displaystyle \sum_{k=0}^\infty p(k) = 1 \Rightarrow c \displaystyle \sum_{k=0}^\infty \frac{4^k}{k!} = 1 \Rightarrow c e^4 \Rightarrow c =e^{-4}\)</span>. Portanto,
+<span class="math display">\[p(k) = \frac{e^{-4}\, 4^k}{k!}, \; k = 0,1,\ldots \]</span></p></li>
+<li><p><span class="math inline">\(P(X&gt;2) = 1- P(X\leq 2) = 1-[p(0) + p(1) + p(2)] = 1-13\,e^{-4} \approx 0,7619\)</span>.</p></li>
+</ol>
+</div>
 </div>
 </div>
 <div id="função-de-distribuição-acumulada" class="section level2 hasAnchor" number="4.3">
@@ -260,7 +299,7 @@ F(2) &amp;=&amp; P(X \leq 2) = p(0) + p(1) + p(2) =7/8, \\[0.2cm]
 F(3) &amp;=&amp; P(X \leq 3) = p(0) + p(1) + p(2) + p(3)= 1. 
 \end{eqnarray*}\]</span></p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-47" class="definition"><strong>Definição 4.1  </strong></span>A <em>função de distribuição (acumulada)</em> de uma variável aleatória <span class="math inline">\(X\)</span> é a função <span class="math inline">\(F: \mathbb R \rightarrow \mathbb R\)</span> definida por
+<p><span id="def:unnamed-chunk-51" class="definition"><strong>Definição 4.1  </strong></span>A <em>função de distribuição (acumulada)</em> de uma variável aleatória <span class="math inline">\(X\)</span> é a função <span class="math inline">\(F: \mathbb R \rightarrow \mathbb R\)</span> definida por
 <span class="math display">\[\begin{equation*}
 F(x) = P(X\leq x) = P(\{s\in \Omega: X(s)\leq x\}), \; x\in \mathbb R.
 \end{equation*}\]</span></p>

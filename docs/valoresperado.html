@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-13" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,7 +170,7 @@
 E(X) = \sum_{i=1}^\infty x_i\, p(x_i).
 \end{align*}\]</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-20" class="remark"><em>Observação</em>. </span>Note que a esperança de <span class="math inline">\(X\)</span>, é uma média ponderada dos valores de <span class="math inline">\(x\)</span>, em que cada valor de <span class="math inline">\(x\)</span> é ponderado por sua probabilidade correspondente.</p>
+<p><span id="unlabeled-div-22" class="remark"><em>Observação</em>. </span>Note que a esperança de <span class="math inline">\(X\)</span>, é uma média ponderada dos valores de <span class="math inline">\(x\)</span>, em que cada valor de <span class="math inline">\(x\)</span> é ponderado por sua probabilidade correspondente.</p>
 </div>
 <p>Voltando ao exemplo do lançamento da moeda 3 vezes e, definindo <span class="math inline">\(X\)</span> como o número de caras observadas, temos que
 <span class="math display">\[
@@ -182,10 +182,10 @@ E(X) = 0 \times \frac{1}{8} + 1 \times \frac{3}{8} + 2 \times \frac{3}{8} + 3 \t
 <li>Não se deve arredondar <span class="math inline">\(E(X)\)</span> para um número inteiro.</li>
 </ul>
 <div class="example">
-<p><span id="exm:unnamed-chunk-49" class="example"><strong>Exemplo 5.1  </strong></span>Seja <span class="math inline">\(X:\)</span> Resultado observado no lançamento de um dado honesto. Determine o valor esperado de <span class="math inline">\(X\)</span>.</p>
+<p><span id="exm:unnamed-chunk-53" class="example"><strong>Exemplo 5.1  </strong></span>Seja <span class="math inline">\(X:\)</span> Resultado observado no lançamento de um dado honesto. Determine o valor esperado de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-21" class="solution"><em>Solução</em>. </span>A função de probabilidade de <span class="math inline">\(X\)</span> é
+<p><span id="unlabeled-div-23" class="solution"><em>Solução</em>. </span>A função de probabilidade de <span class="math inline">\(X\)</span> é
 <span class="math display">\[
 p(x) = \frac{1}{x}, \; x=1,\ldots,6. 
 \]</span>
@@ -195,10 +195,10 @@ E(X) = \sum_{x=1}^6 x \frac{1}{6} = \frac{1}{6}\sum_{x=1}^6 x= \frac{6\times 7}{
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-51" class="example"><strong>Exemplo 5.2  </strong></span>Um lote contém 3 itens defeituoso e 5 não defeituosos. Retiram-se 2 itens do lote em sequência, sem reposição. Determine o número esperado de itens defeituosos retirados.</p>
+<p><span id="exm:unnamed-chunk-55" class="example"><strong>Exemplo 5.2  </strong></span>Um lote contém 3 itens defeituoso e 5 não defeituosos. Retiram-se 2 itens do lote em sequência, sem reposição. Determine o número esperado de itens defeituosos retirados.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-22" class="solution"><em>Solução</em>. </span>Vamos determinar, primeiro, a função de probabilidade de <span class="math inline">\(X:\)</span> número de itens defeituosos retirados. Para isso, seja <span class="math inline">\(D_i\)</span>: o i-ésimo item retirado é defeituoso e <span class="math inline">\(B_i\)</span>: o i-ésimo item retirado é bom. Logo:
+<p><span id="unlabeled-div-24" class="solution"><em>Solução</em>. </span>Vamos determinar, primeiro, a função de probabilidade de <span class="math inline">\(X:\)</span> número de itens defeituosos retirados. Para isso, seja <span class="math inline">\(D_i\)</span>: o i-ésimo item retirado é defeituoso e <span class="math inline">\(B_i\)</span>: o i-ésimo item retirado é bom. Logo:
 <span class="math display">\[\begin{align*}
 p(0)=P(X=0) &amp;= P(B_1\cap B_2) = P(B_1)P(B_2|B_1) = \frac{5}{8} \frac{4}{7} = \frac{20}{56},\\
 p(1)=P(X=1) &amp;= P(B_1 \cap D_2) + P(D_1 \cap B_2) = \frac{5}{8} \frac{3}{7} + \frac{3}{8} \frac{5}{7} = \frac{15}{56} + \frac{15}{56} = \frac{30}{56},\\
@@ -225,16 +225,16 @@ e a média aritmética dos valores observados de <span class="math inline">\(X\)
 <h2><span class="header-section-number">5.2</span> Funções de variáveis aleatórias<a href="valoresperado.html#funções-de-variáveis-aleatórias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Se <span class="math inline">\(X\)</span> é uma variável aleatória e <span class="math inline">\(g\)</span> uma função a valores reais, então <span class="math inline">\(Y=g(X)\)</span>, também é uma variável aleatória.</p>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-53" class="proposition"><strong>Proposição 5.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. discreta com função de probabilidade <span class="math inline">\(p(x)\)</span>. Para qualquer função <span class="math inline">\(g\)</span> a valores reais,
+<p><span id="prp:unnamed-chunk-57" class="proposition"><strong>Proposição 5.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. discreta com função de probabilidade <span class="math inline">\(p(x)\)</span>. Para qualquer função <span class="math inline">\(g\)</span> a valores reais,
 <span class="math display">\[
 E[g(X)] = \sum_{x: p(x)&gt;0} g(x) p(x).
 \]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-23" class="remark"><em>Observação</em>. </span>Note que esse resultado permite o cálculo da esperança de <span class="math inline">\(Y=g(X)\)</span>, mesmo que se desconheça a distribuição de probabilidade de <span class="math inline">\(Y\)</span>.</p>
+<p><span id="unlabeled-div-25" class="remark"><em>Observação</em>. </span>Note que esse resultado permite o cálculo da esperança de <span class="math inline">\(Y=g(X)\)</span>, mesmo que se desconheça a distribuição de probabilidade de <span class="math inline">\(Y\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-55" class="example"><strong>Exemplo 5.3  </strong></span>Seja <span class="math inline">\(X\)</span>: Número de caras nos três lançamentos de uma moeda justa, então a função de probabilidade de <span class="math inline">\(X\)</span> é</p>
+<p><span id="exm:unnamed-chunk-59" class="example"><strong>Exemplo 5.3  </strong></span>Seja <span class="math inline">\(X\)</span>: Número de caras nos três lançamentos de uma moeda justa, então a função de probabilidade de <span class="math inline">\(X\)</span> é</p>
 <table>
 <thead>
 <tr class="header">
@@ -261,29 +261,29 @@ E(X^2)=E(Y) = \sum_{x=0}^3 x^2 p(x) = 0^2\times \frac{1}{8} + 1^2 \times \frac{3
 \end{align*}\]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-24" class="remark"><em>Observação</em>. </span>Em geral <span class="math inline">\(E(X^2) \neq [E(X)]^2\)</span></p>
+<p><span id="unlabeled-div-26" class="remark"><em>Observação</em>. </span>Em geral <span class="math inline">\(E(X^2) \neq [E(X)]^2\)</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-57" class="example"><strong>Exemplo 5.4  </strong></span>Suponha que uma moeda é lançada 3 vezes, e que ganhamos ou perdemos R$1 conforme o número de caras seja par ou ímpar. Qual o valor esperado do nosso lucro?</p>
+<p><span id="exm:unnamed-chunk-61" class="example"><strong>Exemplo 5.4  </strong></span>Suponha que uma moeda é lançada 3 vezes, e que ganhamos ou perdemos R$1 conforme o número de caras seja par ou ímpar. Qual o valor esperado do nosso lucro?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-25" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de caras <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(Y=(-1)^X\)</span>: Lucro obtido no jogo. Logo,
+<p><span id="unlabeled-div-27" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de caras <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(Y=(-1)^X\)</span>: Lucro obtido no jogo. Logo,
 <span class="math display">\[
 E(Y)=E[(-1)^X]=(-1)^0\times \frac{1}{8} + (-1)^1 \times \frac{3}{8} + (-1)^2 \times \frac{3}{8} + (-1)^3 \times \frac{1}{8}=0.
 \]</span></p>
 </div>
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-59" class="corollary"><strong>Corolário 5.1  </strong></span>Se <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> são constantes, então
+<p><span id="cor:unnamed-chunk-63" class="corollary"><strong>Corolário 5.1  </strong></span>Se <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> são constantes, então
 Se <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> são constantes, então
 <span class="math display">\[
 E(aX + b) = a E(X) + b
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-60" class="example"><strong>Exemplo 5.5  </strong></span>Uma moeda é lançada 3 vezes, e ganhamos R$5 a cada cara obtida e perdemos R$2 a cada coroa. Qual o valor esperado do nosso lucro?</p>
+<p><span id="exm:unnamed-chunk-64" class="example"><strong>Exemplo 5.5  </strong></span>Uma moeda é lançada 3 vezes, e ganhamos R$5 a cada cara obtida e perdemos R$2 a cada coroa. Qual o valor esperado do nosso lucro?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-26" class="solution"><em>Solução</em>. </span><span class="math inline">\(X\)</span>: Número de caras, <span class="math inline">\(3-X\)</span>: Número de coroas <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(Y=5X - 2(3-X) =7X - 6\)</span>: Lucro.
+<p><span id="unlabeled-div-28" class="solution"><em>Solução</em>. </span><span class="math inline">\(X\)</span>: Número de caras, <span class="math inline">\(3-X\)</span>: Número de coroas <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(Y=5X - 2(3-X) =7X - 6\)</span>: Lucro.
 <span class="math display">\[
 E(Y)=E(7X-6) = 7E(X) - 6= 7 \times \frac{3}{2} - 6 = \frac{9}{2}.
 \]</span></p>
@@ -292,16 +292,16 @@ E(Y)=E(7X-6) = 7E(X) - 6= 7 \times \frac{3}{2} - 6 = \frac{9}{2}.
 <div id="variância" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Variância<a href="valoresperado.html#variância" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-62" class="definition"><strong>Definição 5.1  </strong></span>A <em>variância</em> de uma v.a. <span class="math inline">\(X\)</span> com esperança <span class="math inline">\(\mu\)</span> é definida por
+<p><span id="def:unnamed-chunk-66" class="definition"><strong>Definição 5.1  </strong></span>A <em>variância</em> de uma v.a. <span class="math inline">\(X\)</span> com esperança <span class="math inline">\(\mu\)</span> é definida por
 <span class="math display">\[
 \sigma^2=Var(X)=E[(X-\mu)^2].
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-63" class="definition"><strong>Definição 5.2  </strong></span>O <em>desvio padrão</em> de <span class="math inline">\(X\)</span> é definido por <span class="math inline">\(\sigma=DP(X)= \sqrt{Var (X)}\)</span>.</p>
+<p><span id="def:unnamed-chunk-67" class="definition"><strong>Definição 5.2  </strong></span>O <em>desvio padrão</em> de <span class="math inline">\(X\)</span> é definido por <span class="math inline">\(\sigma=DP(X)= \sqrt{Var (X)}\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-64" class="example"><strong>Exemplo 5.6  </strong></span>Seja <span class="math inline">\(X\)</span> o resultado obtido no lançamento de um dado justo, assim
+<p><span id="exm:unnamed-chunk-68" class="example"><strong>Exemplo 5.6  </strong></span>Seja <span class="math inline">\(X\)</span> o resultado obtido no lançamento de um dado justo, assim
 <span class="math display">\[
 p(i) = 1/6, \; \; i =1,2,3,4,5,6. 
 \]</span>
@@ -317,10 +317,10 @@ e,
 \]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-65" class="proposition"><strong>Proposição 5.2  </strong></span><span class="math inline">\(Var(X) = E(X^2) - [E(X)]^2\)</span></p>
+<p><span id="prp:unnamed-chunk-69" class="proposition"><strong>Proposição 5.2  </strong></span><span class="math inline">\(Var(X) = E(X^2) - [E(X)]^2\)</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-27" class="proof"><em>Prova</em>. </span>Seja <span class="math inline">\(\mu = E(X)\)</span>,
+<p><span id="unlabeled-div-29" class="proof"><em>Prova</em>. </span>Seja <span class="math inline">\(\mu = E(X)\)</span>,
 <span class="math display">\[\begin{align*}
 (X-\mu)^2 = X^2 - 2X\mu + \mu^2,
 \end{align*}\]</span>
@@ -331,13 +331,13 @@ Var(X) = E[(X-\mu)^2] &amp;= E(X^2) - 2\mu^2 + \mu^2 \\
 \end{align*}\]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-67" class="proposition"><strong>Proposição 5.3  </strong></span>Se <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> são constantes, então
+<p><span id="prp:unnamed-chunk-71" class="proposition"><strong>Proposição 5.3  </strong></span>Se <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> são constantes, então
 <span class="math display">\[
 Var(aX+b) = a^2 Var(X)
 \]</span></p>
 </div>
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-68" class="corollary"><strong>Corolário 5.2  </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. tal que <span class="math inline">\(E(X) = \mu\)</span> e <span class="math inline">\(Var(X) = \sigma^2 &gt;0\)</span>. Defina <span class="math inline">\(Z=\frac{X-\mu}{\sigma}\)</span>. Então
+<p><span id="cor:unnamed-chunk-72" class="corollary"><strong>Corolário 5.2  </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. tal que <span class="math inline">\(E(X) = \mu\)</span> e <span class="math inline">\(Var(X) = \sigma^2 &gt;0\)</span>. Defina <span class="math inline">\(Z=\frac{X-\mu}{\sigma}\)</span>. Então
 <span class="math display">\[
 E(Z) = 0 \text{ e } Var(Z) = 1.
 \]</span></p>
@@ -346,25 +346,25 @@ E(Z) = 0 \text{ e } Var(Z) = 1.
 <div id="independência-de-variáveis-aleatórias" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Independência de variáveis aleatórias<a href="valoresperado.html#independência-de-variáveis-aleatórias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-69" class="definition"><strong>Definição 5.3  </strong></span>As variáveis aleatórias <span class="math inline">\(X_1, \ldots, X_n\)</span> são independentes se, para qualquer escolha de conjuntos <span class="math inline">\(A_1,\ldots,A_n \subset \mathbb R\)</span>, tem-se que</p>
+<p><span id="def:unnamed-chunk-73" class="definition"><strong>Definição 5.3  </strong></span>As variáveis aleatórias <span class="math inline">\(X_1, \ldots, X_n\)</span> são independentes se, para qualquer escolha de conjuntos <span class="math inline">\(A_1,\ldots,A_n \subset \mathbb R\)</span>, tem-se que</p>
 <p><span class="math display">\[
 P(X_1 \in A_1, \ldots, X_n\in A_n) = \prod_{i=1}^n P(X_i \in A_i).
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-70" class="definition"><strong>Definição 5.4  (caso discreto) </strong></span>No caso de variáveis aleatórios discretas, a definição anterior é equivalente à condição de que, para qualquer escolha de <span class="math inline">\(x_1,\ldots,x_n \in \mathbb R\)</span>, tem-se que
+<p><span id="def:unnamed-chunk-74" class="definition"><strong>Definição 5.4  (caso discreto) </strong></span>No caso de variáveis aleatórios discretas, a definição anterior é equivalente à condição de que, para qualquer escolha de <span class="math inline">\(x_1,\ldots,x_n \in \mathbb R\)</span>, tem-se que
 <span class="math display">\[
 P(X_1 = x_1, \ldots, X_n = x_n) = \prod_{i=1}^n P(X_i=x_i).
 \]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-71" class="proposition"><strong>Proposição 5.4  (Linearidade da esperança) </strong></span>Para quaisquer variáveis aleatórias <span class="math inline">\(X_1,\ldots,X_n\)</span>, temos:
+<p><span id="prp:unnamed-chunk-75" class="proposition"><strong>Proposição 5.4  (Linearidade da esperança) </strong></span>Para quaisquer variáveis aleatórias <span class="math inline">\(X_1,\ldots,X_n\)</span>, temos:
 <span class="math display">\[
 E(X_1 + \ldots + X_n) = E(X_1) + \cdots + E(X_n)
 \]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-72" class="proposition"><strong>Proposição 5.5  (Linearidade da variância) </strong></span>Sejam <span class="math inline">\(X_1,\ldots,X_n\)</span> variáveis aleatórias independentes, temos:
+<p><span id="prp:unnamed-chunk-76" class="proposition"><strong>Proposição 5.5  (Linearidade da variância) </strong></span>Sejam <span class="math inline">\(X_1,\ldots,X_n\)</span> variáveis aleatórias independentes, temos:
 <span class="math display">\[
 Var(X_1 + \ldots + X_n) = Var(X_1) + \cdots + Var(X_n)
 \]</span></p>

@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-13" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -168,37 +168,37 @@
 <div id="momentos" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Momentos<a href="fgm.html#momentos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-73" class="definition"><strong>Definição 6.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleaória. Para <span class="math inline">\(n \geq 1\)</span> inteiro, definimos o <em>n-ésimo momento</em> de <span class="math inline">\(X\)</span> como</p>
+<p><span id="def:unnamed-chunk-77" class="definition"><strong>Definição 6.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleaória. Para <span class="math inline">\(n \geq 1\)</span> inteiro, definimos o <em>n-ésimo momento</em> de <span class="math inline">\(X\)</span> como</p>
 <p><span class="math display">\[
 \mu_{(n)} = E(X^n).
 \]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-28" class="remark"><em>Observação</em>. </span>No caso em que <span class="math inline">\(X\)</span> é uma v.a. discreta com função de probabilidade <span class="math inline">\(p(x)\)</span>, temos que
+<p><span id="unlabeled-div-30" class="remark"><em>Observação</em>. </span>No caso em que <span class="math inline">\(X\)</span> é uma v.a. discreta com função de probabilidade <span class="math inline">\(p(x)\)</span>, temos que
 <span class="math display">\[
 \mu_{(n)} = \sum_{x: p(x)&gt;0} x^n p(x)
 \]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-29" class="remark"><em>Observação</em>. </span>Note que para <span class="math inline">\(n=1\)</span>, temos que <span class="math inline">\(\mu_{(1)}\)</span> corresponde à média da v.a. <span class="math inline">\(X\)</span> e, que a variância de <span class="math inline">\(X\)</span> é uma função do primeiro e segundo momento, isto é, <span class="math inline">\(Var(X) = \mu_{(2)} - (\mu_{(1)})^2\)</span>.</p>
+<p><span id="unlabeled-div-31" class="remark"><em>Observação</em>. </span>Note que para <span class="math inline">\(n=1\)</span>, temos que <span class="math inline">\(\mu_{(1)}\)</span> corresponde à média da v.a. <span class="math inline">\(X\)</span> e, que a variância de <span class="math inline">\(X\)</span> é uma função do primeiro e segundo momento, isto é, <span class="math inline">\(Var(X) = \mu_{(2)} - (\mu_{(1)})^2\)</span>.</p>
 </div>
 </div>
 <div id="função-geradora-de-momentos" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Função geradora de momentos<a href="fgm.html#função-geradora-de-momentos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-76" class="definition"><strong>Definição 6.2  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória. Definimos a função geradora de momentos de <span class="math inline">\(X\)</span> como:
+<p><span id="def:unnamed-chunk-80" class="definition"><strong>Definição 6.2  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória. Definimos a função geradora de momentos de <span class="math inline">\(X\)</span> como:
 <span class="math display">\[
 M_{X}(t) = E(e^{tX}), \; t \in \mathbb{R}.  
 \]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-77" class="proposition"><strong>Proposição 6.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, temos que
+<p><span id="prp:unnamed-chunk-81" class="proposition"><strong>Proposição 6.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, temos que
 <span class="math display">\[
 M_{X}^{(n)}(t)|_{t=0} = E(X^n)  
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-30" class="proof"><em>Prova</em>. </span>Procedemos por indução em <span class="math inline">\(n\)</span>
+<p><span id="unlabeled-div-32" class="proof"><em>Prova</em>. </span>Procedemos por indução em <span class="math inline">\(n\)</span>
 <span class="math display">\[\begin{align*}
 M_X^{\prime} (t)=\frac{d}{dt}M_X(t) &amp;= \frac{d}{dt}E(e^{tX})\\
 &amp;=E(\frac{d}{dt} e^{tX})\\
@@ -217,7 +217,7 @@ M^{(n)}(t) &amp;= \frac{d}{dt} M^{(n-1)}(t)\\
 <div id="exemplos-de-m_xt-para-algumas-distribuições-comuns" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Exemplos de <span class="math inline">\(M_X(t)\)</span> para algumas distribuições comuns<a href="fgm.html#exemplos-de-m_xt-para-algumas-distribuições-comuns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="example">
-<p><span id="exm:unnamed-chunk-79" class="example"><strong>Exemplo 6.1  (Bernoulli) </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. e <span class="math inline">\(0&lt;p&lt;1\)</span>, tal que
+<p><span id="exm:unnamed-chunk-83" class="example"><strong>Exemplo 6.1  (Bernoulli) </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. e <span class="math inline">\(0&lt;p&lt;1\)</span>, tal que
 <span class="math display">\[p(0) = 1-p, \; \; p(1) = p.\]</span></p>
 <p>Logo, para <span class="math inline">\(t\in\mathbb R\)</span>, a função geradora de momentos é dada por</p>
 <p><span class="math display">\[\begin{align*}
@@ -227,7 +227,7 @@ M_{X}(t) &amp;= E(e^{tX}) \\
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-80" class="example"><strong>Exemplo 6.2  (Geométrica) </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a., cuja função de probabilidade é
+<p><span id="exm:unnamed-chunk-84" class="example"><strong>Exemplo 6.2  (Geométrica) </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a., cuja função de probabilidade é
 <span class="math display">\[
 p(x) = (1-p)^{x-1}p, \; x=1,2,\ldots 
 \]</span>
@@ -242,7 +242,7 @@ M_{X}(t) &amp;= E(e^{tX})\\
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-81" class="example"><strong>Exemplo 6.3  (Poisson) </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. cuja função de probabilidade é
+<p><span id="exm:unnamed-chunk-85" class="example"><strong>Exemplo 6.3  (Poisson) </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. cuja função de probabilidade é
 <span class="math display">\[
 p(x) = \frac{\lambda^x e^{-\lambda}}{x!}, \; x=0,1,\ldots
 \]</span>
@@ -257,13 +257,13 @@ M_X(t) &amp;= E(e^{tX})\\
 \end{align*}\]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-82" class="proposition"><strong>Proposição 6.2  </strong></span>Sejam <span class="math inline">\(a,b\)</span> constantes e <span class="math inline">\(Y=aX+b\)</span>, então
+<p><span id="prp:unnamed-chunk-86" class="proposition"><strong>Proposição 6.2  </strong></span>Sejam <span class="math inline">\(a,b\)</span> constantes e <span class="math inline">\(Y=aX+b\)</span>, então
 <span class="math display">\[
 M_Y(t) = e^{tb} M_X(ta)
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-31" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-33" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
 M_Y(t) &amp;= E(e^{t(aX+b)}) \\
 &amp;=E(e^{(ta)X}e^{tb})\\
 &amp;=e^{tb}E(e^{(ta)X})\\
