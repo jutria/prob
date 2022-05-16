@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-15" />
+<meta name="date" content="2022-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="modelos-discretos.html"/>
-
+<link rel="next" href="modelos-continuos.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -142,6 +142,21 @@
 <li class="chapter" data-level="8.5" data-path="vas-continuas.html"><a href="vas-continuas.html#esperança-de-uma-função-de-uma-v.a.-contínua"><i class="fa fa-check"></i><b>8.5</b> Esperança de uma função de uma v.a. contínua</a></li>
 <li class="chapter" data-level="8.6" data-path="vas-continuas.html"><a href="vas-continuas.html#variância-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.6</b> Variância de uma variável aleatória contínua</a></li>
 <li class="chapter" data-level="8.7" data-path="vas-continuas.html"><a href="vas-continuas.html#função-geradora-de-momentos-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.7</b> Função geradora de momentos de uma variável aleatória contínua</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="modelos-continuos.html"><a href="modelos-continuos.html"><i class="fa fa-check"></i><b>9</b> Modelos de distribuições contínuas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-uniforme-contínua"><i class="fa fa-check"></i><b>9.1</b> Distribuição uniforme contínua</a></li>
+<li class="chapter" data-level="9.2" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-exponencial"><i class="fa fa-check"></i><b>9.2</b> Distribuição exponencial</a></li>
+<li class="chapter" data-level="9.3" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-normal"><i class="fa fa-check"></i><b>9.3</b> Distribuição normal</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="modelos-continuos.html"><a href="modelos-continuos.html#propriedades-da-distribuição-normal"><i class="fa fa-check"></i><b>9.3.1</b> Propriedades da distribuição normal</a></li>
+<li class="chapter" data-level="9.3.2" data-path="modelos-continuos.html"><a href="modelos-continuos.html#a-distribuição-normal-padrão"><i class="fa fa-check"></i><b>9.3.2</b> A distribuição normal padrão</a></li>
+<li class="chapter" data-level="9.3.3" data-path="modelos-continuos.html"><a href="modelos-continuos.html#calculando-probabilidades-de-uma-nmusigma2-a-partir-da-n01"><i class="fa fa-check"></i><b>9.3.3</b> Calculando probabilidades de uma <span class="math inline">\(N(\mu,\sigma^2)\)</span> a partir da <span class="math inline">\(N(0,1)\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="tabelas.html"><a href="tabelas.html#tabela-da-normal-padrão"><i class="fa fa-check"></i><b>10.1</b> Tabela da normal padrão</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -507,7 +522,32 @@ M_X(t) = E(e^{tX}) = \int_{-\infty}^\infty e^{tx} f(x) dx.
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-168" class="example"><strong>Exemplo 8.11  </strong></span>Seja <span class="math inline">\(X\)</span> a precipitação pluviométrica de um município em um certo dia, cuja função de densidade é dada por
+<p><span id="exm:unnamed-chunk-168" class="example"><strong>Exemplo 8.11  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua cuja função de densidade é dada por
+<span class="math display">\[
+f(x) = \begin{cases}
+1, &amp; 0\leq x \leq 1,\\
+0, &amp; \text{caso contrário}
+\end{cases}
+\]</span>
+Encontre <span class="math inline">\(M_X(t)\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-67" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(t\neq 0\)</span>. Logo</p>
+<p><span class="math display">\[\begin{align*}
+M_X(t) &amp;= \int_0^1 e^{tx} dx \\
+&amp;=\left. e^{tx}\right|_0^t \\
+&amp;=\frac{e^t-1}{t}.
+\end{align*}\]</span></p>
+<p>Portanto,
+<span class="math display">\[
+M_X(t) = \begin{cases}
+\frac{e^t-1}{t} &amp; t\neq 0 \\
+1 &amp; t=0.
+\end{cases}
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-170" class="example"><strong>Exemplo 8.12  </strong></span>Seja <span class="math inline">\(X\)</span> a precipitação pluviométrica de um município em um certo dia, cuja função de densidade é dada por
 <span class="math display">\[\begin{align*}
 f(x) = \begin{cases}
 \lambda e^{-\lambda x} &amp; x\geq 0 \\
@@ -518,7 +558,7 @@ onde <span class="math inline">\(\lambda &gt;0\)</span> é uma constante.
 Encontre <span class="math inline">\(M_X(t)\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-67" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(t&lt;\lambda\)</span>. Logo
+<p><span id="unlabeled-div-68" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(t&lt;\lambda\)</span>. Logo
 <span class="math display">\[\begin{align*}
 M_X(t)&amp;=\lambda \int_0^\infty e^{tx} e^{-\lambda x} dx\\
 &amp;=\lambda \int_0^\infty e^{-(\lambda-t)x} dx\\
@@ -534,8 +574,8 @@ M_X(t)&amp;=\lambda \int_0^\infty e^{tx} e^{-\lambda x} dx\\
           </div>
         </div>
       </div>
-<a href="modelos-discretos.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="modelos-discretos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modelos-continuos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
