@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-16" />
+<meta name="date" content="2022-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -153,6 +153,9 @@
 <li class="chapter" data-level="9.3.2" data-path="modelos-continuos.html"><a href="modelos-continuos.html#a-distribuição-normal-padrão"><i class="fa fa-check"></i><b>9.3.2</b> A distribuição normal padrão</a></li>
 <li class="chapter" data-level="9.3.3" data-path="modelos-continuos.html"><a href="modelos-continuos.html#calculando-probabilidades-de-uma-nmusigma2-a-partir-da-n01"><i class="fa fa-check"></i><b>9.3.3</b> Calculando probabilidades de uma <span class="math inline">\(N(\mu,\sigma^2)\)</span> a partir da <span class="math inline">\(N(0,1)\)</span></a></li>
 </ul></li>
+<li class="chapter" data-level="9.4" data-path="modelos-continuos.html"><a href="modelos-continuos.html#quantis-da-distribuição-normal"><i class="fa fa-check"></i><b>9.4</b> Quantis da distribuição normal</a></li>
+<li class="chapter" data-level="9.5" data-path="modelos-continuos.html"><a href="modelos-continuos.html#aproximação-normal-à-binomial"><i class="fa fa-check"></i><b>9.5</b> Aproximação normal à binomial</a></li>
+<li class="chapter" data-level="9.6" data-path="modelos-continuos.html"><a href="modelos-continuos.html#a-curtose-e-a-distribuição-normal"><i class="fa fa-check"></i><b>9.6</b> A curtose e a distribuição normal</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
 <ul>
@@ -217,7 +220,7 @@ E(X) = \frac{a+b}{2} \text{ e } Var(X) = \frac{(a-b)^2}{12}
 <p><span id="unlabeled-div-69" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: eficiencia do componente eletrico</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(P(60 \leq X \leq 80) = F(80) - F(60) = 0,20\)</span>.</p></li>
-<li><p><span class="math inline">\(P(X\leq 90) = F(90)=0,10.\)</span></p></li>
+<li><p><span class="math inline">\(P(X\leq 90) = F(90)=0,90.\)</span></p></li>
 </ol>
 </div>
 </div>
@@ -300,7 +303,7 @@ F(x) = \frac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^x e^{-(t-\mu)^2/2\sigma^2} dt,
 \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z e^{-t^2/2} dt, \; x\in\mathbb R.
 \]</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-71" class="remark"><em>Observação</em>. </span>Os valores de <span class="math inline">\(\Phi(z)\)</span> não são possíveis de obter analiticamente, no entanto, podem ser aproximados numericamente e encontram-se tabelados.</p>
+<p><span id="unlabeled-div-71" class="remark"><em>Observação</em>. </span>Os valores de <span class="math inline">\(\Phi(z)\)</span> não são possíveis de obter analiticamente, no entanto, podem ser aproximados numericamente e encontram-se tabelados para os valores de <span class="math inline">\(z\geq 0\)</span>. Note que se <span class="math inline">\(z&lt;0\)</span>, podemos calcular <span class="math inline">\(\Phi(z)\)</span> através de <span class="math inline">\(\Phi(z) = 1-\Phi(-z)\)</span>.</p>
 </div>
 <p>A continuação apresentamos alguns resultados úteis para o cálculo de probabilidades envolvendo uma distribuição normal.</p>
 <div class="proposition">
@@ -352,8 +355,98 @@ P(X &lt; 1,90 \text{ ou } X&gt; 2,02) &amp;= 1- P(1,90 \leq X \leq 2,02) \\
 &amp;=2-2(0,9331)=0,1336
 \end{align*}\]</span></p>
 </div>
-
 </div>
+</div>
+<div id="quantis-da-distribuição-normal" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Quantis da distribuição normal<a href="modelos-continuos.html#quantis-da-distribuição-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Seja <span class="math inline">\(X\)</span> uma variável aleatória com função de distribuição <span class="math inline">\(F\)</span> e seja <span class="math inline">\(p\in(0,1)\)</span>, definimos o <span class="math inline">\(p\)</span>-ésimo quantil como o valor <span class="math inline">\(Q(p)\)</span> tal que <span class="math inline">\(F(Q(p)) = p\)</span>.</p>
+<p>No caso de <span class="math inline">\(X \sim\)</span> <span class="math inline">\(N(\mu,\sigma^2)\)</span>, temos que</p>
+<p><span class="math display">\[\begin{align*}
+F(Q(p)) = \Phi\left(\frac{Q(p) - \mu}{\sigma}\right) = p.
+\end{align*}\]</span></p>
+<p>Assim, devemos encontrar o valor de <span class="math inline">\(z(p) = \frac{Q(p) - \mu}{\sigma}\)</span> tal que a área sob a curva da normal padrão abaixo de <span class="math inline">\(z(p)\)</span> seja igual a <span class="math inline">\(p\)</span>, logo <span class="math inline">\(Q(p) = \sigma z(p) + \mu\)</span>. Por exemplo, se <span class="math inline">\(p=0.05\)</span>, queremos achar o valor <span class="math inline">\(z(p)\)</span> tal que <span class="math inline">\(\Phi(z(p)) = p = 0.05\)</span>, Neste caso, procurando na tabela da normal, temos que <span class="math inline">\(z(0.05)=-1.64\)</span>. Veja a figura a seguir:</p>
+<p><img src="docs/figuras/quantisnormal.png" /></p>
+<p>Em Inferência Estatística, os quantis de uma distribuição normal padrão recebem o nome de <em>valores críticos</em> e frequentemente é usada a notação: <span class="math inline">\(z_\alpha= z(1-\alpha), \; \alpha \in (0,1)\)</span> e eles tem um papel fundamental na definição de intervalos de confiança e a região crítica de testes de hipóteses.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-189" class="example"><strong>Exemplo 9.4  </strong></span>Numa população o nível sérico de colesterol em adultos (medido em mg/dl) é uma variável aleatória com distribuição normal com parâmetros <span class="math inline">\(\mu=225\)</span> e <span class="math inline">\(\sigma=75\)</span>. Calcule o valor acima do qual se encontra o colesterol de 10% da população que tem os níveis mais elevados.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-74" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Nível de colesterol de uma pessoa selecionada aleatoriamente dessa população <span class="math inline">\(\sim\)</span> N(225,<span class="math inline">\(75^2\)</span>), logo
+<span class="math display">\[
+Z = \frac{X - 225}{75} \sim \text{N(0,1)}.  
+\]</span>
+Queremos achar valor <span class="math inline">\(a\)</span> tal que <span class="math inline">\(P(X &gt; a) = 0.10 \iff P(X \leq a)=0.90\)</span>, ou seja, <span class="math inline">\(a=Q(0.90)\)</span>. Logo, <span class="math inline">\(a=\sigma z(0.90) + \mu = 75 \times 1,28 + 225 = 321\)</span>.</p>
+<p>Portanto, 10% da população tem um nível de colesterol acima de 321 mg/dl.</p>
+</div>
+</div>
+<div id="aproximação-normal-à-binomial" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Aproximação normal à binomial<a href="modelos-continuos.html#aproximação-normal-à-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lembre que uma variável aleatória <span class="math inline">\(X\)</span> tem distribuição binomial com parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span> se sua função de probabilidade é dada por</p>
+<p><span class="math display">\[
+p(x) = \binom{n}{x} p^x (1-p)^{n-x}, \; x=0,1,\ldots, n.
+\]</span></p>
+<p>Quando <span class="math inline">\(n\)</span> é muito grande por veces resulta inviável calcular a probabilidade de que <span class="math inline">\(X\)</span> assuma um certo conjunto de valores. Consideremos o seguinte exemplo:</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-191" class="example"><strong>Exemplo 9.5  </strong></span>Durante um longo período tem se determinado que 70% dos advogados que apresentam o exame da <em>OAB</em> são aprovados. Suponha que 500 advogados que apresentam o exame, qual a probabilidade de que pelo menos 370 deles sejam aprovados.</p>
+</div>
+<p>Seja <span class="math inline">\(X\)</span>: Número de advogados que aprovam o exame dentre os 500 <span class="math inline">\(\sim\)</span> Binomial(500,0.70).
+<span class="math display">\[
+P(X \geq 370) = \sum_{x=370}^{500} \binom{500}{x} (0.70)^x (0.30)^{500-x}  
+\]</span>
+Nesse caso teriamos que calcular 131 probabilidades binomiais, o que resulta uma tarefa bastante tediosa se tivessemos que usar uma calculadora ou pior se tivessemos que realizar o cálculo “à mão.”</p>
+<p>Diante dessa situação podemos usar a distribuição normal para aproximar probabilidades binomiais. O seguinte teorema mostra como isso pode ser feito.</p>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-192" class="theorem"><strong>Teorema 9.1  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>). Se <span class="math inline">\(n\)</span> é suficientemente grande, então para <span class="math inline">\(x=0,1,\ldots,n\)</span></p>
+<p><span class="math display">\[\begin{align*}
+P(X \leq x) = P(X \leq x+0,5) &amp;\approx \Phi\left( \frac{x + 0,5 - np}{\sqrt{np(1-p)}} \right) \\
+P(x \leq X \leq y) = P(x - 0,5\leq X \leq y+0,5) &amp;\approx \Phi\left(\frac{ y + 0,5 - np}{\sqrt{np(1-p)}}\right) - \Phi\left(\frac{ x - 0,5 - np}{\sqrt{np(1-p)}}\right)
+\end{align*}\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-75" class="remark"><em>Observação</em>. </span>O procedimento de substrair e somar 0,5 é conhecido como <em>correção de continuidade de Fisher</em> e fornece uma aproximação mais precisa, especialmente quando <span class="math inline">\(n\)</span> não for muito grande.</p>
+<p>Dois critérios que oferecem uma boa aproximação comumente usados são: <span class="math inline">\(np\geq 5\)</span> e <span class="math inline">\(n(1-p) \geq 5\)</span> ou <span class="math inline">\(np(1-p)\geq 10\)</span>.</p>
+</div>
+<p>A continuação apresentamos a função de probabilidade de uma distribuição binomial e a densidade da distribuição normal para diferentes valores de <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>.</p>
+<p><img src="docs/figuras/normal-binom1.png" />
+<img src="docs/figuras/normal-binom2.png" /></p>
+<p>Agora, usaremos o Teorema 9.1. para responder ao Exemplo 9.4. Nesse caso <span class="math inline">\(\mu = 500\times 0.70 = 350\)</span> e <span class="math inline">\(\sigma^2 = 500 \times 0.70 \times 0.30 = 105\)</span></p>
+<p><span class="math display">\[\begin{align*}
+P(X\geq 370) &amp;= 1 - P(X \leq 369) \\
+&amp;=1-\Phi\left( \frac{369 +0,5 - 350}{\sqrt{105}} \right)\\
+&amp;=1-\Phi(1.90)\\
+&amp;=1-0,9713\\
+&amp;=0.0287.
+\end{align*}\]</span>
+Portanto, a probabilidade de pelo menos 370 advogados aprovem o exame da OAB é aproximadamente de 2%.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-194" class="example"><strong>Exemplo 9.6  </strong></span>Um fabricante sabe por experiência que de 17000 produtos, o 4% é rejeitado por defeitos. Se um novo lote de 800 unidades vai ser inspecionado. Qual a probabilidade aproximada de que menos de 35 unidades sejam rejeitadas?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-76" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de produtos rejeitados por defeito <span class="math inline">\(\sim\)</span> Binomial(500,0,04), podemos usar a distribuição normal com <span class="math inline">\(\mu = 500 \times 0,04 = 32\)</span> e <span class="math inline">\(\sigma^2 = 500 \times 0,04 \times 0,96 = 30,72\)</span>. Logo,
+<span class="math display">\[
+P(X&lt;35) = P(X\leq 34) = \Phi\left( \frac{34+0,5 - 32}{\sqrt{30,72}}\right) = \Phi(0,45)=0,6736.  
+\]</span></p>
+</div>
+</div>
+<div id="a-curtose-e-a-distribuição-normal" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> A curtose e a distribuição normal<a href="modelos-continuos.html#a-curtose-e-a-distribuição-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A curtose é uma medida de forma que mostra o <em>achatamento</em> da curva da função de densidade de probabilidade de uma variável aleatória.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-196" class="definition"><strong>Definição 9.4  </strong></span>Tomando a distribuição normal como referência, diremos que uma distribuição pode ser menos “achatada” que a normal (LEPTOCÚRTICA) ou mais “achatada” que a normal (PLATICÚRTICA). A distribuição normal desde o ponto de vista da curtose, é chamada de MESOCÚRTICA.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-197" class="definition"><strong>Definição 9.5  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória (discreta ou contínua) com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Então, o <em>coeficiente de curtose</em> de <span class="math inline">\(X\)</span> é definida como</p>
+<p><span class="math display">\[
+\kappa = \frac{E[(X-\mu)^4]}{\sigma^4} - 3  
+\]</span></p>
+</div>
+<p><em>Critério</em></p>
+<ul>
+<li><p>Se <span class="math inline">\(\kappa &lt; 0\)</span>, então a distribuição de <span class="math inline">\(X\)</span> é leptocúrtica.</p></li>
+<li><p>Se <span class="math inline">\(\kappa = 0\)</span>, então a distribuição de <span class="math inline">\(X\)</span> é mesocúrtica.</p></li>
+<li><p>Se <span class="math inline">\(\kappa &gt; 0\)</span>, então a distribuição de <span class="math inline">\(X\)</span> é platicúrtica.</p></li>
+</ul>
+
 </div>
 </div>
             </section>

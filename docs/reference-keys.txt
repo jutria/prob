@@ -113,6 +113,12 @@ prp:unnamed-chunk-183
 prp:unnamed-chunk-184
 cor:unnamed-chunk-186
 exm:unnamed-chunk-187
+exm:unnamed-chunk-189
+exm:unnamed-chunk-191
+thm:unnamed-chunk-192
+exm:unnamed-chunk-194
+def:unnamed-chunk-196
+def:unnamed-chunk-197
 introdução
 esp-prob
 espaço-amostral
@@ -167,5 +173,8 @@ distribuição-normal
 propriedades-da-distribuição-normal
 a-distribuição-normal-padrão
 calculando-probabilidades-de-uma-nmusigma2-a-partir-da-n01
+quantis-da-distribuição-normal
+aproximação-normal-à-binomial
+a-curtose-e-a-distribuição-normal
 tabelas
 tabela-da-normal-padrão
