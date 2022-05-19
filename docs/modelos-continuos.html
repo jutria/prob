@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-18" />
+<meta name="date" content="2022-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -268,7 +268,7 @@ f(x) = \frac{1}{\sqrt{2\pi} \sigma} e^{-(x-\mu)^2/2\sigma^2}, \; x \in \mathbb R
 <strong>Notação</strong>: <span class="math inline">\(X\sim\)</span> N(<span class="math inline">\(\mu\)</span>,<span class="math inline">\(\sigma^2\)</span>).</p>
 </div>
 <p>A distribuição normal também é conhecida como a distribuição de <em>Laplace-Gauss</em>. No seguinte gráfico apresentamos várias curvas da normal para diferentes valores dos parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span>.</p>
-<p><img src="figuras/normal.png" /></p>
+<p><img src="docs/figuras/normal.png" /></p>
 <div class="proposition">
 <p><span id="prp:unnamed-chunk-181" class="proposition"><strong>Proposição 9.3  </strong></span>Se <span class="math inline">\(X\sim\)</span> N(<span class="math inline">\(\mu,\sigma^2\)</span>), então
 <span class="math display">\[
@@ -279,7 +279,7 @@ E(X) = \mu \text{ e } Var(X) = \sigma^2.
 <p><span class="math display">\[
 F(x) = \frac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^x e^{-(t-\mu)^2/2\sigma^2} dt, \; x\in \mathbb R.
 \]</span></p>
-<p><img src="figuras/cdf-normal.png" /></p>
+<p><img src="docs/figuras/cdf-normal.png" /></p>
 <div id="propriedades-da-distribuição-normal" class="section level3 hasAnchor" number="9.3.1">
 <h3><span class="header-section-number">9.3.1</span> Propriedades da distribuição normal<a href="modelos-continuos.html#propriedades-da-distribuição-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: lower-roman">
@@ -290,7 +290,7 @@ F(x) = \frac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^x e^{-(t-\mu)^2/2\sigma^2} dt,
 <li><p><span class="math inline">\(\lim_{x\to \pm \infty} f(x) = 0\)</span>.</p></li>
 <li><p>O desvio padrão <span class="math inline">\(\sigma\)</span> determina a largura da curva da normal: quanto maior <span class="math inline">\(\sigma\)</span> tem-se uma curva mais larga e achatada, dito de ooutra maneira, quanto maior <span class="math inline">\(\sigma\)</span> menos concentrada perto de <span class="math inline">\(\mu\)</span> a densidade é (veja a figura a continuação).</p></li>
 </ol>
-<p><img src="figuras/normal-variance.png" /></p>
+<p><img src="docs/figuras/normal-variance.png" /></p>
 </div>
 <div id="a-distribuição-normal-padrão" class="section level3 hasAnchor" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> A distribuição normal padrão<a href="modelos-continuos.html#a-distribuição-normal-padrão" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -365,7 +365,7 @@ P(X &lt; 1,90 \text{ ou } X&gt; 2,02) &amp;= 1- P(1,90 \leq X \leq 2,02) \\
 F(Q(p)) = \Phi\left(\frac{Q(p) - \mu}{\sigma}\right) = p.
 \end{align*}\]</span></p>
 <p>Assim, devemos encontrar o valor de <span class="math inline">\(z(p) = \frac{Q(p) - \mu}{\sigma}\)</span> tal que a área sob a curva da normal padrão abaixo de <span class="math inline">\(z(p)\)</span> seja igual a <span class="math inline">\(p\)</span>, logo <span class="math inline">\(Q(p) = \sigma z(p) + \mu\)</span>. Por exemplo, se <span class="math inline">\(p=0.05\)</span>, queremos achar o valor <span class="math inline">\(z(p)\)</span> tal que <span class="math inline">\(\Phi(z(p)) = p = 0.05\)</span>, Neste caso, procurando na tabela da normal, temos que <span class="math inline">\(z(0.05)=-1.64\)</span>. Veja a figura a seguir:</p>
-<p><img src="docs/figuras/quantisnormal.png" /></p>
+<p><img src="docs/figuras/quantilnormal.png" /></p>
 <p>Em Inferência Estatística, os quantis de uma distribuição normal padrão recebem o nome de <em>valores críticos</em> e frequentemente é usada a notação: <span class="math inline">\(z_\alpha= z(1-\alpha), \; \alpha \in (0,1)\)</span> e eles tem um papel fundamental na definição de intervalos de confiança e a região crítica de testes de hipóteses.</p>
 <div class="example">
 <p><span id="exm:unnamed-chunk-189" class="example"><strong>Exemplo 9.4  </strong></span>Numa população o nível sérico de colesterol em adultos (medido em mg/dl) é uma variável aleatória com distribuição normal com parâmetros <span class="math inline">\(\mu=225\)</span> e <span class="math inline">\(\sigma=75\)</span>. Calcule o valor acima do qual se encontra o colesterol de 10% da população que tem os níveis mais elevados.</p>
