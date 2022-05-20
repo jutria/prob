@@ -117,8 +117,9 @@ exm:unnamed-chunk-189
 exm:unnamed-chunk-191
 thm:unnamed-chunk-192
 exm:unnamed-chunk-194
-def:unnamed-chunk-196
+exm:unnamed-chunk-196
 def:unnamed-chunk-197
+def:unnamed-chunk-198
 introdução
 esp-prob
 espaço-amostral
