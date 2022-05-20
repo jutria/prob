@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 8 Variáveis aleatórias contínuas | Probabilidade</title>
+  <meta name="description" content="Este é um material sobre o básico em Probabilidade" />
+  <meta name="generator" content="bookdown 0.26.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 8 Variáveis aleatórias contínuas | Probabilidade" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este é um material sobre o básico em Probabilidade" />
+  <meta name="github-repo" content="jutria/probandstat" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 8 Variáveis aleatórias contínuas | Probabilidade" />
+  
+  <meta name="twitter:description" content="Este é um material sobre o básico em Probabilidade" />
+  
+
+<meta name="author" content="Prof. Dr. Jaime Utria" />
+
+
+<meta name="date" content="2022-05-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="modelos-discretos.html"/>
+<link rel="next" href="modelos-continuos.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Probabilidade</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="esp-prob.html"><a href="esp-prob.html"><i class="fa fa-check"></i><b>2</b> Espaços de Probabilidade</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="esp-prob.html"><a href="esp-prob.html#espaço-amostral"><i class="fa fa-check"></i><b>2.1</b> Espaço amostral</a></li>
+<li class="chapter" data-level="2.2" data-path="esp-prob.html"><a href="esp-prob.html#eventos"><i class="fa fa-check"></i><b>2.2</b> Eventos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="esp-prob.html"><a href="esp-prob.html#relaçoes-e-operações-entre-eventos"><i class="fa fa-check"></i><b>2.2.1</b> Relaçoes e operações entre eventos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="esp-prob.html"><a href="esp-prob.html#probabilidade"><i class="fa fa-check"></i><b>2.3</b> Probabilidade</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="esp-prob.html"><a href="esp-prob.html#propriedades-de-uma-probabilidade"><i class="fa fa-check"></i><b>2.3.1</b> Propriedades de uma probabilidade</a></li>
+<li class="chapter" data-level="2.3.2" data-path="esp-prob.html"><a href="esp-prob.html#calculando-probabilidades"><i class="fa fa-check"></i><b>2.3.2</b> Calculando probabilidades</a></li>
+<li class="chapter" data-level="2.3.3" data-path="esp-prob.html"><a href="esp-prob.html#espaço-de-probabilidade-no-caso-omega-enumerável"><i class="fa fa-check"></i><b>2.3.3</b> Espaço de probabilidade no caso <span class="math inline">\(\Omega\)</span> enumerável</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="esp-prob.html"><a href="esp-prob.html#probabilidade-condicional"><i class="fa fa-check"></i><b>2.4</b> Probabilidade Condicional</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-da-probabilidade-total"><i class="fa fa-check"></i><b>2.4.1</b> Fórmula da probabilidade total</a></li>
+<li class="chapter" data-level="2.4.2" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-de-bayes"><i class="fa fa-check"></i><b>2.4.2</b> Fórmula de Bayes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html"><i class="fa fa-check"></i><b>3</b> Conjuntos limites e continuidade da probabilidade</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html#limite-superior-e-inferior-de-uma-sequência-de-números-reais."><i class="fa fa-check"></i><b>3.1</b> Limite superior e inferior de uma sequência de números reais.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="vas.html"><a href="vas.html"><i class="fa fa-check"></i><b>4</b> Variáveis aleatórias</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="vas.html"><a href="vas.html#definições"><i class="fa fa-check"></i><b>4.1</b> Definições</a></li>
+<li class="chapter" data-level="4.2" data-path="vas.html"><a href="vas.html#função-de-probabilidade"><i class="fa fa-check"></i><b>4.2</b> Função de probabilidade</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="vas.html"><a href="vas.html#exemplos"><i class="fa fa-check"></i><b>4.2.1</b> Exemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="vas.html"><a href="vas.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i><b>4.3</b> Função de distribuição acumulada</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="vas.html"><a href="vas.html#algumas-propriedades-da-função-de-distribuição"><i class="fa fa-check"></i><b>4.3.1</b> Algumas propriedades da função de distribuição</a></li>
+<li class="chapter" data-level="4.3.2" data-path="vas.html"><a href="vas.html#propriedades-fundamentais-da-função-de-distribuição"><i class="fa fa-check"></i><b>4.3.2</b> Propriedades fundamentais da função de distribuição</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="valoresperado.html"><a href="valoresperado.html"><i class="fa fa-check"></i><b>5</b> Valor esperado</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="valoresperado.html"><a href="valoresperado.html#motivação"><i class="fa fa-check"></i><b>5.1</b> Motivação</a></li>
+<li class="chapter" data-level="5.2" data-path="valoresperado.html"><a href="valoresperado.html#funções-de-variáveis-aleatórias"><i class="fa fa-check"></i><b>5.2</b> Funções de variáveis aleatórias</a></li>
+<li class="chapter" data-level="5.3" data-path="valoresperado.html"><a href="valoresperado.html#variância"><i class="fa fa-check"></i><b>5.3</b> Variância</a></li>
+<li class="chapter" data-level="5.4" data-path="valoresperado.html"><a href="valoresperado.html#independência-de-variáveis-aleatórias"><i class="fa fa-check"></i><b>5.4</b> Independência de variáveis aleatórias</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="fgm.html"><a href="fgm.html"><i class="fa fa-check"></i><b>6</b> Função geradora de momentos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="fgm.html"><a href="fgm.html#momentos"><i class="fa fa-check"></i><b>6.1</b> Momentos</a></li>
+<li class="chapter" data-level="6.2" data-path="fgm.html"><a href="fgm.html#função-geradora-de-momentos"><i class="fa fa-check"></i><b>6.2</b> Função geradora de momentos</a></li>
+<li class="chapter" data-level="6.3" data-path="fgm.html"><a href="fgm.html#exemplos-de-m_xt-para-algumas-distribuições-comuns"><i class="fa fa-check"></i><b>6.3</b> Exemplos de <span class="math inline">\(M_X(t)\)</span> para algumas distribuições comuns</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="modelos-discretos.html"><a href="modelos-discretos.html"><i class="fa fa-check"></i><b>7</b> Modelos de distribuições discretas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-uniforme-discreta"><i class="fa fa-check"></i><b>7.1</b> Distribuição Uniforme Discreta</a></li>
+<li class="chapter" data-level="7.2" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-de-bernoulli"><i class="fa fa-check"></i><b>7.2</b> Distribuição de Bernoulli</a></li>
+<li class="chapter" data-level="7.3" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-binomial"><i class="fa fa-check"></i><b>7.3</b> Distribuição Binomial</a></li>
+<li class="chapter" data-level="7.4" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-geométrica"><i class="fa fa-check"></i><b>7.4</b> Distribuição Geométrica</a></li>
+<li class="chapter" data-level="7.5" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-binomial-negativa-pascal"><i class="fa fa-check"></i><b>7.5</b> Distribuição Binomial Negativa (Pascal)</a></li>
+<li class="chapter" data-level="7.6" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-hipergeométrica"><i class="fa fa-check"></i><b>7.6</b> Distribuição Hipergeométrica</a></li>
+<li class="chapter" data-level="7.7" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-de-poisson"><i class="fa fa-check"></i><b>7.7</b> Distribuição de Poisson</a></li>
+<li class="chapter" data-level="7.8" data-path="modelos-discretos.html"><a href="modelos-discretos.html#aproximação-de-poisson-à-binomial"><i class="fa fa-check"></i><b>7.8</b> Aproximação de Poisson à Binomial</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="vas-continuas.html"><a href="vas-continuas.html"><i class="fa fa-check"></i><b>8</b> Variáveis aleatórias contínuas</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="vas-continuas.html"><a href="vas-continuas.html#função-de-distribuição"><i class="fa fa-check"></i><b>8.1</b> Função de distribuição</a></li>
+<li class="chapter" data-level="8.2" data-path="vas-continuas.html"><a href="vas-continuas.html#obtenção-de-f-a-partir-de-f"><i class="fa fa-check"></i><b>8.2</b> Obtenção de <span class="math inline">\(f\)</span> a partir de <span class="math inline">\(F\)</span></a></li>
+<li class="chapter" data-level="8.3" data-path="vas-continuas.html"><a href="vas-continuas.html#percentis-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.3</b> Percentis de uma variável aleatória contínua</a></li>
+<li class="chapter" data-level="8.4" data-path="vas-continuas.html"><a href="vas-continuas.html#esperança-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.4</b> Esperança de uma variável aleatória contínua</a></li>
+<li class="chapter" data-level="8.5" data-path="vas-continuas.html"><a href="vas-continuas.html#esperança-de-uma-função-de-uma-v.a.-contínua"><i class="fa fa-check"></i><b>8.5</b> Esperança de uma função de uma v.a. contínua</a></li>
+<li class="chapter" data-level="8.6" data-path="vas-continuas.html"><a href="vas-continuas.html#variância-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.6</b> Variância de uma variável aleatória contínua</a></li>
+<li class="chapter" data-level="8.7" data-path="vas-continuas.html"><a href="vas-continuas.html#função-geradora-de-momentos-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.7</b> Função geradora de momentos de uma variável aleatória contínua</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="modelos-continuos.html"><a href="modelos-continuos.html"><i class="fa fa-check"></i><b>9</b> Modelos de distribuições contínuas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-uniforme-contínua"><i class="fa fa-check"></i><b>9.1</b> Distribuição uniforme contínua</a></li>
+<li class="chapter" data-level="9.2" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-exponencial"><i class="fa fa-check"></i><b>9.2</b> Distribuição exponencial</a></li>
+<li class="chapter" data-level="9.3" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-normal"><i class="fa fa-check"></i><b>9.3</b> Distribuição normal</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="modelos-continuos.html"><a href="modelos-continuos.html#propriedades-da-distribuição-normal"><i class="fa fa-check"></i><b>9.3.1</b> Propriedades da distribuição normal</a></li>
+<li class="chapter" data-level="9.3.2" data-path="modelos-continuos.html"><a href="modelos-continuos.html#a-distribuição-normal-padrão"><i class="fa fa-check"></i><b>9.3.2</b> A distribuição normal padrão</a></li>
+<li class="chapter" data-level="9.3.3" data-path="modelos-continuos.html"><a href="modelos-continuos.html#calculando-probabilidades-de-uma-nmusigma2-a-partir-da-n01"><i class="fa fa-check"></i><b>9.3.3</b> Calculando probabilidades de uma <span class="math inline">\(N(\mu,\sigma^2)\)</span> a partir da <span class="math inline">\(N(0,1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="modelos-continuos.html"><a href="modelos-continuos.html#quantis-da-distribuição-normal"><i class="fa fa-check"></i><b>9.4</b> Quantis da distribuição normal</a></li>
+<li class="chapter" data-level="9.5" data-path="modelos-continuos.html"><a href="modelos-continuos.html#aproximação-normal-à-binomial"><i class="fa fa-check"></i><b>9.5</b> Aproximação normal à binomial</a></li>
+<li class="chapter" data-level="9.6" data-path="modelos-continuos.html"><a href="modelos-continuos.html#a-curtose-e-a-distribuição-normal"><i class="fa fa-check"></i><b>9.6</b> A curtose e a distribuição normal</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="tabelas.html"><a href="tabelas.html#tabela-da-normal-padrão"><i class="fa fa-check"></i><b>10.1</b> Tabela da normal padrão</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Probabilidade</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vas-continuas" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Capítulo 8</span> Variáveis aleatórias contínuas<a href="vas-continuas.html#vas-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Lembre que uma variável aleatória é dita <em>contínua</em> se assume valores em um intervalo de <span class="math inline">\(\mathbb R\)</span>. Por exemplo, o tempo de vida de um aparelho eletrônico, a temperatura em um determinado dia, a altura de uma pessoa ou o peso de um bebê recém-nascido.</p>
+<p>Para caracterizar uma variável aleatória usamos a chamada função de densidade, definida a continuação:</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-136" class="definition"><strong>Definição 8.1  (Função de densidade) </strong></span>Uma função <span class="math inline">\(f:\mathbb R \rightarrow \mathbb R\)</span>, é uma <em>função de densidade</em> se satisfaz as seguintes condições:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(f(x) \geq 0\)</span>, para qualquer <span class="math inline">\(x\in\mathbb R\)</span></p></li>
+<li><p><span class="math inline">\(\int_{-\infty}^\infty f(x) dx = 1\)</span>.</p></li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-137" class="definition"><strong>Definição 8.2  </strong></span>Dizemos que <span class="math inline">\(X\)</span> é uma variável <em>(absolutamente) contínua</em> se existir uma função de densidade <span class="math inline">\(f\)</span> tal que para qualquer <span class="math inline">\(A \subset \mathbb R\)</span>
+<span class="math display">\[
+P(X\in A) = \int_{A} f(x) dx
+\]</span></p>
+</div>
+<p>Por exemplo, se quisermos calcular a probabilidade de <span class="math inline">\(X\)</span> pertencer a um intervalo da reta <span class="math inline">\([a,b]\)</span>, basta calcular:</p>
+<p><span class="math display">\[
+P(a\leq X \leq b)=\int_a^b f(x) dx.
+\]</span></p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-138" class="example"><strong>Exemplo 8.1  </strong></span>Verifique se as seguintes funções são funções de densidade:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math display">\[\begin{align*}
+f(x) = \begin{cases}
+\frac{1}{2}, \; 0 \leq x \leq 2\\
+0, \text{caso contrário}.
+\end{cases}
+\end{align*}\]</span></p></li>
+<li><p><span class="math display">\[\begin{align*}
+f(x) = \begin{cases}
+e^{-x}, \; x &gt; 0 \\
+0, \text{caso contrário}
+\end{cases}
+\end{align*}\]</span></p></li>
+</ol>
+</div>
+<p>Apresentamos os gráficos das funções em a. e b., a seguir:</p>
+<p><img src="docs/figuras/densidades_exemplo_8.1.png" /></p>
+<div class="solution">
+<p><span id="unlabeled-div-55" class="solution"><em>Solução</em>. </span>Claramente as funções acima são não negativas para qualquer valor de <span class="math inline">\(x\)</span>.</p>
+<p>Agora, vamos verificar se integram 1. Com efeito:
+<span class="math display">\[\begin{align*}
+\int_{0}^2 \frac{1}{2} dx &amp;= \frac{1}{2} \left. x\right|_{0}^{2} \\
+&amp;= \frac{1}{2} \times 2 =1
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\int_0^\infty e^{-x} dx &amp;= \left.-e^{-x}\right|_{0}^\infty \\
+&amp;= -(e^{-\infty} - 1) = 1.
+\end{align*}\]</span>
+Portanto, as duas funções são funções de densidade.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-140" class="example"><strong>Exemplo 8.2  </strong></span>Suponha que <span class="math inline">\(X\)</span> seja uma variável aleatória contínua cuja função de densidade é dada por
+<span class="math display">\[
+f(x) = 
+\begin{cases}
+c(4x - 2x^2) &amp; 0&lt;x&lt;2,\\
+0 &amp; \text{caso contrário}
+\end{cases}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Qual o valor de <span class="math inline">\(c\)</span>?</p></li>
+<li><p>Determine <span class="math inline">\(P(X&gt;1).\)</span></p></li>
+</ol>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-56" class="solution"><em>Solução</em>. </span>Para responder à letra a. usamos o fato que <span class="math inline">\(\int_{-\infty}^\infty f(x)=1\)</span>. Com efeito,</p>
+<p><span class="math display">\[\begin{align*}
+c\int_0^2 (4x - 2x^2) dx=1, 
+\end{align*}\]</span>
+logo,
+<span class="math display">\[\begin{align*}
+c \left[2x^2 - \frac{2x^3}{3}\right]_{0}^{2} &amp;= 1\\
+c \left[8 - \frac{16}{3}\right] = 1 \iff c \left(\frac{8}{3}\right) = 1.
+\end{align*}\]</span>
+Portanto, <span class="math inline">\(c=\frac{3}{8}\)</span>.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+P(X &gt; 1) = \int_{1}^{2}  \frac{3}{8} (4x - 2x^2) = 0.5. 
+\end{align*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-142" class="example"><strong>Exemplo 8.3  </strong></span>A quantidade de tempo em horas que a bateria de um smartphone funciona sem desligar é uma variável aleatória contínua com função de densidade dada por
+<span class="math display">\[
+f(x) = \begin{cases}
+\frac{1}{10} e^{-1/10}, \; x &gt; 0,\\
+0, \text{caso contrário}
+\end{cases}
+\]</span></p>
+<p>Qual a probabilidade de que</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>o smartphone funcione entre 5 e 15 horas antes de desligar?</p></li>
+<li><p>ele funciones menos de 10 horas?</p></li>
+</ol>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-57" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: A quantidade de tempo em horas que a bateria de um smartphone funciona sem desligar.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math display">\[\begin{align*} 
+P(10 &lt; X &lt; 15) &amp;= \int_5^{15} \frac{1}{10} e^{-x/10} dx \\
+&amp;=\left. -e^{-x/10} \right|_5^15 = -e^{-3/2} + e^{-1/2} \approx 0,384.
+\end{align*}\]</span></p></li>
+<li><p><span class="math display">\[P(X&lt;10) = \int_{0}^10 \frac{1}{10} e^{-x/10} dx = \left. -e^{-x/10}\right|_0^10 = 1-e^{-1} \approx 0,633.\]</span></p></li>
+</ol>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-58" class="remark"><em>Observação</em>. </span>Note que a probabilidade de que uma variável aleatória contínua assuma qualquer valor especifíco é zero, ou seja, se <span class="math inline">\(a\in\mathbb R\)</span>, então <span class="math inline">\(P(X=a)=0\)</span>, pois
+<span class="math display">\[
+P(X=a)=\int_a^a f(x) dx= 0.
+\]</span></p>
+</div>
+<p>Da anterior observação podemos concluir que para <span class="math inline">\(a,b\in\mathbb R\)</span> com <span class="math inline">\(a&lt;b\)</span>, tem-se que</p>
+<p><span class="math display">\[
+P(a&lt;X&lt;b) = P(a&lt;X\leq b) = P(a \leq X&lt; b)=P(a&lt;X&lt;b).
+\]</span></p>
+<div id="função-de-distribuição" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Função de distribuição<a href="vas-continuas.html#função-de-distribuição" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recorde que a função de distribuição de uma variável aleatória é definida por <span class="math inline">\(F(x) = P(X\leq x)\)</span>, para qualquer <span class="math inline">\(x\in\mathbb R\)</span>. No caso em que <span class="math inline">\(X\)</span> é uma variável contínua, tem-se que</p>
+<p><span class="math display">\[
+F(x) = \int_{-\infty}^x f(t)dt.
+\]</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-59" class="remark"><em>Observação</em>. </span>Note que <span class="math inline">\(P(a \leq X \leq b) = F(b) - F(a)\)</span>.</p>
+</div>
+</div>
+<div id="obtenção-de-f-a-partir-de-f" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Obtenção de <span class="math inline">\(f\)</span> a partir de <span class="math inline">\(F\)</span><a href="vas-continuas.html#obtenção-de-f-a-partir-de-f" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Anteriormente, definimos a função de distribuição de uma variável aleatória continua como:</p>
+<p><span class="math display">\[
+F(x) = \int_{-\infty}^x f(t) dt.
+\]</span></p>
+<p>Ou seja, mostramos como pode-se obter a função de distribuição a partir do conhecimento da função de densidade. O seguinte teorema mostra como pode-se obter a função de densidade a partir da função de distribuição.</p>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-146" class="theorem"><strong>Teorema 8.1  </strong></span>Se <span class="math inline">\(F(x)\)</span> é a função de distribuição de uma variável aleatória contínua <span class="math inline">\(X\)</span>, então <span class="math inline">\(f(x)\)</span> é dada por
+<span class="math display">\[
+f(x) =F^\prime(x),  
+\]</span>
+sempre que exista a derivada.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-147" class="example"><strong>Exemplo 8.4  </strong></span>Suponha que
+<span class="math display">\[
+F(x) = \begin{cases}
+0, \; x&lt;0 \\
+x, \; 0\leq x \leq 1 \\
+1, \; x&gt;1
+\end{cases}
+\]</span>
+Logo,
+<span class="math display">\[
+f(x) =F&#39;(x) = \begin{cases}
+0, \; x&lt;0 \\
+1, \; 0\leq x \leq 1  \\
+0, \; x&gt;1
+\end{cases}
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-148" class="example"><strong>Exemplo 8.5  </strong></span>Se <span class="math inline">\(X\)</span> é uma variável aleatoria com função de densidade dada por
+<span class="math display">\[
+f(x) = \begin{cases}
+3x^2, \; 0\leq x \leq 1 \\
+0, \; \text{caso contrário}
+\end{cases}
+\]</span>
+Encontre <span class="math inline">\(F(x)\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-60" class="solution"><em>Solução</em>. </span>Como</p>
+<p><span class="math display">\[
+F(x) = \int_{-\infty}^x f(t) dt,  
+\]</span>
+temos que</p>
+<p><span class="math display">\[\begin{align*}
+F(x)=\begin{cases}
+0, \; x &lt;0, \\
+x^3, \; 0\leq x\leq 1, \\
+1 \; x&gt;1
+\end{cases}
+\end{align*}\]</span></p>
+</div>
+</div>
+<div id="percentis-de-uma-variável-aleatória-contínua" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Percentis de uma variável aleatória contínua<a href="vas-continuas.html#percentis-de-uma-variável-aleatória-contínua" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Quando dizemos que o salário de um indivíduo esteve no 85-ésimo percentil de uma empresa, queremos dizer que 85% dos salários de toda a empresa estiveram por abaixo desse salário e 15% por em cima.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-150" class="definition"><strong>Definição 8.3  </strong></span>Seja <span class="math inline">\(p\in (0,100)\)</span> um número inteiro. O <span class="math inline">\(p\)</span>-ésimo percentil da distribuição <span class="math inline">\(F\)</span> de uma variável aleatória contínua <span class="math inline">\(X\)</span>, denotado por <span class="math inline">\(\eta(p)\)</span> é definido por
+<span class="math display">\[
+\frac{p}{100}= F(\eta(p)) =  \int_{-\infty}^{\eta(p)} f(x) dx  
+\]</span>
+O 50-ésimo percentil da distribuição <span class="math inline">\(F\)</span> de <span class="math inline">\(X\)</span> chama-se a  de <span class="math inline">\(F\)</span> (ou de <span class="math inline">\(X\)</span>), e é denotado por <span class="math inline">\(\tilde{\mu}\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-61" class="remark"><em>Observação</em>. </span><span class="math inline">\(\eta(p)\)</span> é o valor no eixo horizontal, tal que <span class="math inline">\(p\)</span>% da área sob o gráfico de <span class="math inline">\(f\)</span> está à esquerda de <span class="math inline">\(\eta(p)\)</span> e <span class="math inline">\((100-p)\)</span>% está à direita.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-152" class="example"><strong>Exemplo 8.6  </strong></span>A função de distribuição de uma variável aleatória contínua <span class="math inline">\(X\)</span> é
+<span class="math display">\[\begin{align*}
+F(x) = \begin{cases}
+0, &amp; x&lt;0,\\
+\frac{x}{2}, &amp; 0 \leq x \leq 2 \\
+1, &amp; x&gt;2
+\end{cases}
+\end{align*}\]</span>
+Determine a mediana, <span class="math inline">\(\tilde{\mu}\)</span>, de <span class="math inline">\(F\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-62" class="solution"><em>Solução</em>. </span>A mediana <span class="math inline">\(\tilde{\mu}\)</span> deve satisfazer a relação <span class="math inline">\(0,5 = F(\tilde\mu)\)</span>, logo <span class="math inline">\(0,5=\frac{\tilde\mu}{2}\)</span>, portanto <span class="math inline">\(\tilde\mu =1\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-154" class="example"><strong>Exemplo 8.7  </strong></span>A função de distribuição de uma variável aleatória contínua <span class="math inline">\(X\)</span> é
+<span class="math display">\[\begin{align*}
+F(x) = \begin{cases}
+1-e^{-2x}, &amp; x\geq 0,\\
+0, &amp; x&lt;0 
+\end{cases}
+\end{align*}\]</span>
+Determine a mediana, <span class="math inline">\(\tilde{\mu}\)</span>, de <span class="math inline">\(F\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-63" class="solution"><em>Solução</em>. </span>A mediana <span class="math inline">\(\tilde\mu\)</span> satisfaz <span class="math inline">\(0.5 = F(\tilde\mu)\)</span>, logo <span class="math inline">\(0,5=1-e^{-2\tilde\mu}\)</span>, portanto <span class="math inline">\(\tilde\mu = \frac{\ln(2)}{2}\)</span></p>
+</div>
+</div>
+<div id="esperança-de-uma-variável-aleatória-contínua" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Esperança de uma variável aleatória contínua<a href="vas-continuas.html#esperança-de-uma-variável-aleatória-contínua" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>No capítulo 5, definimos a esperança de uma variável aleatória discreta, <span class="math inline">\(X\)</span>, como a soma (sobre os valores de <span class="math inline">\(x\)</span>) do produto <span class="math inline">\(x p(x)\)</span>, onde <span class="math inline">\(p(x)\)</span> é a função de probabilidade de <span class="math inline">\(X\)</span>. No caso contínuo procederemos de maneira semelhante, porém trocaremos a soma por uma integral e a função de probabilidade pela função de densidade. Daí, temos a seguinte definição.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-156" class="definition"><strong>Definição 8.4  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua com função de densidade <span class="math inline">\(f\)</span>, definimos a <em>esperança</em> (<em>valor esperado</em> ou <em>média</em>) de <span class="math inline">\(X\)</span> como
+<span class="math display">\[
+\mu=E(X)=\int_{-\infty}^\infty x f(x) dx
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-157" class="example"><strong>Exemplo 8.8  </strong></span>Considere uma variável aleatória contínua <span class="math inline">\(X\)</span>, cuja função de densidade é dada por</p>
+<p><span class="math display">\[\begin{align*}
+f(x) = \begin{cases}
+1, &amp; 0\leq x \leq 1 \\
+0, &amp; \text{caso contrário}
+\end{cases}
+\end{align*}\]</span>
+Encontre <span class="math inline">\(E(X)\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-64" class="solution"><em>Solução</em>. </span><span class="math display">\[\begin{align*}
+E(X) &amp;= \int_{0}^1 x dx \\
+&amp;=\left.\frac{x^2}{2}\right|_0^1 \\
+&amp;=\frac{1}{2}.
+\end{align*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-159" class="example"><strong>Exemplo 8.9  </strong></span>Seja <span class="math inline">\(X\)</span> o tempo de vida útil, em meses, de uma lâmpada, cuja função de densidade é dada por
+<span class="math display">\[\begin{align*}
+f(x) = \begin{cases}
+e^{-x} &amp; x\geq 0 \\
+0 &amp; \text{caso contrário}
+\end{cases}
+\end{align*}\]</span>
+Determine <span class="math inline">\(E(X)\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-65" class="solution"><em>Solução</em>. </span>Procederemos por integração por partes. Seja <span class="math inline">\(u=x\)</span> e <span class="math inline">\(dv=e^{-x}\)</span>, logo <span class="math inline">\(du=dx\)</span> e <span class="math inline">\(v=-e^{-x}\)</span>
+<span class="math display">\[\begin{align*}
+E(X) &amp;= \int_0^\infty x e^{-x}\\
+&amp;=\left.-xe^{-x}\right|_0^\infty + \int_0^\infty  e^{-x} dx \\
+&amp;=\left. -e^{-x}\right|_0^\infty\\
+&amp;=1.
+\end{align*}\]</span></p>
+</div>
+</div>
+<div id="esperança-de-uma-função-de-uma-v.a.-contínua" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Esperança de uma função de uma v.a. contínua<a href="vas-continuas.html#esperança-de-uma-função-de-uma-v.a.-contínua" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suponha que <span class="math inline">\(X\)</span> seja uma variável aleatória contínua e consideremos a variável aleatória <span class="math inline">\(h(X)\)</span> onde <span class="math inline">\(h\)</span> é uma função a valores reais. Logo, podemos calcular a esperança de <span class="math inline">\(h(X)\)</span> através da seguinte proposição.</p>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-161" class="proposition"><strong>Proposição 8.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua com função de densidade <span class="math inline">\(f(x)\)</span> e <span class="math inline">\(h\)</span> uma função a valores reais, então
+<span class="math display">\[
+E(h(X)) = \int_{-\infty}^\infty h(x)f(x) dx.  
+\]</span></p>
+</div>
+<p>A anterior proposição é a <em>lei do estatístico inconsciente</em> no caso contínuo.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-162" class="example"><strong>Exemplo 8.10  </strong></span>Duas espécies competem em uma região para controlar uma limitada quantidade de certo recurso. Seja <span class="math inline">\(X\)</span> a v.a. contínua que representa a proporção do recurso controlado pela primeira especie, e suponha que a função de densidade de <span class="math inline">\(X\)</span> é
+<span class="math display">\[
+f(x) = \begin{cases}
+1, &amp; 0 \leq x\leq 1 \\
+0, &amp; \text{caso contrário}
+\end{cases}
+\]</span>
+Seja <span class="math inline">\(h(X)\)</span> a maior proporção controlada por uma das especies. Calcule a <span class="math inline">\(E(h(X))\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-66" class="solution"><em>Solução</em>. </span><span class="math display">\[\begin{align*}
+h(X) = \max\{X,1-X\} = \begin{cases}
+1-X, &amp; 0\leq X\leq 1/2 \\
+X, &amp; 1/2\leq X \leq 1
+\end{cases}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+E(h(X)) &amp;= \int_0^{1/2} (1-x) dx + \int_{1/2}^{1} x dx\\
+&amp;= \left[ x  - \frac{x^2}{2}\right]_0^{1/2} + \left.\frac{x^2}{2}\right|_{1/2}^{1} = \frac{3}{4}.
+\end{align*}\]</span></p>
+</div>
+</div>
+<div id="variância-de-uma-variável-aleatória-contínua" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Variância de uma variável aleatória contínua<a href="vas-continuas.html#variância-de-uma-variável-aleatória-contínua" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lembre que no caso discreto definimos a variância de uma variável aleatória discreta com função de probabilidade <span class="math inline">\(p(x)\)</span> e média <span class="math inline">\(\mu\)</span> como a soma dos produtos <span class="math inline">\((x-\mu)^2 p(x)\)</span>. Em caso que <span class="math inline">\(X\)</span> seja uma v.a. contínua definimos a variância de <span class="math inline">\(X\)</span> como segue.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-164" class="definition"><strong>Definição 8.5  </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. contínua com função de densidade <span class="math inline">\(f(x)\)</span> e média <span class="math inline">\(\mu\)</span>, a <em>variância</em> de <span class="math inline">\(X\)</span> é dada por
+<span class="math display">\[\begin{align*}
+Var(X) = E[(X-\mu)^2] = \int_{-\infty}^\infty (x-\mu)^2 f(x) dx.
+\end{align*}\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-165" class="proposition"><strong>Proposição 8.2  </strong></span>Se <span class="math inline">\(X\)</span> é uma v.a. contínua com função de densidade <span class="math inline">\(f(x)\)</span>, então
+<span class="math display">\[\begin{align*}
+Var(X) = E(X^2) - [E(X)]^2 = \int_{-\infty}^\infty x^2 f(x) dx - \left(\int_{-\infty}^\infty x f(x)\right)^2dx.
+\end{align*}\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-166" class="proposition"><strong>Proposição 8.3  (propriedades da média e da variância) </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. contínua e <span class="math inline">\(a,b\in \mathbb R\)</span>, então</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(E(aX + b) = aE(X)+b\)</span>.</p></li>
+<li><p><span class="math inline">\(E(b) = b\)</span>.</p></li>
+<li><p><span class="math inline">\(Var(aX+b)=a^2 Var(X)\)</span>.</p></li>
+<li><p><span class="math inline">\(Var(b)=0\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="função-geradora-de-momentos-de-uma-variável-aleatória-contínua" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">8.7</span> Função geradora de momentos de uma variável aleatória contínua<a href="vas-continuas.html#função-geradora-de-momentos-de-uma-variável-aleatória-contínua" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Seja <span class="math inline">\(X\)</span> uma v.a. contínua com função de densidade <span class="math inline">\(f(x)\)</span>. Para <span class="math inline">\(n\geq 1\)</span> inteiro, o <span class="math inline">\(n\)</span>-ésimo momento de <span class="math inline">\(X\)</span> é definido por
+<span class="math display">\[
+\mu_{(n)} = E(X^n) = \int_{-\infty}^\infty x^n f(x) dx.
+\]</span></p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-167" class="definition"><strong>Definição 8.6  </strong></span>Seja <span class="math inline">\(X\)</span> uma v.a. contínua com função de densidade <span class="math inline">\(f(x)\)</span>, a função geradora de momentos de <span class="math inline">\(X\)</span> é
+<span class="math display">\[
+M_X(t) = E(e^{tX}) = \int_{-\infty}^\infty e^{tx} f(x) dx.   
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-168" class="example"><strong>Exemplo 8.11  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua cuja função de densidade é dada por
+<span class="math display">\[
+f(x) = \begin{cases}
+1, &amp; 0\leq x \leq 1,\\
+0, &amp; \text{caso contrário}
+\end{cases}
+\]</span>
+Encontre <span class="math inline">\(M_X(t)\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-67" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(t\neq 0\)</span>. Logo</p>
+<p><span class="math display">\[\begin{align*}
+M_X(t) &amp;= \int_0^1 e^{tx} dx \\
+&amp;=\left. e^{tx}\right|_0^t \\
+&amp;=\frac{e^t-1}{t}.
+\end{align*}\]</span></p>
+<p>Portanto,
+<span class="math display">\[
+M_X(t) = \begin{cases}
+\frac{e^t-1}{t} &amp; t\neq 0 \\
+1 &amp; t=0.
+\end{cases}
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-170" class="example"><strong>Exemplo 8.12  </strong></span>Seja <span class="math inline">\(X\)</span> a precipitação pluviométrica de um município em um certo dia, cuja função de densidade é dada por
+<span class="math display">\[\begin{align*}
+f(x) = \begin{cases}
+\lambda e^{-\lambda x} &amp; x\geq 0 \\
+0 &amp; \text{caso contrário}
+\end{cases}
+\end{align*}\]</span>
+onde <span class="math inline">\(\lambda &gt;0\)</span> é uma constante.
+Encontre <span class="math inline">\(M_X(t)\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-68" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(t&lt;\lambda\)</span>. Logo
+<span class="math display">\[\begin{align*}
+M_X(t)&amp;=\lambda \int_0^\infty e^{tx} e^{-\lambda x} dx\\
+&amp;=\lambda \int_0^\infty e^{-(\lambda-t)x} dx\\
+&amp;=\lambda \frac{1}{\lambda-t} \left. e^{-(\lambda-t)x}\right|_{x=0}^{x=\infty} \\
+&amp;=\frac{\lambda}{\lambda-t}
+\end{align*}\]</span></p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modelos-discretos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modelos-continuos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/vas-continuas.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Probabilidade.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Espaços de Probabilidade | Probabilidade</title>
+  <meta name="description" content="Este é um material sobre o básico em Probabilidade" />
+  <meta name="generator" content="bookdown 0.26.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Espaços de Probabilidade | Probabilidade" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este é um material sobre o básico em Probabilidade" />
+  <meta name="github-repo" content="jutria/probandstat" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Espaços de Probabilidade | Probabilidade" />
+  
+  <meta name="twitter:description" content="Este é um material sobre o básico em Probabilidade" />
+  
+
+<meta name="author" content="Prof. Dr. Jaime Utria" />
+
+
+<meta name="date" content="2022-05-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="conjuntos-limites-e-continuidade-da-probabilidade.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Probabilidade</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="esp-prob.html"><a href="esp-prob.html"><i class="fa fa-check"></i><b>2</b> Espaços de Probabilidade</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="esp-prob.html"><a href="esp-prob.html#espaço-amostral"><i class="fa fa-check"></i><b>2.1</b> Espaço amostral</a></li>
+<li class="chapter" data-level="2.2" data-path="esp-prob.html"><a href="esp-prob.html#eventos"><i class="fa fa-check"></i><b>2.2</b> Eventos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="esp-prob.html"><a href="esp-prob.html#relaçoes-e-operações-entre-eventos"><i class="fa fa-check"></i><b>2.2.1</b> Relaçoes e operações entre eventos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="esp-prob.html"><a href="esp-prob.html#probabilidade"><i class="fa fa-check"></i><b>2.3</b> Probabilidade</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="esp-prob.html"><a href="esp-prob.html#propriedades-de-uma-probabilidade"><i class="fa fa-check"></i><b>2.3.1</b> Propriedades de uma probabilidade</a></li>
+<li class="chapter" data-level="2.3.2" data-path="esp-prob.html"><a href="esp-prob.html#calculando-probabilidades"><i class="fa fa-check"></i><b>2.3.2</b> Calculando probabilidades</a></li>
+<li class="chapter" data-level="2.3.3" data-path="esp-prob.html"><a href="esp-prob.html#espaço-de-probabilidade-no-caso-omega-enumerável"><i class="fa fa-check"></i><b>2.3.3</b> Espaço de probabilidade no caso <span class="math inline">\(\Omega\)</span> enumerável</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="esp-prob.html"><a href="esp-prob.html#probabilidade-condicional"><i class="fa fa-check"></i><b>2.4</b> Probabilidade Condicional</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-da-probabilidade-total"><i class="fa fa-check"></i><b>2.4.1</b> Fórmula da probabilidade total</a></li>
+<li class="chapter" data-level="2.4.2" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-de-bayes"><i class="fa fa-check"></i><b>2.4.2</b> Fórmula de Bayes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html"><i class="fa fa-check"></i><b>3</b> Conjuntos limites e continuidade da probabilidade</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html#limite-superior-e-inferior-de-uma-sequência-de-números-reais."><i class="fa fa-check"></i><b>3.1</b> Limite superior e inferior de uma sequência de números reais.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="vas.html"><a href="vas.html"><i class="fa fa-check"></i><b>4</b> Variáveis aleatórias</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="vas.html"><a href="vas.html#definições"><i class="fa fa-check"></i><b>4.1</b> Definições</a></li>
+<li class="chapter" data-level="4.2" data-path="vas.html"><a href="vas.html#função-de-probabilidade"><i class="fa fa-check"></i><b>4.2</b> Função de probabilidade</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="vas.html"><a href="vas.html#exemplos"><i class="fa fa-check"></i><b>4.2.1</b> Exemplos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="vas.html"><a href="vas.html#função-de-distribuição-acumulada"><i class="fa fa-check"></i><b>4.3</b> Função de distribuição acumulada</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="vas.html"><a href="vas.html#algumas-propriedades-da-função-de-distribuição"><i class="fa fa-check"></i><b>4.3.1</b> Algumas propriedades da função de distribuição</a></li>
+<li class="chapter" data-level="4.3.2" data-path="vas.html"><a href="vas.html#propriedades-fundamentais-da-função-de-distribuição"><i class="fa fa-check"></i><b>4.3.2</b> Propriedades fundamentais da função de distribuição</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="valoresperado.html"><a href="valoresperado.html"><i class="fa fa-check"></i><b>5</b> Valor esperado</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="valoresperado.html"><a href="valoresperado.html#motivação"><i class="fa fa-check"></i><b>5.1</b> Motivação</a></li>
+<li class="chapter" data-level="5.2" data-path="valoresperado.html"><a href="valoresperado.html#funções-de-variáveis-aleatórias"><i class="fa fa-check"></i><b>5.2</b> Funções de variáveis aleatórias</a></li>
+<li class="chapter" data-level="5.3" data-path="valoresperado.html"><a href="valoresperado.html#variância"><i class="fa fa-check"></i><b>5.3</b> Variância</a></li>
+<li class="chapter" data-level="5.4" data-path="valoresperado.html"><a href="valoresperado.html#independência-de-variáveis-aleatórias"><i class="fa fa-check"></i><b>5.4</b> Independência de variáveis aleatórias</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="fgm.html"><a href="fgm.html"><i class="fa fa-check"></i><b>6</b> Função geradora de momentos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="fgm.html"><a href="fgm.html#momentos"><i class="fa fa-check"></i><b>6.1</b> Momentos</a></li>
+<li class="chapter" data-level="6.2" data-path="fgm.html"><a href="fgm.html#função-geradora-de-momentos"><i class="fa fa-check"></i><b>6.2</b> Função geradora de momentos</a></li>
+<li class="chapter" data-level="6.3" data-path="fgm.html"><a href="fgm.html#exemplos-de-m_xt-para-algumas-distribuições-comuns"><i class="fa fa-check"></i><b>6.3</b> Exemplos de <span class="math inline">\(M_X(t)\)</span> para algumas distribuições comuns</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="modelos-discretos.html"><a href="modelos-discretos.html"><i class="fa fa-check"></i><b>7</b> Modelos de distribuições discretas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-uniforme-discreta"><i class="fa fa-check"></i><b>7.1</b> Distribuição Uniforme Discreta</a></li>
+<li class="chapter" data-level="7.2" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-de-bernoulli"><i class="fa fa-check"></i><b>7.2</b> Distribuição de Bernoulli</a></li>
+<li class="chapter" data-level="7.3" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-binomial"><i class="fa fa-check"></i><b>7.3</b> Distribuição Binomial</a></li>
+<li class="chapter" data-level="7.4" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-geométrica"><i class="fa fa-check"></i><b>7.4</b> Distribuição Geométrica</a></li>
+<li class="chapter" data-level="7.5" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-binomial-negativa-pascal"><i class="fa fa-check"></i><b>7.5</b> Distribuição Binomial Negativa (Pascal)</a></li>
+<li class="chapter" data-level="7.6" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-hipergeométrica"><i class="fa fa-check"></i><b>7.6</b> Distribuição Hipergeométrica</a></li>
+<li class="chapter" data-level="7.7" data-path="modelos-discretos.html"><a href="modelos-discretos.html#distribuição-de-poisson"><i class="fa fa-check"></i><b>7.7</b> Distribuição de Poisson</a></li>
+<li class="chapter" data-level="7.8" data-path="modelos-discretos.html"><a href="modelos-discretos.html#aproximação-de-poisson-à-binomial"><i class="fa fa-check"></i><b>7.8</b> Aproximação de Poisson à Binomial</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="vas-continuas.html"><a href="vas-continuas.html"><i class="fa fa-check"></i><b>8</b> Variáveis aleatórias contínuas</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="vas-continuas.html"><a href="vas-continuas.html#função-de-distribuição"><i class="fa fa-check"></i><b>8.1</b> Função de distribuição</a></li>
+<li class="chapter" data-level="8.2" data-path="vas-continuas.html"><a href="vas-continuas.html#obtenção-de-f-a-partir-de-f"><i class="fa fa-check"></i><b>8.2</b> Obtenção de <span class="math inline">\(f\)</span> a partir de <span class="math inline">\(F\)</span></a></li>
+<li class="chapter" data-level="8.3" data-path="vas-continuas.html"><a href="vas-continuas.html#percentis-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.3</b> Percentis de uma variável aleatória contínua</a></li>
+<li class="chapter" data-level="8.4" data-path="vas-continuas.html"><a href="vas-continuas.html#esperança-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.4</b> Esperança de uma variável aleatória contínua</a></li>
+<li class="chapter" data-level="8.5" data-path="vas-continuas.html"><a href="vas-continuas.html#esperança-de-uma-função-de-uma-v.a.-contínua"><i class="fa fa-check"></i><b>8.5</b> Esperança de uma função de uma v.a. contínua</a></li>
+<li class="chapter" data-level="8.6" data-path="vas-continuas.html"><a href="vas-continuas.html#variância-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.6</b> Variância de uma variável aleatória contínua</a></li>
+<li class="chapter" data-level="8.7" data-path="vas-continuas.html"><a href="vas-continuas.html#função-geradora-de-momentos-de-uma-variável-aleatória-contínua"><i class="fa fa-check"></i><b>8.7</b> Função geradora de momentos de uma variável aleatória contínua</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="modelos-continuos.html"><a href="modelos-continuos.html"><i class="fa fa-check"></i><b>9</b> Modelos de distribuições contínuas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-uniforme-contínua"><i class="fa fa-check"></i><b>9.1</b> Distribuição uniforme contínua</a></li>
+<li class="chapter" data-level="9.2" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-exponencial"><i class="fa fa-check"></i><b>9.2</b> Distribuição exponencial</a></li>
+<li class="chapter" data-level="9.3" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-normal"><i class="fa fa-check"></i><b>9.3</b> Distribuição normal</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="modelos-continuos.html"><a href="modelos-continuos.html#propriedades-da-distribuição-normal"><i class="fa fa-check"></i><b>9.3.1</b> Propriedades da distribuição normal</a></li>
+<li class="chapter" data-level="9.3.2" data-path="modelos-continuos.html"><a href="modelos-continuos.html#a-distribuição-normal-padrão"><i class="fa fa-check"></i><b>9.3.2</b> A distribuição normal padrão</a></li>
+<li class="chapter" data-level="9.3.3" data-path="modelos-continuos.html"><a href="modelos-continuos.html#calculando-probabilidades-de-uma-nmusigma2-a-partir-da-n01"><i class="fa fa-check"></i><b>9.3.3</b> Calculando probabilidades de uma <span class="math inline">\(N(\mu,\sigma^2)\)</span> a partir da <span class="math inline">\(N(0,1)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="modelos-continuos.html"><a href="modelos-continuos.html#quantis-da-distribuição-normal"><i class="fa fa-check"></i><b>9.4</b> Quantis da distribuição normal</a></li>
+<li class="chapter" data-level="9.5" data-path="modelos-continuos.html"><a href="modelos-continuos.html#aproximação-normal-à-binomial"><i class="fa fa-check"></i><b>9.5</b> Aproximação normal à binomial</a></li>
+<li class="chapter" data-level="9.6" data-path="modelos-continuos.html"><a href="modelos-continuos.html#a-curtose-e-a-distribuição-normal"><i class="fa fa-check"></i><b>9.6</b> A curtose e a distribuição normal</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="tabelas.html"><a href="tabelas.html#tabela-da-normal-padrão"><i class="fa fa-check"></i><b>10.1</b> Tabela da normal padrão</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Probabilidade</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="esp-prob" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Espaços de Probabilidade<a href="esp-prob.html#esp-prob" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Neste capítulo formulamos um modelo matemático (ou modelo probabilístico) para um experimento aleatório. Começamos definindo o que é um experimento aleatório.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definição 2.1  </strong></span>Um experimento é <em>aleatório</em> se, quando repetido sob as mesmas condições nem sempre gera os mesmos resultados, isto é, não conseguimos prever o resultado do experimento até que ele seja realizado.</p>
+</div>
+<p><strong>Exemplos de experimentos aleatorios</strong></p>
+<ol style="list-style-type: lower-roman">
+<li><p>Lançar um dado e registrar a face superior.</p></li>
+<li><p>Contar o número de pessoas que chegam numa agência bancária durante um período de tempo dado.</p></li>
+<li><p>Medir o tempo de vida útil, em horas, de uma lâmpada.</p></li>
+</ol>
+<p>A seguir descreveremos o <em>modelo probabilistíco</em> para um experimento aleatório.</p>
+<div id="espaço-amostral" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Espaço amostral<a href="esp-prob.html#espaço-amostral" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-2" class="definition"><strong>Definição 2.2  (Espaço amostral) </strong></span>O conjunto de todos os resultados possíveis de um experimento aleatório é chamado de <em>espaço amostral</em>, e o denotamos por <span class="math inline">\(\Omega\)</span>.</p>
+</div>
+<p>A continuação apresentamos um espaço amostral adequado para cada um dos experientos descritos nos exemplos acima:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>.</p></li>
+<li><p><span class="math inline">\(\Omega = \{0,1,2,3,\ldots\}\)</span></p></li>
+<li><p><span class="math inline">\(\Omega = \{x \in \mathbb R : 0\leq x &lt; \infty \}.\)</span></p></li>
+</ol>
+<p>Note que nos exemplos (i) e (ii), <span class="math inline">\(\Omega\)</span> é um conjunto no máximo enumerável, quando isso acontece dizemos que <span class="math inline">\(\Omega\)</span> é um espaço amostral <em>discreto</em>. No entanto, no exemplo (iii) temos um conjunto infinito não-enumerável, nesse caso dizemos que <span class="math inline">\(\Omega\)</span> é um espaço amostral <em>contínuo</em>.</p>
+</div>
+<div id="eventos" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Eventos<a href="esp-prob.html#eventos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definição 2.3  (Evento) </strong></span>Informalmente, um <em>evento</em> é qualquer subconjunto <span class="math inline">\(A\subset \Omega\)</span>.</p>
+</div>
+<div id="relaçoes-e-operações-entre-eventos" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Relaçoes e operações entre eventos<a href="esp-prob.html#relaçoes-e-operações-entre-eventos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Seja <span class="math inline">\(A\)</span> um evento. Se <span class="math inline">\(\omega\)</span> é um elemento em <span class="math inline">\(\Omega\)</span>, tal que <span class="math inline">\(\omega \in A\)</span>, dizemos que <span class="math inline">\(A\)</span> ocorre.</li>
+<li>Se <span class="math inline">\(A=\{\omega\}\)</span> para algum <span class="math inline">\(\omega \in \Omega\)</span>, dizemos que <span class="math inline">\(A\)</span> é um evento elementar.</li>
+<li>Dados dois eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, dizemos que <span class="math inline">\(A\subset B\)</span>, se <span class="math inline">\(\omega \in A\Rightarrow \omega \in B\)</span>. Em palavras a ocorrência de <span class="math inline">\(A\)</span> implica a ocorrência de <span class="math inline">\(B\)</span>.</li>
+<li>A <em>união</em> de dois eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> é <span class="math inline">\(A \cup B =\{\omega: \omega \in A \text{ ou } \omega \in B \}\)</span> e representa o evento
+A <em>intersecção</em> de dois eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> é <span class="math inline">\(A\cap B =\{\omega: \omega \in A \text{ e } \omega \in B\}\)</span> e representa o evento de que ambos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> ocorrem.</li>
+<li>A <em>diferença</em> de dois eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> é <span class="math inline">\(A\setminus B = \{\omega: \omega \in A \text{ e } \omega \notin B\}\)</span> e representa o evento de que <span class="math inline">\(A\)</span> ocorre e <span class="math inline">\(B\)</span> não ocorre.</li>
+<li>Dois eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são <em>disjuntos</em> ou <em>mutuamente exclusivos</em> se <span class="math inline">\(A\cap B =\emptyset\)</span>. Isso significa que <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> não ocorrem simultaneamente.<br />
+</li>
+<li>Para qualquer evento <span class="math inline">\(A\)</span>, o <em>complementar</em> de <span class="math inline">\(A\)</span> é <span class="math inline">\(A^c =\{\omega: \omega \notin A\}\)</span> e representa o evento de que <span class="math inline">\(A\)</span> não ocorre.</li>
+<li><em>Leis de Morgan</em>: Sejam <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> eventos, temos que
+<span class="math display">\[\begin{align}
+\left( \bigcup_{i=1}^n A_i\right)^c = \bigcap_{i=1}^n A_i^c, \tag{LM1} \label{LM1} \\
+\left( \bigcap_{i=1}^n A_i\right)^c = \bigcup_{i=1}^n A_i^c. \label{LM2} \tag{LM2}
+\end{align}\]</span></li>
+</ul>
+<div class="remark">
+<p><span id="unlabeled-div-1" class="remark"><em>Observação</em>. </span>Note que <span class="math inline">\(\eqref{LM1}\)</span> diz que o complementar de que pelo menos um dos <span class="math inline">\(A_i\)</span>’s ocorre é igual ao evento de que nenhum dos <span class="math inline">\(A_i\)</span>’s ocorra. Enquanto <span class="math inline">\(\eqref{LM2}\)</span> diz que o complementar de que todos os <span class="math inline">\(A_i\)</span>’s ocorrem é igual ao evento de que pelo menos um dos <span class="math inline">\(A_i\)</span>’s não ocorre.</p>
+</div>
+</div>
+</div>
+<div id="probabilidade" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Probabilidade<a href="esp-prob.html#probabilidade" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-5" class="definition"><strong>Definição 2.4  (Definição clássica) </strong></span>Seja <span class="math inline">\(\Omega =\{\omega_1,\ldots,\omega_N\}\)</span> finito, e suponhamos que cada evento elementar é igualmente provável, isto é,
+<span class="math display">\[
+P(\omega) = \frac{1}{N}, \, \omega \in \Omega. 
+\]</span>
+Definimos a probabilidade do evento <span class="math inline">\(A\subset \Omega\)</span> como</p>
+<p><span class="math display">\[
+P(A) = \frac{|A|}{|\Omega|}. 
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-6" class="definition"><strong>Definição 2.5  (Definição axiomática) </strong></span>Uma <em>probabilidade</em> é uma função <span class="math inline">\(P: \mathcal F \rightarrow \mathbb R\)</span>, em que <span class="math inline">\(\mathcal F\)</span> é uma classe de eventos de um espaço amostral <span class="math inline">\(\Omega\)</span>, que satisfaz as seguintes condições:</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(P(A) \geq 0\)</span>, para todo <span class="math inline">\(A \in \mathcal F\)</span>,</li>
+<li><span class="math inline">\(P(\Omega) = 1\)</span>,</li>
+<li>(Aditividade enumerável). Para qualquer sequência <span class="math inline">\(A_1,A_2,\ldots \in \mathcal F\)</span>, tais que <span class="math inline">\(A_i \cap A_j =\emptyset\)</span>, <span class="math inline">\(i\neq j\)</span>,
+<span class="math display">\[\begin{align*}
+P\left(\bigcup_{i=1}^\infty A_i\right)= \sum_{i=1}^\infty P(A_i).
+\end{align*}\]</span></li>
+</ol>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-2" class="remark"><em>Observação</em>. </span>Quando <span class="math inline">\(\Omega\)</span> é infinito não-enumerável, geralmente é impossível associar uma probabilidade bem definida a todos os subconjuntos de <span class="math inline">\(\Omega\)</span>. Para isso, definimos uma probabilidade em uma classe mais restrita de subconjuntos de <span class="math inline">\(\Omega\)</span> (chamada de <span class="math inline">\(\sigma\)</span>-álgebra e definida abaixo); e apenas esses subconjuntos são chamados de eventos.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-8" class="definition"><strong>Definição 2.6  (sigma-álgebra) </strong></span>Uma classe <span class="math inline">\(\mathcal F \subset 2^\Omega\)</span> é uma <span class="math inline">\(\sigma\)</span>-<em>álgebra</em> (em <span class="math inline">\(\Omega \neq \emptyset\)</span>) se satisfaz as seguintes condições</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(\Omega \in \mathcal F\)</span>,</p></li>
+<li><p>Se <span class="math inline">\(A \in \mathcal F\)</span>, então <span class="math inline">\(A^c \in \mathcal F\)</span>,</p></li>
+<li><p>Se <span class="math inline">\(A_1,A_2,\ldots \in \mathcal F\)</span>, então <span class="math inline">\(\displaystyle\bigcup_{i=1}^\infty A_i \in \mathcal F\)</span>.</p></li>
+</ol>
+</div>
+<p>O trio <span class="math inline">\((\Omega,\mathcal F, P)\)</span> é chamado de um <em>espaço de probabilidade</em>.</p>
+<div id="propriedades-de-uma-probabilidade" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Propriedades de uma probabilidade<a href="esp-prob.html#propriedades-de-uma-probabilidade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(P(\emptyset) = 0\)</span>.</p></li>
+<li><p>Se <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> são eventos dois a dois disjuntos, então
+<span class="math display">\[\begin{align*}
+P\left(\bigcup_{i=1}^n A_i \right) = \sum_{i=1}^n P(A_i)
+\end{align*}\]</span></p></li>
+<li><p><span class="math inline">\(P(A) = 1- P(A^c)\)</span> para todo evento <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Para quaisquer eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>,
+<span class="math display">\[\begin{align*}
+P(B) = P(A \cap B) + P(A^c \cap B)
+\end{align*}\]</span></p></li>
+<li><p>Se <span class="math inline">\(A \subset B\)</span>, então <span class="math inline">\(P(A) \leq P(B)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(A)\leq 1\)</span> para todo evento <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Para quaisquer eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>,
+<span class="math display">\[\begin{align*}
+P(A\cup B) =P(A) + P(B) - P(A\cap B).
+\end{align*}\]</span></p></li>
+<li><p>Princípio da Inclusão-Exclusão
+<span class="math display">\[\begin{align*}
+P\left(\bigcup_{i=1}^n A_i \right) &amp;= \sum_{i=1}^n P(A_i) - \sum_{i&lt;j} P(A_i \cap A_j)\\ &amp;+ \sum_{i&lt;j&lt;k} P(A_i \cap A_j \cap A_k) - \cdots +(-1)^{n+1} P(A_1\cap \cdots \cap A_n)
+\end{align*}\]</span></p></li>
+<li><p>Subaditividade finita: Para qualquer sequência finita <span class="math inline">\(A_1,A_2,\ldots, A_n\)</span> de eventos,
+<span class="math display">\[
+P\left(\bigcup_{i=1}^n A_i \right) \leq \sum_{i=1}^n P(A_i). 
+\]</span></p></li>
+<li><p>Subaditividade enumerável: Para qualquer sequência <span class="math inline">\(A_1,A_2,\ldots\)</span> de eventos,
+<span class="math display">\[
+P\left(\bigcup_{i=1}^\infty A_i \right) \leq \sum_{i=1}^\infty P(A_i). 
+\]</span>
+As propriedades (ix) e (x), são conhecidas como <em>Desigualdades de Boole</em>.</p></li>
+</ol>
+<div class="proof">
+<p><span id="unlabeled-div-3" class="proof"><em>Prova</em>. </span>Para provar i. Defina <span class="math inline">\(A_1 = \Omega\)</span>, <span class="math inline">\(A_i = \emptyset\)</span>, <span class="math inline">\(i&gt;1\)</span>, logo
+<span class="math inline">\(\Omega = \bigcup _{i=1}^\infty A_i\)</span>. Além disso,
+<span class="math display">\[\begin{align*}
+1=P(\Omega) = P(\Omega) + \sum_{i=2}^\infty P(\emptyset) \Rightarrow \sum_{i=2}^\infty P(\emptyset) = 0 \Rightarrow P(\emptyset) = 0.
+\end{align*}\]</span></p>
+<ol start="2" style="list-style-type: lower-roman">
+<li><p>Defina <span class="math inline">\(A_i = \emptyset\)</span>, <span class="math inline">\(i&gt;n\)</span>, logo
+<span class="math inline">\(\bigcup_{i=1}^\infty A_i = \bigcup_{i=1}^n A_i\)</span>,
+pelo axioma (iii) em  e a propriedade 1, segue que
+<span class="math display">\[\begin{align*}
+P\left(\bigcup_{i=1}^n A_i\right)=P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^n P(A_i) + \sum_{i=n+1}^\infty P(\emptyset) = \sum_{i=1}^n P(A_i)
+\end{align*}\]</span></p></li>
+<li><p>Note que para qualquer <span class="math inline">\(A\subset \Omega\)</span>, temos que <span class="math inline">\(\Omega= A \cup A^c\)</span> e <span class="math inline">\(A\cap A^c = \emptyset\)</span>, logo
+<span class="math display">\[\begin{align*}
+1=P(\Omega)=P(A) + P(A^c) \Rightarrow P(A^c) = 1-P(A)
+\end{align*}\]</span></p></li>
+<li><p>Note que <span class="math inline">\(B = (A\cap B) \cup (A^c \cap B)\)</span> tal que <span class="math inline">\((A\cap B) \cap (A^c \cap B) = \emptyset\)</span>, logo
+<span class="math display">\[\begin{align*}
+P(B) = P(A\cap B) + P(A^c \cap B)
+\end{align*}\]</span></p></li>
+<li><p>Como <span class="math inline">\(A\subset B\)</span>, temos que <span class="math inline">\(B=(B\setminus A) \cup A\)</span>, com <span class="math inline">\((B\setminus A) \cap A = \emptyset\)</span>, logo
+<span class="math display">\[\begin{align*}
+P(B) =  P(A) + P(A\setminus B) \geq P(A).
+\end{align*}\]</span></p></li>
+<li><p>Como <span class="math inline">\(A\subset \Omega\)</span>, logo <span class="math inline">\(P(A) \leq P(\Omega) = 1\)</span>.</p></li>
+<li><p>Note que <span class="math inline">\(A\cup B = (A\setminus B) \cup (A \cap B) \cup (B \setminus A)\)</span>, logo
+<span class="math display">\[\begin{align*}
+P(A\cup B) &amp;= P(A\setminus B) + P(A \cap B) + P(B\setminus A) \\
+&amp;= [P(A\setminus B) + P(A \cap B)] + [P(B\setminus A) + P(A\cap B)] - P(A\cap B)\\
+&amp;= P(A) + P(B) - P(A\cap B).
+\end{align*}\]</span></p></li>
+<li><p>Use indução em <span class="math inline">\(n\)</span>. Note que para o caso <span class="math inline">\(n=3\)</span>, temos
+<span class="math display">\[\begin{align*}
+P(A\cup B\cup C) &amp;= P(A) + P(B) + P(C) - P(A\cap B) - P(A\cap C) - P(B \cap C) \\ &amp;+ P(A\cap B \cap C). 
+\end{align*}\]</span></p></li>
+</ol>
+</div>
+</div>
+<div id="calculando-probabilidades" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Calculando probabilidades<a href="esp-prob.html#calculando-probabilidades" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="example">
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Exemplo 2.1  </strong></span>Um comitê de 5 pessoas deve ser selecionado de um grupo de 6 homens e 9 mulheres. Se a seleção for feita aleatoriamente, qual a probabilidade de que o comitê seja formado por 3 homens e 2 mulheres?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-4" class="solution"><em>Solução</em>. </span>Como o experimento consiste em escolher 5 pessoas do total de 15, temos que <span class="math inline">\(|\Omega|= \binom{15}{5}\)</span>. Supondo que todas as <span class="math inline">\(\binom{15}{5}\)</span> tem a mesma probabilidade e se <span class="math inline">\(A\)</span> representa o evento de que a seleção feita seja formada por 3 homens e 2 mulheres, temos que <span class="math inline">\(|A| = \binom{6}{3} \binom{9}{2}\)</span>. Portanto,
+<span class="math display">\[\begin{align*}
+P(A) &amp;= \frac{|A|}{|\Omega|} \\
+&amp;= \frac{\binom{6}{3}\binom{9}{2}}{\binom{15}{5}}=\frac{240}{1001}
+\end{align*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Exemplo 2.2  </strong></span>Numa mão de pôquer de cinco cartas, o <em>full house</em> ocorre quando alguém sai com três cartas de mesmo valor e duas outras cartas do mesmo valor (diferente do primeiro). Assim um full house é formado por uma trinca e um par. Qual a probabilidade de alguém sair com um full house?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-5" class="solution"><em>Solução</em>. </span>Vamos supor que todas <span class="math inline">\(\binom{52}{5}\)</span> possíveis seleções são equiprováveis. Note que o número de maneiras de escolher um par é <span class="math inline">\(13 \cdot \binom{4}{2}\)</span> e uma vez escolhido o par, o número de maneiras de escolher uma trinca é <span class="math inline">\(12 \cdot \binom{4}{3}\)</span>, logo se <span class="math inline">\(A\)</span> é o evento de sair um full house, temos que
+<span class="math display">\[\begin{align*}
+P(A) = \frac{13\cdot 12 \cdot \binom{4}{2} \cdot \binom{4}{3}}{\binom{52}{5}} \approx 0,0014.
+\end{align*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-14" class="example"><strong>Exemplo 2.3  </strong></span>Um estudante possui 5 livros diferentes de Probabilidade, 2 livros diferentes de Estatística e 3 livros diferentes de Computação, que serão dispostos aleatoriamente em uma prateleira. Qual a probabilidade de que os livros de cada assunto fiquem juntos?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-6" class="solution"><em>Solução</em>. </span>Primeiro observe que temos 10! maneiras de dispor os 10 livros na prateleira, logo para garantir que os livros de cada assunto fiquem juntos vamos formar três blocos (um por cada assunto): o primeiro bloco é formado pelos 5 livros de Probabilidade, o segundo pelos 2 livros de Estatística e o terceiro pelos 3 livros de Computação. Assim, para o primeiro bloco temos 5! maneiras de ordenar eles, para o segundo temos 2! e para o terceiro temos 3!, finalmente temos 3! maneiras de ordenar os blocos. Portanto, a probabilidade pedida é
+<span class="math display">\[\begin{align*}
+P(\text{os livros de cada assunto fiquem juntos}) &amp;= \frac{5!2!3!3!}{10!}\\
+&amp;=\frac{1}{420}
+\end{align*}\]</span></p>
+</div>
+</div>
+<div id="espaço-de-probabilidade-no-caso-omega-enumerável" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Espaço de probabilidade no caso <span class="math inline">\(\Omega\)</span> enumerável<a href="esp-prob.html#espaço-de-probabilidade-no-caso-omega-enumerável" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suponha que <span class="math inline">\(\Omega = \{\omega_1, \omega_2,\ldots\}\)</span> seja um conjunto enumerável e assuma que a cada <span class="math inline">\(\omega_i \in \Omega\)</span>, atribuimos um <em>peso</em> <span class="math inline">\(p(\omega_i)\)</span> tal que <span class="math inline">\(\sum_{i=1}^\infty p(\omega_i) = 1\)</span>, além disso considere como família de eventos <span class="math inline">\(\mathcal F = 2^\Omega\)</span> e para qualquer <span class="math inline">\(A \in \mathcal F\)</span>, definimos a probabilidade de <span class="math inline">\(A\)</span> como
+<span class="math display">\[
+P(A) = \sum_{i: \omega_i \in A} p(\omega_i).
+\]</span></p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-16" class="example"><strong>Exemplo 2.4  </strong></span>Suponha um jogo no qual você ganha <span class="math inline">\(k-2\)</span> reais com probabilidade <span class="math inline">\(\left(\frac{1}{2}\right)^k\)</span> para qualquer <span class="math inline">\(k\geq 1\)</span> inteiro. Qual a probabilidade de você ganhar mais de dos reais ?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-7" class="solution"><em>Solução</em>. </span>Neste caso o espaço amostral é dado pela quantidade de reais que você pode ganhar no jogo, ou seja,
+<span class="math display">\[
+\Omega = \{-1,0,1,2,\ldots\}, 
+\]</span>
+e <span class="math display">\[ P(\{\omega\})=P(\omega) = \left(\frac{1}{2}\right)^{\omega+2}, \; \omega \in \Omega.\]</span>
+Por exemplo, <span class="math inline">\(P(\{-1\}) = 1/2\)</span> e <span class="math inline">\(P(\{0\}) = 1/4\)</span>. O evento de interesse é
+<span class="math inline">\(A=\{3,4,5,6,\ldots\}\)</span>. Portanto,
+<span class="math display">\[\begin{align*}
+P(A) = \sum_{\omega = 3}^\infty P(\omega) &amp;= \sum_{\omega=3}^\infty  \left(\frac{1}{2}\right)^{\omega + 2}\\
+&amp;=\frac{1}{4} \sum_{\omega=3}^\infty  \left(\frac{1}{2}\right)^{\omega} \\
+&amp;= \frac{1}{16}.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div id="probabilidade-condicional" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Probabilidade Condicional<a href="esp-prob.html#probabilidade-condicional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Considere o experimento que consiste em lançar um dado honesto e defina os eventos <span class="math inline">\(A=\{1,2,3\}\)</span> e <span class="math inline">\(B=\{2,4,6\}\)</span>, temos que <span class="math inline">\(P(A) = \frac{1}{2}\)</span>, essa é a <em>probabilidade a priori</em> de <span class="math inline">\(A\)</span>, isto é, antes que o experimento se realize. Suponha que uma vez realizado o experimento alguém nos infrome que o resultado do mesmo é um número par, ou seja que <span class="math inline">\(B\)</span> ocorreu. Com essa nova informação, a probabilidade de <span class="math inline">\(A\)</span> é atualizada, pois para que <span class="math inline">\(A\)</span> aconteça o único resultado possível do experimento deve ter sido 2. O que nos leva a</p>
+<p><span class="math display">\[
+P(A \text{ dado } B) = \frac{|A\cap B|}{|\Omega|} = \frac{1}{3}.
+\]</span></p>
+<p>Essa probabilidade é chamada de <em>probabilidade a posteriori</em> de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span>. Daqui em diante, vamos chama-la de probabilidade de <span class="math inline">\(A\)</span> dada a ocorrência de <span class="math inline">\(B\)</span> ou simplesmente de probabilidade de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span>. Do exemplo, podemos generalizar com a seguinte definição:</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-18" class="definition"><strong>Definição 2.7  (Probabilidade condicional) </strong></span>Sejam <span class="math inline">\(A,B\)</span> dois eventos em um espaço de probabilidade <span class="math inline">\((\Omega, \mathcal F, P)\)</span>, tal que <span class="math inline">\(P(B)&gt;0\)</span>, definimos a probabilidade condicional de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span> como
+<span class="math display">\[\begin{align*}
+P(A|B) = \frac{P(A\cap B)}{P(B)}.
+\end{align*}\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-19" class="proposition"><strong>Proposição 2.1  </strong></span>Seja <span class="math inline">\(B\)</span> um evento em um espaço de probabilidade <span class="math inline">\((\Omega,\mathcal F, P)\)</span>, tal que <span class="math inline">\(P(B)&gt;0\)</span>, temos que <span class="math inline">\(P(\cdot|B)\)</span> é uma probabilidade.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-8" class="proof"><em>Prova</em>. </span>Devemos verificar os três axiomas da definição axiomática de probabilidade. Com efeito</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(P(A|B) \geq 0\)</span>, para qualquer evento <span class="math inline">\(A\)</span> (trivial).</p></li>
+<li><p><span class="math inline">\(P(\Omega|B) = \frac{P(\Omega\cap B)}{P(B)} = \frac{P(B)}{P(B)} = 1\)</span>.</p></li>
+<li><p>Aditividade enumerável: Sejam <span class="math inline">\(A_1, A_2,\ldots\)</span> eventos disjuntos dois a dois, então
+<span class="math display">\[\begin{align*} 
+P\left(\bigcup_{i=1}^\infty A_i|B\right) &amp;= \frac{P\left(\left(\bigcup_{i=1}^\infty A_i\right) \cap B\right)}{P(B)}\\
+&amp;= \frac{P\left(\bigcup_{i=1}^\infty (A_i \cap B)\right)}{P(B)} \\
+&amp;= \frac{\sum_{i=1}^\infty P(A_i\cap B)}{P(B)} \\
+&amp;= \sum_{i=1}^\infty P(A_i|B)
+\end{align*}\]</span></p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-21" class="proposition"><strong>Proposição 2.2  (Regra da multiplicação) </strong></span>Se <span class="math inline">\(A_1,\ldots,A_n\)</span> são eventos em um espaço de probabilidade <span class="math inline">\((\Omega,\mathcal F, P)\)</span> com <span class="math inline">\(P(A_1\cap \ldots \cap A_{n-1})&gt;0\)</span>, então
+<span class="math display">\[
+P(A_1 \cap A_2 \cap \ldots \cap A_n) = P(A_1)P(A_2|A_1) \cdots P(A_n|A_1 \cap \ldots \cap A_{n-1})
+\]</span></p>
+</div>
+<div id="fórmula-da-probabilidade-total" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Fórmula da probabilidade total<a href="esp-prob.html#fórmula-da-probabilidade-total" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unnamed-chunk-22" class="definition"><strong>Definição 2.8  (Partição) </strong></span>Seja <span class="math inline">\(\Omega\neq \emptyset\)</span>, uma <em>partição</em> de <span class="math inline">\(\Omega\)</span> é uma sequencia finita de conjuntos (ou eventos) <span class="math inline">\(A_1,\ldots,A_n\)</span> tais que</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(A_i \cap A_j = \emptyset\)</span> para qualquer <span class="math inline">\(i\neq j\)</span>, <span class="math inline">\(i,j=1,\ldots,n\)</span>,</li>
+<li><span class="math inline">\(\displaystyle \bigcup_{i=1}^n A_i = \Omega\)</span>.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-23" class="theorem"><strong>Teorema 2.1  (Fórmula da probabilidade total) </strong></span>Seja <span class="math inline">\(\{A_i\}_{i=1}^n\)</span> uma partição do espaço amostral <span class="math inline">\(\Omega\)</span>, tal que <span class="math inline">\(P(A_i)&gt;0\)</span> para qualquer <span class="math inline">\(i=1,\ldots, n\)</span> e <span class="math inline">\(B\)</span> um evento qualquer, temos que
+<span class="math display">\[
+P(B) = \sum_{i=1}^n P(B|A_i)P(A_i).
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-9" class="proof"><em>Prova</em>. </span>Note que <span class="math inline">\(\displaystyle B = \bigcup_{i=1}^n (B\cap A_i)\)</span> e
+<span class="math inline">\((B\cap A_i) \cap (B\cap A_j)\)</span> para qualquer <span class="math inline">\(i\neq j\)</span>. Logo
+<span class="math display">\[
+P(B) = \sum_{i=1}^n P(B\cap A_i) = \sum_{i=1}^n P(B|A_i) P(A_i),   
+\]</span>
+onde a ultima passagem decorre da regra da multiplicação para dois eventos.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-25" class="example"><strong>Exemplo 2.5  </strong></span>Durante o mês de outubro a probabilidade de chuva em um dia determinado é de 4/10. Um time de futebol ganha um jogo em um dia com chuva com probabilidade 6/10 e em um dia sem chuva com probabilidade de 4/10. Qual a probabilidade de que esse time ganhe um jogo naquele dia de outubro?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-10" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(A\)</span>: O time ganhe um jogo naquele dia de outubro e <span class="math inline">\(B\)</span>: teve chuva naquele dia de outubro, logo
+<span class="math display">\[
+P(A) = P(A|B)P(B) + P(A|B^c)P(B^c) = (6/10)(4/10) + (4/10)(6/10) = 24/50
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-27" class="example"><strong>Exemplo 2.6  </strong></span>Ao responder uma questão em uma prova de múltipla escolha, um estudante sabe a resposta ou a chuta. Seja <span class="math inline">\(p\)</span> a probabilidade de que o estudante saiba a resposta e <span class="math inline">\(1-p\)</span> a probabilidade de que ele chute. Suponha que um estudante que chuta a resposta tem uma probabilidade de acerto de <span class="math inline">\(1/m\)</span>, onde <span class="math inline">\(m\)</span> é o número de alternativas em cada questão de múltipla escolha. Qual a probabilidade que ele a tenha respondido corretamente?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-11" class="solution"><em>Solução</em>. </span>Denote por <span class="math inline">\(A\)</span>: o estudante tenha respondido corretamente [acerta a resposta] e por <span class="math inline">\(B\)</span>: o estudante sabe a resposta, logo
+<span class="math display">\[
+P(A) = P(A|B)P(B) + P(A|B^c)P(B^c) = p\cdot 1 + (1-p) \cdot 1/m = p+(1-p)/m. 
+\]</span>
+Por exemplo, se <span class="math inline">\(p=1/2\)</span> e <span class="math inline">\(m=10\)</span>, temos que <span class="math inline">\(P(A) = \frac{11}{20}\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Exemplo 2.7  </strong></span>Em uma cidade, os motoristas são parados pela polícia para fazer um teste sobre o teor de álcool no sangue. Suponha que a probabilidade de que um motorista detido esteja embriagado é 5% e que o teste realizado acerta o estado de embriaguez em 80% das ocasiões. Qual a probabilidade de que o teste de um motorista detido resulte positivo?</p>
+</div>
+</div>
+<div id="fórmula-de-bayes" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Fórmula de Bayes<a href="esp-prob.html#fórmula-de-bayes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-30" class="theorem"><strong>Teorema 2.2  (Fórmula de Bayes) </strong></span>Seja <span class="math inline">\(\{A_i\}_{i=1}^n\)</span> uma partição do espaço amostral <span class="math inline">\(\Omega\)</span>, tal que <span class="math inline">\(P(A_i)&gt;0\)</span> para qualquer <span class="math inline">\(i=1,\ldots, n\)</span> e <span class="math inline">\(B\)</span> um evento, temos que
+<span class="math display">\[
+P(A_i|B) = \frac{P(B|A_i)P(A_i)}{\sum_{i=1}^n P(B|A_i)P(A_i)}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-12" class="proof"><em>Prova</em>. </span>Para cada <span class="math inline">\(i=1,2,\ldots,n\)</span>, temos que
+<span class="math display">\[\begin{align*}
+P(A_i|B)&amp;=\frac{P(A_i\cap B)}{P(B)} \\
+&amp;=\frac{P(B|A_i)P(A_i)}{\sum_{i=1}^n P(B|A_i)P(A_i)}
+\end{align*}\]</span>
+Na primeira passagem aplicamos a definição de probabilidade condicional, na segunda passagem aplicamos, no numerador, a regra da multiplicação e no denominador o teorema da probabilidade total.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-13" class="solution"><em>Solução</em>. </span>Denote por <span class="math inline">\(A\)</span>: teste resulte positivo e por <span class="math inline">\(B\)</span>: o motorista está embriagado.
+<span class="math display">\[P(A) = P(A|B)P(B) + P(A|B^c)P(B^c) = (0,80)(0,05) + (0,20)(0,95) = 23/100.\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-33" class="example"><strong>Exemplo 2.8  </strong></span>Nas mesmas condições do exemplo 3, dado que o teste de um motorista resulto negativo, qual a probabilidade de que estava dirigindo com um índice alcoólico acima do permitido?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-14" class="solution"><em>Solução</em>. </span>Defina <span class="math inline">\(B\)</span>: embriagado, <span class="math inline">\(B^c\)</span>: sóbrio, <span class="math inline">\(A^c\)</span>: teste negativo, <span class="math inline">\(A\)</span>: teste positivo
+Pelo Teorema de Bayes, temos que
+<span class="math display">\[\begin{align*}
+P(B|A^c) &amp;=\frac{P(A^c|B)P(B)}{P(A^c|B)P(B) + P(A^c|B^c)P(B^c)}\\
+&amp;=\frac{(0,20)(0,05)}{(0,20)(0,05)+(0,80)(0,95)} \\
+&amp;\approx 0.01
+\end{align*}\]</span>
+Ou seja, a probabilidade de ocorrer um <em>falso negativo</em> é aproximadamente de 1% .</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conjuntos-limites-e-continuidade-da-probabilidade.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/espprob.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Probabilidade.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
