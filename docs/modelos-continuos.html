@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-23" />
+<meta name="date" content="2022-05-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -156,13 +156,14 @@
 <li class="chapter" data-level="9.4" data-path="modelos-continuos.html"><a href="modelos-continuos.html#quantis-da-distribuição-normal"><i class="fa fa-check"></i><b>9.4</b> Quantis da distribuição normal</a></li>
 <li class="chapter" data-level="9.5" data-path="modelos-continuos.html"><a href="modelos-continuos.html#aproximação-normal-à-binomial"><i class="fa fa-check"></i><b>9.5</b> Aproximação normal à binomial</a></li>
 <li class="chapter" data-level="9.6" data-path="modelos-continuos.html"><a href="modelos-continuos.html#a-curtose-e-a-distribuição-normal"><i class="fa fa-check"></i><b>9.6</b> A curtose e a distribuição normal</a></li>
-<li class="chapter" data-level="9.7" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-qui-quadrada"><i class="fa fa-check"></i><b>9.7</b> Distribuição qui-quadrada</a></li>
-<li class="chapter" data-level="9.8" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-t-student"><i class="fa fa-check"></i><b>9.8</b> Distribuição t-Student</a>
+<li class="chapter" data-level="9.7" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-gama"><i class="fa fa-check"></i><b>9.7</b> Distribuição Gama</a></li>
+<li class="chapter" data-level="9.8" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-qui-quadrada"><i class="fa fa-check"></i><b>9.8</b> Distribuição qui-quadrada</a></li>
+<li class="chapter" data-level="9.9" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-t-student"><i class="fa fa-check"></i><b>9.9</b> Distribuição t-Student</a>
 <ul>
-<li class="chapter" data-level="9.8.1" data-path="modelos-continuos.html"><a href="modelos-continuos.html#amostragem-de-uma-população-normal"><i class="fa fa-check"></i><b>9.8.1</b> Amostragem de uma população normal</a></li>
+<li class="chapter" data-level="9.9.1" data-path="modelos-continuos.html"><a href="modelos-continuos.html#amostragem-de-uma-população-normal"><i class="fa fa-check"></i><b>9.9.1</b> Amostragem de uma população normal</a></li>
 </ul></li>
-<li class="chapter" data-level="9.9" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-gama"><i class="fa fa-check"></i><b>9.9</b> Distribuição Gama</a></li>
-<li class="chapter" data-level="9.10" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-weibull"><i class="fa fa-check"></i><b>9.10</b> Distribuição de Weibull</a></li>
+<li class="chapter" data-level="9.10" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-cauchy-lorentz"><i class="fa fa-check"></i><b>9.10</b> Distribuição de Cauchy-Lorentz</a></li>
+<li class="chapter" data-level="9.11" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-beta"><i class="fa fa-check"></i><b>9.11</b> Distribuição Beta</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
 <ul>
@@ -271,18 +272,12 @@ E(X) = \frac{1}{\lambda} \text{ e } Var(X) = \frac{1}{\lambda^2}
 <div class="definition">
 <p><span id="def:unnamed-chunk-181" class="definition"><strong>Definição 9.3  </strong></span>Dizemos que a variável aleatória <span class="math inline">\(X\)</span> tem uma distribuição normal de parâmetros <span class="math inline">\(\mu \in \mathbb R\)</span> e <span class="math inline">\(\sigma^2&gt;0\)</span>, se sua função de densidade é
 <span class="math display">\[
-f(x) = \frac{1}{\sqrt{2\pi} \sigma} e^{-(x-\mu)^2/2\sigma^2}, \; x \in \mathbb R
+f(x) = \frac{1}{\sqrt{2\pi} \sigma} e^{-(x-\mu)^2/2\sigma^2}, \; x \in \mathbb R.
 \]</span>
 <strong>Notação</strong>: <span class="math inline">\(X\sim\)</span> N(<span class="math inline">\(\mu\)</span>,<span class="math inline">\(\sigma^2\)</span>).</p>
 </div>
 <p>A distribuição normal também é conhecida como a distribuição de <em>Laplace-Gauss</em>. No seguinte gráfico apresentamos várias curvas da normal para diferentes valores dos parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span>.</p>
 <p><img src="figuras/normal.png" /><!-- --></p>
-<div class="proposition">
-<p><span id="prp:unnamed-chunk-183" class="proposition"><strong>Proposição 9.3  </strong></span>Se <span class="math inline">\(X\sim\)</span> N(<span class="math inline">\(\mu,\sigma^2\)</span>), então
-<span class="math display">\[
-E(X) = \mu \text{ e } Var(X) = \sigma^2.  
-\]</span></p>
-</div>
 <p>A função de distribuição da normal é</p>
 <p><span class="math display">\[
 F(x) = \frac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^x e^{-(t-\mu)^2/2\sigma^2} dt, \; x\in \mathbb R.
@@ -302,9 +297,9 @@ F(x) = \frac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^x e^{-(t-\mu)^2/2\sigma^2} dt,
 </div>
 <div id="a-distribuição-normal-padrão" class="section level3 hasAnchor" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> A distribuição normal padrão<a href="modelos-continuos.html#a-distribuição-normal-padrão" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A <em>distribuição normal padrão</em> resulta quando os parâmetros de uma distribuição normal correspondem a <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma^2 = 1\)</span>. Ou seja, dizemos que a variável <span class="math inline">\(X\sim\)</span> N(0,1) se sua função de densidade é</p>
+<p>A <em>distribuição normal padrão</em> resulta quando os parâmetros de uma distribuição normal correspondem a <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma^2 = 1\)</span>. Ou seja, dizemos que a variável <span class="math inline">\(Z\sim\)</span> N(0,1) se sua função de densidade é</p>
 <p><span class="math display">\[
-\phi(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}, \; x\in \mathbb R.
+\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}, \; z\in \mathbb R.
 \]</span></p>
 <p>A função de distribuição de uma normal padrão é denotada pela letra grega <span class="math inline">\(\Phi\)</span> maiúscula e é dada por</p>
 <p><span class="math display">\[
@@ -315,18 +310,18 @@ F(x) = \frac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^x e^{-(t-\mu)^2/2\sigma^2} dt,
 </div>
 <p>A continuação apresentamos alguns resultados úteis para o cálculo de probabilidades envolvendo uma distribuição normal.</p>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-187" class="proposition"><strong>Proposição 9.4  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(0&lt;\sigma^2&lt;\infty\)</span>. Se
+<p><span id="prp:unnamed-chunk-186" class="proposition"><strong>Proposição 9.3  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(0&lt;\sigma^2&lt;\infty\)</span>. Se
 <span class="math display">\[
 Z = \frac{X-\mu}{\sigma},
 \]</span>
 então <span class="math inline">\(E(Z) = 0\)</span> e <span class="math inline">\(Var(Z)=1\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-188" class="proposition"><strong>Proposição 9.5  </strong></span>Seja <span class="math inline">\(X\sim\)</span> N(<span class="math inline">\(\mu,\sigma^2\)</span>), e defina <span class="math inline">\(Y=aX + b\)</span>, então <span class="math inline">\(Y\sim\)</span> N(<span class="math inline">\(a\mu + b\)</span>, <span class="math inline">\(a^2 \sigma^2\)</span>).</p>
+<p><span id="prp:unnamed-chunk-187" class="proposition"><strong>Proposição 9.4  </strong></span>Seja <span class="math inline">\(X\sim\)</span> N(<span class="math inline">\(\mu,\sigma^2\)</span>), e defina <span class="math inline">\(Y=aX + b\)</span>, então <span class="math inline">\(Y\sim\)</span> N(<span class="math inline">\(a\mu + b\)</span>, <span class="math inline">\(a^2 \sigma^2\)</span>).</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-72" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
-F_Y(Y\leq y) &amp;= P(Y \leq y) \\
+F_Y(y) &amp;= P(Y \leq y) \\
 &amp;= P(aX + b \leq y) \\
 &amp;=P\left(X\leq\frac{y-b}{a}\right)\\
 &amp;=F_X\left(\frac{y-b}{a}\right)
@@ -340,7 +335,20 @@ f_Y(y) &amp;= F_Y&#39;(y)\\
 \end{align*}\]</span></p>
 </div>
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-190" class="corollary"><strong>Corolário 9.1  </strong></span>Seja <span class="math inline">\(X\sim\)</span> N(<span class="math inline">\(\mu,\sigma^2\)</span>), então <span class="math inline">\(Z=\frac{X-\mu}{\sigma}\sim\)</span> N(0,1).</p>
+<p><span id="cor:unnamed-chunk-189" class="corollary"><strong>Corolário 9.1  </strong></span>Seja <span class="math inline">\(X\sim\)</span> N(<span class="math inline">\(\mu,\sigma^2\)</span>), então <span class="math inline">\(Z=\frac{X-\mu}{\sigma}\sim\)</span> N(0,1).</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unnamed-chunk-190" class="corollary"><strong>Corolário 9.2  </strong></span>Seja <span class="math inline">\(Z\sim\)</span> N(0,1), então <span class="math inline">\(X = \sigma Z + \mu \sim\)</span> N(<span class="math inline">\(\mu,\sigma^2\)</span>)</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-191" class="proposition"><strong>Proposição 9.5  </strong></span>Se <span class="math inline">\(X\sim\)</span> N(<span class="math inline">\(\mu,\sigma^2\)</span>), então
+<span class="math display">\[
+E(X) = \mu \text{ e } Var(X) = \sigma^2.  
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-73" class="proof"><em>Prova</em>. </span>Podemos escrever <span class="math inline">\(X = \sigma Z + \mu\)</span>, onde <span class="math inline">\(Z\sim N(0,1)\)</span>, logo
+<span class="math inline">\(E(X) = \sigma E(Z) + \mu = \mu\)</span> e <span class="math inline">\(Var(X)=\sigma^2 Var(Z) = \sigma^2\)</span>.</p>
 </div>
 </div>
 <div id="calculando-probabilidades-de-uma-nmusigma2-a-partir-da-n01" class="section level3 hasAnchor" number="9.3.3">
@@ -350,10 +358,10 @@ f_Y(y) &amp;= F_Y&#39;(y)\\
 F(a)=P(X\leq a) = P\left(Z \leq \frac{a-\mu}{\sigma}\right) = \Phi\left(\frac{a-\mu}{\sigma}\right).
 \]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-191" class="example"><strong>Exemplo 9.3  </strong></span>Suponha que os diâmetros das bolas de golf produzidas por uma companhia seguem uma distribuição normal com <span class="math inline">\(\mu = 1,96\)</span> polegadas e <span class="math inline">\(\sigma = 0,04\)</span> polegadas. Uma bola de golf é considerada defeituosa se seu diâmetro é menor que 1,90 polegadas ou maior que 2,02 polegadas. Qual a porcentagem de bolas de golf fabricadas pela companhia?</p>
+<p><span id="exm:unnamed-chunk-193" class="example"><strong>Exemplo 9.3  </strong></span>Suponha que os diâmetros das bolas de golf produzidas por uma companhia seguem uma distribuição normal com <span class="math inline">\(\mu = 1,96\)</span> polegadas e <span class="math inline">\(\sigma = 0,04\)</span> polegadas. Uma bola de golf é considerada defeituosa se seu diâmetro é menor que 1,90 polegadas ou maior que 2,02 polegadas. Qual a porcentagem de bolas de golf defeituosas fabricadas pela companhia?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-73" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Diâmetro de uma bola de golf fabricada pela companhia. Logo,
+<p><span id="unlabeled-div-74" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Diâmetro de uma bola de golf fabricada pela companhia. Logo,
 <span class="math display">\[\begin{align*}
 P(X &lt; 1,90 \text{ ou } X&gt; 2,02) &amp;= 1- P(1,90 \leq X \leq 2,02) \\
 &amp;=1-[F(2,02)-F(1,90)]\\
@@ -367,23 +375,24 @@ P(X &lt; 1,90 \text{ ou } X&gt; 2,02) &amp;= 1- P(1,90 \leq X \leq 2,02) \\
 </div>
 <div id="quantis-da-distribuição-normal" class="section level2 hasAnchor" number="9.4">
 <h2><span class="header-section-number">9.4</span> Quantis da distribuição normal<a href="modelos-continuos.html#quantis-da-distribuição-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Seja <span class="math inline">\(X\)</span> uma variável aleatória com função de distribuição <span class="math inline">\(F\)</span> e seja <span class="math inline">\(p\in(0,1)\)</span>, definimos o <span class="math inline">\(p\)</span>-ésimo quantil como o valor <span class="math inline">\(Q(p)\)</span> tal que <span class="math inline">\(F(Q(p)) = p\)</span>.</p>
+<p>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua com função de distribuição <span class="math inline">\(F\)</span> e seja <span class="math inline">\(p\in(0,1)\)</span>, definimos o <span class="math inline">\(p\)</span>-ésimo quantil como o valor <span class="math inline">\(Q(p)\)</span> tal que <span class="math inline">\(F(Q(p)) = p\)</span>.</p>
 <p>No caso de <span class="math inline">\(X \sim\)</span> <span class="math inline">\(N(\mu,\sigma^2)\)</span>, temos que</p>
 <p><span class="math display">\[\begin{align*}
 F(Q(p)) = \Phi\left(\frac{Q(p) - \mu}{\sigma}\right) = p.
 \end{align*}\]</span></p>
-<p>Assim, devemos encontrar o quantil da normal padrão, denotado por <span class="math inline">\(z(p)\)</span>, ou seja, o valor <span class="math inline">\(z(p) = \frac{Q(p) - \mu}{\sigma}\)</span> tal que a área sob a curva da normal padrão abaixo de <span class="math inline">\(z(p)\)</span> seja igual a <span class="math inline">\(p\)</span>, logo <span class="math inline">\(Q(p) = \sigma z(p) + \mu\)</span>. Por exemplo, se <span class="math inline">\(p=0.05\)</span>, queremos achar o valor <span class="math inline">\(z(p)\)</span> tal que <span class="math inline">\(\Phi(z(p)) = p = 0.05\)</span>, Neste caso, procurando na tabela da normal, temos que <span class="math inline">\(z(0.05)=-1.64\)</span>. Veja a figura a seguir:</p>
+<p>Note que devemos encontrar o <span class="math inline">\(p\)</span>-ésimo quantil da normal padrão, denotado por <span class="math inline">\(z(p)\)</span> e logo <span class="math inline">\(Q(p)\)</span> será o valor tal que <span class="math inline">\(z(p) = \frac{Q(p) - \mu}{\sigma}\)</span>, isto é, <span class="math inline">\(Q(p) = \mu + \sigma z(p)\)</span>.</p>
+<p>Por exemplo, se <span class="math inline">\(p=0,05\)</span>, queremos achar o valor <span class="math inline">\(z(p)\)</span> tal que <span class="math inline">\(\Phi(z(p)) = p = 0,05\)</span>, Neste caso, procurando na tabela da normal, temos que <span class="math inline">\(z(0,05)=-1.64\)</span> e <span class="math inline">\(Q(0.05) = \mu + 0,05 \sigma\)</span>. Veja a figura a seguir:</p>
 <p><img src="figuras/quantilnormal.png" /><!-- --></p>
 <p>Em Inferência Estatística, os quantis de uma distribuição normal padrão recebem o nome de <em>valores críticos</em> e frequentemente é usada a notação: <span class="math inline">\(z_\alpha= z(1-\alpha), \; \alpha \in (0,1)\)</span> e eles tem um papel fundamental na definição de intervalos de confiança e a região crítica de testes de hipóteses.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-194" class="example"><strong>Exemplo 9.4  </strong></span>Numa população o nível sérico de colesterol em adultos (medido em mg/dl) é uma variável aleatória com distribuição normal com parâmetros <span class="math inline">\(\mu=225\)</span> e <span class="math inline">\(\sigma=75\)</span>. Calcule o valor acima do qual se encontra o colesterol de 10% da população que tem os níveis mais elevados.</p>
+<p><span id="exm:unnamed-chunk-196" class="example"><strong>Exemplo 9.4  </strong></span>Numa população o nível sérico de colesterol em adultos (medido em mg/dl) é uma variável aleatória com distribuição normal com parâmetros <span class="math inline">\(\mu=225\)</span> e <span class="math inline">\(\sigma=75\)</span>. Calcule o valor acima do qual se encontra o colesterol de 10% da população que tem os níveis mais elevados.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-74" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Nível de colesterol de uma pessoa selecionada aleatoriamente dessa população <span class="math inline">\(\sim\)</span> N(225,<span class="math inline">\(75^2\)</span>), logo
+<p><span id="unlabeled-div-75" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Nível de colesterol de uma pessoa selecionada aleatoriamente dessa população <span class="math inline">\(\sim\)</span> N(225,<span class="math inline">\(75^2\)</span>), logo
 <span class="math display">\[
 Z = \frac{X - 225}{75} \sim \text{N(0,1)}.  
 \]</span>
-Queremos achar valor <span class="math inline">\(a\)</span> tal que <span class="math inline">\(P(X &gt; a) = 0.10 \iff P(X \leq a)=0.90\)</span>, ou seja, <span class="math inline">\(a=Q(0.90)\)</span>. Logo, <span class="math inline">\(a=\sigma z(0.90) + \mu = 75 \times 1,28 + 225 = 321\)</span>.</p>
+Queremos achar valor <span class="math inline">\(a\)</span> tal que <span class="math inline">\(P(X &gt; a) = 0.10 \iff P(X \leq a)=0.90\)</span>, ou seja, <span class="math inline">\(a=Q(0.90)\)</span>. Logo, <span class="math inline">\(a=\mu + \sigma z(0.90)= 225 + 75 \times 1,28 = 321\)</span>.</p>
 <p>Portanto, 10% da população tem um nível de colesterol acima de 321 mg/dl.</p>
 </div>
 </div>
@@ -395,7 +404,7 @@ p(x) = \binom{n}{x} p^x (1-p)^{n-x}, \; x=0,1,\ldots, n.
 \]</span></p>
 <p>Quando <span class="math inline">\(n\)</span> é muito grande por veces resulta inviável calcular a probabilidade de que <span class="math inline">\(X\)</span> assuma um certo conjunto de valores. Consideremos o seguinte exemplo:</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-196" class="example"><strong>Exemplo 9.5  </strong></span>Durante um longo período tem se determinado que 70% dos advogados que apresentam o exame da <em>OAB</em> são aprovados. Suponha que 500 advogados que apresentam o exame, qual a probabilidade de que pelo menos 370 deles sejam aprovados.</p>
+<p><span id="exm:unnamed-chunk-198" class="example"><strong>Exemplo 9.5  </strong></span>Durante um longo período tem se determinado que 70% dos advogados que apresentam o exame da <em>OAB</em> são aprovados. Suponha que 500 advogados que apresentam o exame, qual a probabilidade de que pelo menos 370 deles sejam aprovados.</p>
 </div>
 <p>Seja <span class="math inline">\(X\)</span>: Número de advogados que aprovam o exame dentre os 500 <span class="math inline">\(\sim\)</span> Binomial(500,0.70).
 <span class="math display">\[
@@ -404,14 +413,14 @@ P(X \geq 370) = \sum_{x=370}^{500} \binom{500}{x} (0.70)^x (0.30)^{500-x}
 Nesse caso teriamos que calcular 131 probabilidades binomiais, o que resulta uma tarefa bastante tediosa se tivessemos que usar uma calculadora ou pior se tivessemos que realizar o cálculo “à mão.”</p>
 <p>Diante dessa situação podemos usar a distribuição normal para aproximar probabilidades binomiais. O seguinte teorema mostra como isso pode ser feito.</p>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-197" class="theorem"><strong>Teorema 9.1  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>). Se <span class="math inline">\(n\)</span> é suficientemente grande, então para <span class="math inline">\(x=0,1,\ldots,n\)</span></p>
+<p><span id="thm:unnamed-chunk-199" class="theorem"><strong>Teorema 9.1  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>). Se <span class="math inline">\(n\)</span> é suficientemente grande, então para <span class="math inline">\(x=0,1,\ldots,n\)</span></p>
 <p><span class="math display">\[\begin{align*}
 P(X \leq x) = P(X \leq x+0,5) &amp;\approx \Phi\left( \frac{x + 0,5 - np}{\sqrt{np(1-p)}} \right) \\
 P(x \leq X \leq y) = P(x - 0,5\leq X \leq y+0,5) &amp;\approx \Phi\left(\frac{ y + 0,5 - np}{\sqrt{np(1-p)}}\right) - \Phi\left(\frac{ x - 0,5 - np}{\sqrt{np(1-p)}}\right)
 \end{align*}\]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-75" class="remark"><em>Observação</em>. </span>O procedimento de substrair e somar 0,5 é conhecido como <em>correção de continuidade de Fisher</em> e fornece uma aproximação mais precisa, especialmente quando <span class="math inline">\(n\)</span> não for muito grande.</p>
+<p><span id="unlabeled-div-76" class="remark"><em>Observação</em>. </span>O procedimento de substrair e somar 0,5 é conhecido como <em>correção de continuidade de Fisher</em> e fornece uma aproximação mais precisa, especialmente quando <span class="math inline">\(n\)</span> não for muito grande.</p>
 <p>Dois critérios que oferecem uma boa aproximação comumente usados são: <span class="math inline">\(np\geq 5\)</span> e <span class="math inline">\(n(1-p) \geq 5\)</span> ou <span class="math inline">\(np(1-p)\geq 10\)</span>.</p>
 </div>
 <p>A continuação apresentamos a função de probabilidade de uma distribuição binomial e a densidade da distribuição normal para diferentes valores de <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>.</p>
@@ -426,19 +435,19 @@ P(X\geq 370) &amp;= 1 - P(X \leq 369) \\
 \end{align*}\]</span>
 Portanto, a probabilidade de pelo menos 370 advogados aprovem o exame da OAB é aproximadamente de 2%.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-200" class="example"><strong>Exemplo 9.6  </strong></span>Um fabricante sabe por experiência que o 4% de um lote contendo um certo produto é rejeitado por defeitos. Se um novo lote de 800 unidades vai ser inspecionado. Qual a probabilidade aproximada de que menos de 35 unidades sejam rejeitadas?</p>
+<p><span id="exm:unnamed-chunk-202" class="example"><strong>Exemplo 9.6  </strong></span>Um fabricante sabe por experiência que o 4% de um lote contendo um certo produto é rejeitado por defeitos. Se um novo lote de 800 unidades vai ser inspecionado. Qual a probabilidade aproximada de que menos de 35 unidades sejam rejeitadas?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-76" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de produtos rejeitados por defeito <span class="math inline">\(\sim\)</span> Binomial(800,0,04), podemos usar a distribuição normal com <span class="math inline">\(\mu = 800 \times 0,04 = 32\)</span> e <span class="math inline">\(\sigma^2 = 800 \times 0,04 \times 0,96 = 30,72\)</span>. Logo,
+<p><span id="unlabeled-div-77" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de produtos rejeitados por defeito <span class="math inline">\(\sim\)</span> Binomial(800,0,04), podemos usar a distribuição normal com <span class="math inline">\(\mu = 800 \times 0,04 = 32\)</span> e <span class="math inline">\(\sigma^2 = 800 \times 0,04 \times 0,96 = 30,72\)</span>. Logo,
 <span class="math display">\[
 P(X&lt;35) = P(X\leq 34) = \Phi\left( \frac{34+0,5 - 32}{\sqrt{30,72}}\right) = \Phi(0,45)=0,6736.  
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-202" class="example"><strong>Exemplo 9.7  </strong></span>O tamanho ideal de uma turma de primeiro ano em uma faculdade particular é de 150 alunos. A faculdade, sabendo de experiências anteriores que, em média, apenas 30% dos alunos aceitos vão de fato seguir o curso, usa a prática de aprovar os pedidos de matrícula de 450 estudantes. Calcule a probabilidade de que mais de 150 estudantes de primeiro ano frequente as aulas nesta faculdade.</p>
+<p><span id="exm:unnamed-chunk-204" class="example"><strong>Exemplo 9.7  </strong></span>O tamanho ideal de uma turma de primeiro ano em uma faculdade particular é de 150 alunos. A faculdade, sabendo de experiências anteriores que, em média, apenas 30% dos alunos aceitos vão de fato seguir o curso, usa a prática de aprovar os pedidos de matrícula de 450 estudantes. Calcule a probabilidade de que mais de 150 estudantes de primeiro ano frequente as aulas nesta faculdade.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-77" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de estudantes que seguem o curso, então <span class="math inline">\(X\)</span> é uma variável binomial com distribuição binomial com parâmetros <span class="math inline">\(n=450\)</span> e <span class="math inline">\(p=0,3\)</span>. Usando a aproximação normal à binomial, temos que</p>
+<p><span id="unlabeled-div-78" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de estudantes que seguem o curso, então <span class="math inline">\(X\)</span> é uma variável binomial com distribuição binomial com parâmetros <span class="math inline">\(n=450\)</span> e <span class="math inline">\(p=0,3\)</span>. Usando a aproximação normal à binomial, temos que</p>
 <p><span class="math display">\[\begin{align*}
 P(X\geq 150) &amp;\approx 1-\Phi\left( \frac{150 + 0,5 - (450)(0,3)}{\sqrt{(450)(0,3)(0,7)}} \right) \\
 &amp;=1-\Phi(1,59) \\
@@ -451,10 +460,10 @@ Portanto, menos do 6% das vezes mais que 150 dos 450 estudantes aceitos vão de 
 <h2><span class="header-section-number">9.6</span> A curtose e a distribuição normal<a href="modelos-continuos.html#a-curtose-e-a-distribuição-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A curtose é uma medida de forma que mostra o <em>achatamento</em> da curva da função de densidade de probabilidade de uma variável aleatória.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-204" class="definition"><strong>Definição 9.4  </strong></span>Tomando a distribuição normal como referência, diremos que uma distribuição pode ser menos “achatada” que a normal (LEPTOCÚRTICA) ou mais “achatada” que a normal (PLATICÚRTICA). A distribuição normal desde o ponto de vista da curtose, é chamada de MESOCÚRTICA.</p>
+<p><span id="def:unnamed-chunk-206" class="definition"><strong>Definição 9.4  </strong></span>Tomando a distribuição normal como referência, diremos que uma distribuição pode ser menos “achatada” que a normal (LEPTOCÚRTICA) ou mais “achatada” que a normal (PLATICÚRTICA). A distribuição normal desde o ponto de vista da curtose, é chamada de MESOCÚRTICA.</p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-205" class="definition"><strong>Definição 9.5  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória (discreta ou contínua) com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Então, o <em>coeficiente de curtose</em> de <span class="math inline">\(X\)</span> é definida como</p>
+<p><span id="def:unnamed-chunk-207" class="definition"><strong>Definição 9.5  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória (discreta ou contínua) com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Então, o <em>coeficiente de curtose</em> de <span class="math inline">\(X\)</span> é definida como</p>
 <p><span class="math display">\[
 \kappa = \frac{E[(X-\mu)^4]}{\sigma^4} - 3  
 \]</span></p>
@@ -466,57 +475,10 @@ Portanto, menos do 6% das vezes mais que 150 dos 450 estudantes aceitos vão de 
 <li><p>Se <span class="math inline">\(\kappa &gt; 0\)</span>, então a distribuição de <span class="math inline">\(X\)</span> é platicúrtica.</p></li>
 </ul>
 </div>
-<div id="distribuição-qui-quadrada" class="section level2 hasAnchor" number="9.7">
-<h2><span class="header-section-number">9.7</span> Distribuição qui-quadrada<a href="modelos-continuos.html#distribuição-qui-quadrada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="distribuição-gama" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> Distribuição Gama<a href="modelos-continuos.html#distribuição-gama" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-206" class="definition"><strong>Definição 9.6  </strong></span>Dizemos que uma variável aleatória <span class="math inline">\(X\)</span> tem distribuição qui-quadrada com <span class="math inline">\(\nu\)</span> graus de liberdade se, sua função de densidade é
-<span class="math display">\[
-f(x) = \begin{cases}
-\frac{1}{2^{\nu/2}\Gamma(\nu/2)} x^{(\nu/2)-1}e^{-x/2}, x&gt;0 \\
-0, \text{caso contrário}
-\end{cases}
-\]</span></p>
-</div>
-<p>A figura abaixo mostra diferentes curvas da função de densidade de uma qui-quadrado para diferentes valores de <span class="math inline">\(\nu\)</span>.</p>
-<p><img src="figuras/chiquadrado.png" /><!-- --></p>
-</div>
-<div id="distribuição-t-student" class="section level2 hasAnchor" number="9.8">
-<h2><span class="header-section-number">9.8</span> Distribuição t-Student<a href="modelos-continuos.html#distribuição-t-student" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="definition">
-<p><span id="def:unnamed-chunk-208" class="definition"><strong>Definição 9.7  </strong></span>Dizemos que uma variável aleatória <span class="math inline">\(X\)</span> tem distribuição <span class="math inline">\(t\)</span>-Student com <span class="math inline">\(\nu\)</span> graus de liberdade se, sua função de densidade é</p>
-<p><span class="math display">\[
-f(x) = \frac{\Gamma(\frac{\nu + 1}{2})}{\sqrt{\nu \pi}\Gamma(\nu/2)} \frac{1}{(1+x^2/\nu)^{(\nu + 1)/2}}  
-\]</span></p>
-</div>
-<p>A figura abaixo mostra diferentes curvas da função de densidade de uma t-Student para diferentes valores de <span class="math inline">\(\nu\)</span>. Além disso, adicionamos uma normal padrão, note que a distribução t-Student é uma distribuição com “caudas mais pesadas” que a normal.</p>
-<p><img src="figuras/tstudent.png" /><!-- --></p>
-<p>As distribuições qui-quadrado e t-Student estão relacionadas com a distribuição normal como segue:</p>
-<ul>
-<li><p>Se <span class="math inline">\(Z_1,\ldots,Z_n\)</span> são variáveis aleatórias independentes e identicamente distrbibuídas com distribuição normal padrão, então a variável <span class="math inline">\(Y = \sum_{i=1}^n Z_i^2\)</span> tem <em>distribuição qui-quadrado com n graus de liberdade</em>.</p></li>
-<li><p>Se <span class="math inline">\(Z\)</span> e <span class="math inline">\(Y\)</span> são variáveis aleatórias independentes, <span class="math inline">\(Z\sim N(0,1)\)</span> e <span class="math inline">\(Y\sim \chi^2_n\)</span>, então a variável
-<span class="math display">\[ T = \frac{Z}{\sqrt{Y/\nu}},\]</span>
-tem distribuição <em>t de Student com n graus de liberdade</em></p></li>
-</ul>
-<div id="amostragem-de-uma-população-normal" class="section level3 hasAnchor" number="9.8.1">
-<h3><span class="header-section-number">9.8.1</span> Amostragem de uma população normal<a href="modelos-continuos.html#amostragem-de-uma-população-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="definition">
-<p><span id="def:unnamed-chunk-210" class="definition"><strong>Definição 9.8  </strong></span>Seja <span class="math inline">\(F\)</span> uma distribuição de probabilidade. Uma <em>amostra aleatória</em> de tamanho <span class="math inline">\(n\)</span> de uma população <span class="math inline">\(F\)</span> é uma sequência finita <span class="math inline">\(X_1,X_2,\ldots, X_n\)</span> de variáveis aleatórias independentes e identicamente distribuídas com distribuição <span class="math inline">\(F\)</span>.</p>
-</div>
-<p>Nesta seção lidamos com amostras obtidas a partir de uma população normal. A amostragem oriundas de populações normais conduz a diversas propriedades úteis da amostragem estatística e também a muitas <strong>distribuições amostrais</strong> amplamente conhecidas.</p>
-<div class="proposition">
-<p><span id="prp:unnamed-chunk-211" class="proposition"><strong>Proposição 9.6  </strong></span>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> uma amostra aleatória de uma população normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>, defina, <span class="math inline">\(\bar X = \frac{X_1 + \ldots + X_n}{n}\)</span> e <span class="math inline">\(S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar X)^2\)</span> como <em>média amostral</em> e <em>variância amostral</em> de <span class="math inline">\(X_1,\ldots, X_n\)</span>, respectivamente. Então <span class="math inline">\(\bar X\)</span> e <span class="math inline">\(S^2\)</span> são independentes, com</p>
-<ol style="list-style-type: lower-roman">
-<li><p><span class="math inline">\(\bar X \sim N(\mu,\sigma^2/n)\)</span></p></li>
-<li><p><span class="math inline">\(\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}\)</span></p></li>
-<li><p><span class="math inline">\(\frac{\sqrt{n}(\bar X -\mu)}{S} \sim t_{n-1}\)</span></p></li>
-</ol>
-</div>
-</div>
-</div>
-<div id="distribuição-gama" class="section level2 hasAnchor" number="9.9">
-<h2><span class="header-section-number">9.9</span> Distribuição Gama<a href="modelos-continuos.html#distribuição-gama" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="definition">
-<p><span id="def:unnamed-chunk-212" class="definition"><strong>Definição 9.9  </strong></span>A <em>função Gama de Euler</em> <span class="math inline">\(\Gamma: (0,\infty) \rightarrow \mathbb R\)</span> é definida por
+<p><span id="def:unnamed-chunk-208" class="definition"><strong>Definição 9.6  </strong></span>A <em>função Gama de Euler</em> <span class="math inline">\(\Gamma: (0,\infty) \rightarrow \mathbb R\)</span> é definida por
 <span class="math display">\[
 \Gamma(\alpha) = \int_{0}^\infty x^{\alpha-1} e^{-x} dx,   
 \]</span>
@@ -527,7 +489,7 @@ e possui as seguintes propriedades:</p>
 </ol>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-213" class="definition"><strong>Definição 9.10  </strong></span>Dizemos que uma variável aleatória <span class="math inline">\(X\)</span> tem distribuição gama com parâmetros <span class="math inline">\(\alpha &gt;0\)</span> e <span class="math inline">\(\lambda&gt;0\)</span> se, sua função de densidade é
+<p><span id="def:unnamed-chunk-209" class="definition"><strong>Definição 9.7  </strong></span>Dizemos que uma variável aleatória <span class="math inline">\(X\)</span> tem distribuição gama com parâmetros <span class="math inline">\(\alpha &gt;0\)</span> e <span class="math inline">\(\lambda&gt;0\)</span> se, sua função de densidade é
 <span class="math display">\[
 f(x) = \begin{cases}
 \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha -1} e^{-\lambda x}, &amp; x &gt;0 \\
@@ -545,25 +507,40 @@ f(x) = \begin{cases}
 \]</span></p>
 <p>Além disso,</p>
 <ul>
-<li><p>Se <span class="math inline">\(\lambda = 1\)</span>, a distribuição é chamada de gama padrão.</p></li>
-<li><p>Se <span class="math inline">\(\alpha=1\)</span>, então Gama(<span class="math inline">\(1,\lambda\)</span>) <span class="math inline">\(\equiv\)</span> Exponencial().</p></li>
-<li><p>Se <span class="math inline">\(\alpha = \nu/2\)</span> e <span class="math inline">\(\lambda = 1/2\)</span>, então Gama(<span class="math inline">\(1,\lambda\)</span>) <span class="math inline">\(\equiv\)</span> <span class="math inline">\(\chi^2_{\nu}\)</span>.</p></li>
+<li>Se <span class="math inline">\(\lambda = 1\)</span>, a distribuição é chamada de <em>gama padrão</em> e, sua função de densidade é dada por</li>
+</ul>
+<p><span class="math display">\[
+f_1(x;\alpha) = \frac{1}{\Gamma(\alpha)} x^{\alpha-1} e^{-x}, \; x&gt;0
+\]</span></p>
+<ul>
+<li>Se <span class="math inline">\(\alpha=1\)</span>, então Gama(<span class="math inline">\(1,\lambda\)</span>) <span class="math inline">\(\equiv\)</span> Exponencial(<span class="math inline">\(\lambda\)</span>).</li>
 </ul>
 <p>A função de distribuição de uma gama padrão é definida por</p>
 <p><span class="math display">\[
-F(x) = \int_0^x \frac{1}{\Gamma(\alpha)} x^{\alpha-1} e^{-x}, \; x&gt;0,
+F_1(x;\alpha) = \int_0^x \frac{1}{\Gamma(\alpha)} x^{\alpha-1} e^{-x}, \; x&gt;0,
 \]</span>
 e recebe o nome de <em>função gama incompleta</em>.</p>
-<p>Em geral, se <span class="math inline">\(X\sim\)</span> Gama(<span class="math inline">\(\alpha,\lambda\)</span>) e <span class="math inline">\(Y \sim\)</span> Gamma (<span class="math inline">\(\alpha\)</span>,1), temos que</p>
-<p><span class="math display">\[
-F_X(x) = F_Y(\lambda x)
-\]</span></p>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-215" class="proposition"><strong>Proposição 9.7  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Gama(<span class="math inline">\(\alpha,\beta\)</span>), então:
+<p><span id="prp:unnamed-chunk-211" class="proposition"><strong>Proposição 9.6  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Gama(<span class="math inline">\(\alpha,\lambda\)</span>), então</p>
+<p><span class="math display">\[
+F_X(x) = F_1(\lambda x;\alpha)
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-79" class="proof"><em>Prova</em>. </span>Seja <span class="math inline">\(x&gt;0\)</span>, logo
+<span class="math display">\[\begin{align*}
+\frac{d}{dx} F_1(\lambda x;\alpha) &amp;= \lambda f_1(\lambda x;\alpha) \\
+&amp;=\frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\lambda x}\\
+&amp;=f_X(x)
+\end{align*}\]</span>
+Portanto, <span class="math inline">\(F_1(\lambda x;\alpha) = F_X(x)\)</span>.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-213" class="proposition"><strong>Proposição 9.7  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Gama(<span class="math inline">\(\alpha,\lambda\)</span>), então:
 <span class="math display">\[E(X) =\frac{\alpha}{\lambda} \text{ e } Var(X) = \frac{\alpha}{\lambda^2}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-216" class="example"><strong>Exemplo 9.8  </strong></span>Suponha que o tempo de sobrevivência de um rato macho em semanas exposto a 240 rads de radiação gamma tem uma uma distribuição gama com <span class="math inline">\(\alpha = 8\)</span> e <span class="math inline">\(\lambda = 1/15\)</span>. Determine</p>
+<p><span id="exm:unnamed-chunk-214" class="example"><strong>Exemplo 9.8  </strong></span>Suponha que o tempo de sobrevivência de um rato macho em semanas exposto a 240 rads de radiação gamma tem uma uma distribuição gama com <span class="math inline">\(\alpha = 8\)</span> e <span class="math inline">\(\lambda = 1/15\)</span>. Determine</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>a probabilidade de que um rato sobreviva entre 60 e 120 semanas.</p></li>
 <li><p>a probabilidade de que um rato sobreviva pelo menos 30 semanas.</p></li>
@@ -571,25 +548,182 @@ F_X(x) = F_Y(\lambda x)
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-78" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Tempo de sobrevivência de um rato em semanas exposto a 240 rads de radiação gamma e <span class="math inline">\(F\)</span> a função de distribuição de uma gama padrão. Logo</p>
+<p><span id="unlabeled-div-80" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Tempo de sobrevivência de um rato, em semanas, exposto a 240 rads de radiação gamma <span class="math inline">\(\sim\)</span> Gama(<span class="math inline">\(\alpha=8\)</span>,<span class="math inline">\(\lambda=1/15\)</span>). Logo</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(60 \leq X \leq 120) = F\left(\frac{120}{15}\right) - F\left(\frac{30}{15}\right) =F(8)-F(4) = 0,547 - 0,051 = 0,496.\)</span></p></li>
-<li><p><span class="math inline">\(P(X \leq 30) = 1 - F\left(\frac{30}{15}\right) = 1 - F(2) = 1- 0,001 = 0,999\)</span></p></li>
-<li><p><span class="math inline">\(E(X) = \frac{\alpha}{\beta} = (8)(15) = 120\)</span> semanas.</p></li>
+<li><p>Queremos calcular <span class="math inline">\(P(60 \leq X \leq 120)\)</span>. Com efeito,
+<span class="math display">\[\begin{align*}
+P(60 \leq X \leq 120) &amp;= F_X(120)- F_X(60) \\ &amp;=F_1\left(\frac{120}{15};8\right) - F_1\left(\frac{30}{15};8\right) \\
+&amp;=F_1(8;8)-F_1(4;8) = 0,547 - 0,051 = 0,496.
+\end{align*}\]</span></p></li>
+<li><p><span class="math inline">\(P(X \geq 30) = 1-F_X(30)=1 - F_1\left(\frac{30}{15};8\right) = 1 - F(2) = 1- 0,001 = 0,999\)</span></p></li>
+<li><p><span class="math inline">\(E(X) = \frac{\alpha}{\lambda} = (8)(15) = 120\)</span> semanas.</p></li>
 </ol>
 </div>
 </div>
-<div id="distribuição-de-weibull" class="section level2 hasAnchor" number="9.10">
-<h2><span class="header-section-number">9.10</span> Distribuição de Weibull<a href="modelos-continuos.html#distribuição-de-weibull" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="distribuição-qui-quadrada" class="section level2 hasAnchor" number="9.8">
+<h2><span class="header-section-number">9.8</span> Distribuição qui-quadrada<a href="modelos-continuos.html#distribuição-qui-quadrada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<span id="def:unnamed-chunk-218" class="definition"><strong>Definição 9.11  </strong></span>Dizemos que uma variável aleatória <span class="math inline">\(X\)</span> tem <em>distribuição de Weibull</em> com parâmetros <span class="math inline">\(\nu, \alpha\)</span> e <span class="math inline">\(\beta&gt;0\)</span> se, sua função de densidade é
-[
-f(x) =
-<span class="math display">\[\begin{cases}
-\frac{\beta}{\alpha} \left( \frac{x-\nu}{\alpha}\right)^{\beta-1}
-e^\left[-\left(\frac{x-\nu}{\alpha}\right)^\beta\right],  &amp; x &gt; \nu\\
+<p><span id="def:unnamed-chunk-216" class="definition"><strong>Definição 9.8  </strong></span>Dizemos que uma variável aleatória <span class="math inline">\(X\)</span> tem distribuição qui-quadrada com <span class="math inline">\(\nu\)</span> graus de liberdade se, sua função de densidade é
+<span class="math display">\[
+f(x) = \begin{cases}
+\frac{1}{2^{\nu/2}\Gamma(\nu/2)} x^{(\nu/2)-1}e^{-x/2}, x&gt;0 \\
 0, \text{caso contrário}
-\end{cases}\]</span>
+\end{cases}
+\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-81" class="remark"><em>Observação</em>. </span>Note que, se <span class="math inline">\(\alpha = \nu/2\)</span> e <span class="math inline">\(\lambda = 1/2\)</span>, então Gama(<span class="math inline">\(\nu/2,1/2\)</span>) <span class="math inline">\(\equiv\)</span> <span class="math inline">\(\chi^2_{\nu}\)</span>.</p>
+</div>
+<p>A figura abaixo mostra diferentes curvas da função de densidade de uma qui-quadrado para diferentes valores de <span class="math inline">\(\nu\)</span>.</p>
+<p><img src="figuras/chiquadrado.png" /><!-- --></p>
+</div>
+<div id="distribuição-t-student" class="section level2 hasAnchor" number="9.9">
+<h2><span class="header-section-number">9.9</span> Distribuição t-Student<a href="modelos-continuos.html#distribuição-t-student" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-219" class="definition"><strong>Definição 9.9  </strong></span>Dizemos que uma variável aleatória <span class="math inline">\(X\)</span> tem distribuição <span class="math inline">\(t\)</span>-Student com <span class="math inline">\(\nu\)</span> graus de liberdade se, sua função de densidade é</p>
+<p><span class="math display">\[
+f(x) = \frac{\Gamma(\frac{\nu + 1}{2})}{\sqrt{\nu \pi}\Gamma(\nu/2)} \frac{1}{(1+x^2/\nu)^{(\nu + 1)/2}}, \; x \in \mathbb R.  
+\]</span></p>
+</div>
+<p>A figura abaixo mostra diferentes curvas da função de densidade de uma t-Student para diferentes valores de <span class="math inline">\(\nu\)</span>. Além disso, adicionamos uma normal padrão, note que a distribução t-Student é uma distribuição com “caudas mais pesadas” que a normal.</p>
+<p><img src="figuras/tstudent.png" /><!-- --></p>
+<p>As distribuições qui-quadrado e t-Student estão relacionadas com a distribuição normal como segue:</p>
+<ul>
+<li><p>Se <span class="math inline">\(Z_1,\ldots,Z_n\)</span> são variáveis aleatórias independentes e identicamente distrbibuídas com distribuição normal padrão, então a variável <span class="math inline">\(Y = \sum_{i=1}^n Z_i^2\)</span> tem <em>distribuição qui-quadrado com n graus de liberdade</em>.</p></li>
+<li><p>Se <span class="math inline">\(Z\)</span> e <span class="math inline">\(Y\)</span> são variáveis aleatórias independentes, <span class="math inline">\(Z\sim N(0,1)\)</span> e <span class="math inline">\(Y\sim \chi^2_{\nu}\)</span>, então a variável
+<span class="math display">\[ T = \frac{Z}{\sqrt{Y/\nu}},\]</span>
+tem distribuição <em>t de Student com n graus de liberdade</em></p></li>
+</ul>
+<div id="amostragem-de-uma-população-normal" class="section level3 hasAnchor" number="9.9.1">
+<h3><span class="header-section-number">9.9.1</span> Amostragem de uma população normal<a href="modelos-continuos.html#amostragem-de-uma-população-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unnamed-chunk-221" class="definition"><strong>Definição 9.10  </strong></span>Seja <span class="math inline">\(F\)</span> uma distribuição de probabilidade. Uma <em>amostra aleatória</em> de tamanho <span class="math inline">\(n\)</span> de uma população <span class="math inline">\(F\)</span> é uma sequência finita <span class="math inline">\(X_1,X_2,\ldots, X_n\)</span> de variáveis aleatórias independentes e identicamente distribuídas com distribuição <span class="math inline">\(F\)</span>.</p>
+</div>
+<p>Nesta seção lidamos com amostras obtidas a partir de uma população normal. A amostragem oriundas de populações normais conduz a diversas propriedades úteis da amostragem estatística e também a muitas <strong>distribuições amostrais</strong> amplamente conhecidas.</p>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-222" class="proposition"><strong>Proposição 9.8  </strong></span>Seja <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> uma amostra aleatória de uma população normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>, defina, <span class="math inline">\(\bar X = \frac{X_1 + \ldots + X_n}{n}\)</span> e <span class="math inline">\(S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar X)^2\)</span> como <em>média amostral</em> e <em>variância amostral</em> de <span class="math inline">\(X_1,\ldots, X_n\)</span>, respectivamente. Então <span class="math inline">\(\bar X\)</span> e <span class="math inline">\(S^2\)</span> são independentes, com</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(\bar X \sim N(\mu,\sigma^2/n)\)</span></p></li>
+<li><p><span class="math inline">\(\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}\)</span></p></li>
+<li><p><span class="math inline">\(\frac{\sqrt{n}(\bar X -\mu)}{S} \sim t_{n-1}\)</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="distribuição-de-cauchy-lorentz" class="section level2 hasAnchor" number="9.10">
+<h2><span class="header-section-number">9.10</span> Distribuição de Cauchy-Lorentz<a href="modelos-continuos.html#distribuição-de-cauchy-lorentz" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-223" class="definition"><strong>Definição 9.11  </strong></span>Dizemos que uma variável aleatória <span class="math inline">\(X\)</span> tem distribuição de Cauchy (ou Cauchy-Lorentz) com parâmetros <span class="math inline">\(\alpha \in \mathbb R\)</span> e <span class="math inline">\(\beta &gt; 0\)</span> se, sua função de densidade é
+<span class="math display">\[
+f(x)=\frac{1}{\pi \beta \{1+[(x-\alpha)/\beta]^2\}}, \; x\in\mathbb R
+\]</span></p>
+</div>
+<p>A seguir apresentamos várias curvas da densidade da Cauchy para diferentes valores de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>.</p>
+<p><img src="figuras/cauchy.png" /><!-- --></p>
+<div class="remark">
+<p><span id="unlabeled-div-82" class="remark"><em>Observação</em>. </span>Quando <span class="math inline">\(\alpha=0\)</span> e <span class="math inline">\(\beta = 1\)</span>, temos a distribuição Cauchy padrão, cuja função de densidade é</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{\pi (1+x^2)}, \; x\in\mathbb R
+\]</span></p>
+</div>
+<p>É possível mostrar que a média da distribuição de Cauchy não existe. De fato, se tentamos calcular a média de <span class="math inline">\(X\sim\)</span> Cauchy(0,1), temos que para qualquer <span class="math inline">\(t\in\mathbb R\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+E(X) &amp;= \int_{-\infty}^\infty \frac{x}{\pi (1+x^2)} dx\\
+&amp;= \int_{-\infty}^t \frac{x}{\pi (1+x^2)} dx + \int_{t}^\infty \frac{x}{\pi (1+x^2)} dx \\
+&amp;= \frac{1}{\pi}\left[\int_{-\infty}^{1+t^2} \frac{du}{u} + \int_{1+t^2}^{\infty} \frac{du}{u} \right] \\
+&amp;= \frac{1}{\pi}\left[ \ln(1+t^2) - \ln(-\infty) + \ln(\infty) - \ln(1+t^2) \right] \\
+&amp;=\infty - \infty \; (\text{não definido})
+\end{align*}\]</span>
+Portanto, <span class="math inline">\(E(X)\)</span> <strong>não existe</strong>.</p>
+<div class="remark">
+<p><span id="unlabeled-div-83" class="remark"><em>Observação</em>. </span>De fato <span class="math inline">\(E(|X|) = \infty\)</span>, portanto não existem os momentos <span class="math inline">\(E(X^n)\)</span> para qualquer <span class="math inline">\(n\geq 1\)</span>. Em particular, a função geradora de momentos não existe.</p>
+</div>
+<p>A pesar de não existir a média da distribuição de Cauchy é possível mostrar, por exemplo, que a médiana é <span class="math inline">\(\tilde \mu = \alpha\)</span>. Para simplificar os cálculos assuma que <span class="math inline">\(X\sim\)</span> Cauchy(0,1), mostraremos que <span class="math inline">\(\tilde \mu = 0\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+F(0)=P(X\leq 0) &amp;= \frac{1}{\pi}\int_{-\infty}^0 \frac{dx}{1+x^2}\\
+&amp;=\frac{1}{\pi} \left[\mathrm{arctg}(x)\right]_{-\infty}^0\\
+&amp;=\frac{1}{\pi} (0-(-\pi/2)) = 1/2.
+\end{align*}\]</span></p>
+<p>Portanto, <span class="math inline">\(\tilde \mu = 0\)</span>.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-227" class="example"><strong>Exemplo 9.9  </strong></span>Mostraremos nesse exemplo como a distribuição de Cauchy descreve a distância horizontal à qual um segmento de linha inclinado a um ângulo aleatório com distribuição uniforme contínua em [<span class="math inline">\(-\pi/2, \pi/2\)</span>] corta o eixo <span class="math inline">\(x\)</span>. A situação é apresentada na figura abaixo.</p>
+</div>
+<p><img src="figuras/cauchyangle.png" /><!-- --></p>
+<div class="solution">
+<p><span id="unlabeled-div-84" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(\Theta\)</span> o ângulo daquele segmento, com um ponto fixo de rotação, que faz com o eixo <span class="math inline">\(x\)</span> (como mostrado na figura acima). Então <span class="math inline">\(\Theta \sim\)</span> Uniforme Contínua[<span class="math inline">\(-\pi/2,\pi/2\)</span>]. Além disso,</p>
+<p><span class="math display">\[\begin{align*}
+F_X(x)=P(X \leq x) &amp;= P(\mathrm{tg}(\Theta)\leq \frac{x}{\beta})\\
+&amp;=P(\Theta \leq \mathrm{arctg}(x/\beta))\\
+&amp;=F_{\Theta}(\mathrm{arctg}(x/\beta))\\
+&amp;= \frac{1}{\pi}\left[\mathrm{arctg}(x/\beta) + \pi/2\right]
+
+\end{align*}\]</span>
+Logo,</p>
+<p><span class="math display">\[\begin{align*}
+f_X(x) = \frac{d F(x)}{dx} &amp;= \frac{1}{\pi \beta} \left(\frac{1}{1+(x/\beta)^2}\right) 
+\end{align*}\]</span>
+Portanto, <span class="math inline">\(X\sim\)</span> Cauchy(0,<span class="math inline">\(\beta\)</span>).</p>
+</div>
+</div>
+<div id="distribuição-beta" class="section level2 hasAnchor" number="9.11">
+<h2><span class="header-section-number">9.11</span> Distribuição Beta<a href="modelos-continuos.html#distribuição-beta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-230" class="definition"><strong>Definição 9.12  </strong></span>A função <span class="math inline">\(B:(0,\infty) \times (0,\infty) \rightarrow \mathbb R\)</span> é definida por
+<span class="math display">\[
+B(\alpha,\beta) = \int_0^1 x^{\alpha -1} (1-x)^{\beta - 1} dx,
+\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-85" class="remark"><em>Observação</em>. </span>A função beta está relacionada à função gama por meio da seguinte identidade:
+<span class="math inline">\(B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-232" class="definition"><strong>Definição 9.13  </strong></span>Dizemos que uma variável aleatória <span class="math inline">\(X\)</span> tem <em>distribuição beta</em> com parâmetros <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span> se, sua função de densidade é</p>
+<p><span class="math display">\[
+f(x) =   \begin{cases}
+\frac{1}{B(\alpha,\beta)}x^{\alpha-1} (1-x)^{\beta -1}, &amp; x \in (0,1) \\
+0 &amp; \text{caso contrário}
+\end{cases}
+\]</span></p>
+</div>
+<p><img src="figuras/beta.png" /><!-- --></p>
+<p>A função de distribuição de uma variável aleatória beta, em geral, recebe o nome de <em>função beta incompleta</em> e é dada por</p>
+<p><span class="math display">\[
+F(x) = \int_0^x \frac{1}{B(\alpha,\beta)} t^{\alpha - 1} (1-t)^{\beta - 1} dt.
+\]</span></p>
+<p>Se <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> são inteiros, então</p>
+<p><span class="math display">\[\begin{align*}
+F(x) &amp;= \int_0^x \frac{1}{B(\alpha,\beta)} x^{\alpha - 1} (1-x)^{\beta - 1}\\
+&amp;= \sum_{i=\alpha}^n \binom{n}{i} x^i(1-x)^{n-i},
+\end{align*}\]</span>
+onde <span class="math inline">\(n=\alpha+\beta-1\)</span>.</p>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-234" class="proposition"><strong>Proposição 9.9  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Beta(<span class="math inline">\(\alpha,\beta\)</span>), então
+<span class="math display">\[
+E(X) = \frac{\alpha}{\alpha + \beta} \text{ e } Var(X) = \frac{\alpha\beta}{(\alpha + \beta)^2 (\alpha + \beta +1)} 
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-86" class="proof"><em>Prova</em>. </span>Pela definição de esperança, temos</p>
+<p><span class="math display">\[\begin{align*}
+E(X) &amp;=\frac{1}{B(\alpha,\beta)}\int_{0}^1  x^\alpha (1-x)^{\beta -1} dx\\
+&amp;=\frac{B(\alpha+1,\beta)}{B(\alpha,\beta)}\\
+&amp;=\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)}\times 
+\frac{\Gamma(\alpha+1) \Gamma(\beta)}{\Gamma(\alpha + \beta + 1)}\\
+&amp;=\frac{\alpha}{\beta}.
+\end{align*}\]</span></p>
+<p>O cálculo da variância é deixado como exercício.</p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-236" class="example"><strong>Exemplo 9.10  </strong></span>Um distribuidor de combustível tem tanques de armazenamento de grande capacidade com um abastecimento fixo, que são cheios cada segunda. Ele deseja saber se a porcentagem de combustível vendido durante a semana. Depois de várias semanas de observação descobre que essa porcentagem pode ser bem modelada por uma variável aleatória com distribuição beta com <span class="math inline">\(\alpha=4\)</span> e <span class="math inline">\(\beta = 2\)</span>. Qual a probabilidade de que venda pelo menos 90% de suas existências em uma semana?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-87" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: porcentagem de combustível vendido durante a semana <span class="math inline">\(\sim\)</span> Beta(4,2).</p>
+<p><span class="math display">\[\begin{align*}
+P(X&gt;0.90) &amp;= 1-\int_0^{0.90} \frac{1}{B(4,2)} t^{3} (1-t) dt\\
+&amp;=1- F(0.90)\\
+&amp;=0.08.
+\end{align*}\]</span></p>
 </div>
 
 </div>
