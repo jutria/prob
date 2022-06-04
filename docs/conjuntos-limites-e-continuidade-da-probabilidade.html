@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-30" />
+<meta name="date" content="2022-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,6 +164,8 @@
 </ul></li>
 <li class="chapter" data-level="9.10" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-cauchy-lorentz"><i class="fa fa-check"></i><b>9.10</b> Distribuição de Cauchy-Lorentz</a></li>
 <li class="chapter" data-level="9.11" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-beta"><i class="fa fa-check"></i><b>9.11</b> Distribuição Beta</a></li>
+<li class="chapter" data-level="9.12" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-log-normal"><i class="fa fa-check"></i><b>9.12</b> Distribuição log-normal</a></li>
+<li class="chapter" data-level="9.13" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-pareto"><i class="fa fa-check"></i><b>9.13</b> Distribuição de Pareto</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
 <ul>
@@ -197,7 +199,7 @@
 <ol style="list-style-type: lower-roman">
 <li><p>Dizemos que <span class="math inline">\((A_n)_{n\geq 1}\)</span> é uma sequência de eventos <em>crescente</em> se
 <span class="math display">\[
-A_1 \subset A_2 \subset A_3 \subset \cdots 
+A_1 \subset A_2 \subset A_3 \subset \cdots
 \]</span></p></li>
 <li><p>Dizemos que <span class="math inline">\((A_n)_{n\geq 1}\)</span> é uma sequência de eventos <em>decrescente</em> se
 <span class="math display">\[
@@ -212,11 +214,11 @@ A_1 \supset A_2 \supset A_3 \supset \cdots \]</span></p></li>
 <ol style="list-style-type: lower-roman">
 <li>Denotamos por <span class="math inline">\(A_n\uparrow A\)</span>, se <span class="math inline">\((A_n)_{n\geq 1}\)</span> é uma sequência crescente de eventos e<br />
 <span class="math display">\[
-A = \bigcup_{n=1}^\infty A_n. 
+A = \bigcup_{n=1}^\infty A_n.
 \]</span></li>
 <li>Denotamos por <span class="math inline">\(A_n\downarrow A\)</span>, se <span class="math inline">\((A_n)_{n\geq 1}\)</span> é uma sequência crescente de eventos e<br />
 <span class="math display">\[
-A = \bigcap_{n=1}^\infty A_n. 
+A = \bigcap_{n=1}^\infty A_n.
 \]</span></li>
 </ol>
 </div>
@@ -276,8 +278,8 @@ Além disso, como <span class="math inline">\(A_n\subset A_{n+1},\)</span> <span
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-18" class="proof"><em>Prova</em>. </span>Para <span class="math inline">\(n\geq 1\)</span>, defina <span class="math inline">\(\displaystyle B_n = \bigcap_{k=n}^\infty A_k\)</span> e <span class="math inline">\(\displaystyle C_n = \bigcup_{k=n}^\infty A_k\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(B_n\subset A_n \subset C_n\)</span>, logo, <span class="math inline">\(P(B_n) \leq P(A_n) \leq P(C_n)\)</span>. Além disso, temos que <span class="math inline">\(B_n \uparrow \liminf A_n\)</span> e <span class="math inline">\(C_n \downarrow\limsup A_n\)</span>, logo <span class="math inline">\(P(\liminf A_n) = \lim P(B_n)\)</span> e <span class="math inline">\(\lim P(C_n) = P(\limsup A_n)\)</span>. Agora,</p>
-<p><span class="math display">\[ 
-P(\liminf A_n) \leq \liminf P(A_n) \leq \limsup P(A_n) \leq  P(\limsup A_n), 
+<p><span class="math display">\[
+P(\liminf A_n) \leq \liminf P(A_n) \leq \limsup P(A_n) \leq  P(\limsup A_n),
 \]</span>
 mas <span class="math inline">\(P(A) = P(\liminf A_n) = P(\limsup A_n)\)</span>, logo se <span class="math inline">\(P(A_n)\)</span> converge, temos que <span class="math inline">\(\lim P(A_n) = P(A)\)</span>.</p>
 </div>
@@ -298,7 +300,7 @@ Portanto <span class="math inline">\((b_n)_{n\geq 1}\)</span> é uma sequência 
 \liminf a_n&amp;:=\lim b_{n} = \sup_{n\geq 1} \inf_{k\geq n} a_k, \label{liminfseq} \\
 \limsup a_n &amp;:= \lim c_n = \inf_{n\geq 1} \sup_{k\geq n} a_k. \label{limsupseq}
 \end{align}\]</span>
-O limite dado em  é chamado de <em>limite inferior</em> da sequência <span class="math inline">\((a_n)\)</span>, similarmente o limite dado em  é chamado de <em>limite superior</em> de <span class="math inline">\((a_n)\)</span>.</p>
+O limite dado em <span class="math inline">\(\eqref{liminfseq}\)</span> é chamado de <em>limite inferior</em> da sequência <span class="math inline">\((a_n)\)</span>, similarmente o limite dado em <span class="math inline">\(\eqref{limsupseq}\)</span> é chamado de <em>limite superior</em> de <span class="math inline">\((a_n)\)</span>.</p>
 <div class="theorem">
 <p><span id="thm:unnamed-chunk-45" class="theorem"><strong>Teorema 3.3  </strong></span>Uma sequência <span class="math inline">\((a_n)\)</span> de números reais converge para <span class="math inline">\(a\in\mathbb R\)</span> se, e somente se, <span class="math display">\[\liminf a_n= \limsup a_n = a.\]</span></p>
 </div>

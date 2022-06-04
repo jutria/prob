@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-30" />
+<meta name="date" content="2022-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,6 +164,8 @@
 </ul></li>
 <li class="chapter" data-level="9.10" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-cauchy-lorentz"><i class="fa fa-check"></i><b>9.10</b> Distribuição de Cauchy-Lorentz</a></li>
 <li class="chapter" data-level="9.11" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-beta"><i class="fa fa-check"></i><b>9.11</b> Distribuição Beta</a></li>
+<li class="chapter" data-level="9.12" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-log-normal"><i class="fa fa-check"></i><b>9.12</b> Distribuição log-normal</a></li>
+<li class="chapter" data-level="9.13" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-pareto"><i class="fa fa-check"></i><b>9.13</b> Distribuição de Pareto</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
 <ul>
@@ -201,7 +203,7 @@ E(X) = \sum_{i=1}^\infty x_i\, p(x_i).
 </div>
 <p>Voltando ao exemplo do lançamento da moeda 3 vezes e, definindo <span class="math inline">\(X\)</span> como o número de caras observadas, temos que
 <span class="math display">\[
-E(X) = 0 \times \frac{1}{8} + 1 \times \frac{3}{8} + 2 \times \frac{3}{8} + 3 \times \frac{1}{8} = 1,5. 
+E(X) = 0 \times \frac{1}{8} + 1 \times \frac{3}{8} + 2 \times \frac{3}{8} + 3 \times \frac{1}{8} = 1,5.
 \]</span></p>
 <p>Algumas observações sobre a o valor esperado:</p>
 <ul>
@@ -214,7 +216,7 @@ E(X) = 0 \times \frac{1}{8} + 1 \times \frac{3}{8} + 2 \times \frac{3}{8} + 3 \t
 <div class="solution">
 <p><span id="unlabeled-div-23" class="solution"><em>Solução</em>. </span>A função de probabilidade de <span class="math inline">\(X\)</span> é
 <span class="math display">\[
-p(x) = \frac{1}{x}, \; x=1,\ldots,6. 
+p(x) = \frac{1}{x}, \; x=1,\ldots,6.
 \]</span>
 Logo
 <span class="math display">\[
@@ -284,7 +286,7 @@ E[g(X)] = \sum_{x: p(x)&gt;0} g(x) p(x).
 </table>
 <p>E seja <span class="math inline">\(Y=X^2\)</span>, logo,</p>
 <p><span class="math display">\[\begin{align*}
-E(X^2)=E(Y) = \sum_{x=0}^3 x^2 p(x) = 0^2\times \frac{1}{8} + 1^2 \times \frac{3}{8} + 2^2 \times \frac{3}{8} + 3^2 \times \frac{1}{8} = 3. 
+E(X^2)=E(Y) = \sum_{x=0}^3 x^2 p(x) = 0^2\times \frac{1}{8} + 1^2 \times \frac{3}{8} + 2^2 \times \frac{3}{8} + 3^2 \times \frac{1}{8} = 3.
 \end{align*}\]</span></p>
 </div>
 <div class="remark">
@@ -330,13 +332,13 @@ E(Y)=E(7X-6) = 7E(X) - 6= 7 \times \frac{3}{2} - 6 = \frac{9}{2}.
 <div class="example">
 <p><span id="exm:unnamed-chunk-68" class="example"><strong>Exemplo 5.6  </strong></span>Seja <span class="math inline">\(X\)</span> o resultado obtido no lançamento de um dado justo, assim
 <span class="math display">\[
-p(i) = 1/6, \; \; i =1,2,3,4,5,6. 
+p(i) = 1/6, \; \; i =1,2,3,4,5,6.
 \]</span>
 Logo, <span class="math inline">\(E(X) = \displaystyle\sum_{i=1}^6 i \, p(i) = \frac{1}{6}\sum_{i=1}^6 i =\frac{1}{6}\frac{(6)(7)}{2} = \frac{7}{2}\)</span>.
 <span class="math display">\[\begin{align*}
 \sigma^2 &amp;= \sum_{i=1}^6 (i-E(X))^2 p(i)\\
 &amp;= \frac{1}{6}\left[\left(1-\frac{7}{2}\right)^2 + \left(2-\frac{7}{2}\right)^2 + \cdots + \left(6-\frac{7}{2}\right)^2\right] \\
-&amp;=\frac{35}{12}. 
+&amp;=\frac{35}{12}.
 \end{align*}\]</span>
 e,
 <span class="math display">\[

@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-30" />
+<meta name="date" content="2022-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,6 +164,8 @@
 </ul></li>
 <li class="chapter" data-level="9.10" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-cauchy-lorentz"><i class="fa fa-check"></i><b>9.10</b> Distribuição de Cauchy-Lorentz</a></li>
 <li class="chapter" data-level="9.11" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-beta"><i class="fa fa-check"></i><b>9.11</b> Distribuição Beta</a></li>
+<li class="chapter" data-level="9.12" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-log-normal"><i class="fa fa-check"></i><b>9.12</b> Distribuição log-normal</a></li>
+<li class="chapter" data-level="9.13" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-pareto"><i class="fa fa-check"></i><b>9.13</b> Distribuição de Pareto</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
 <ul>
@@ -192,7 +194,7 @@
             <section class="normal" id="section-">
 <div id="modelos-discretos" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Capítulo 7</span> Modelos de distribuições discretas<a href="modelos-discretos.html#modelos-discretos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Neste capítulo estudaremos vários modelos de distribuições de variáveis aleatórias discretas mais comuns. Ao longo do capítulo usaremos a notação <span class="math inline">\(X\sim\mathcal D\)</span> para dizer que <span class="math inline">\(X\)</span> “tem distribuição <span class="math inline">\(\mathcal D\)</span>,” onde <span class="math inline">\(\mathcal D\)</span> é uma certa distribuição de probabilidade.</p>
+<p>Neste capítulo estudaremos vários modelos de distribuições de variáveis aleatórias discretas mais comuns. Ao longo do capítulo usaremos a notação <span class="math inline">\(X\sim\mathcal D\)</span> para dizer que <span class="math inline">\(X\)</span> “tem distribuição <span class="math inline">\(\mathcal D\)</span>”, onde <span class="math inline">\(\mathcal D\)</span> é uma certa distribuição de probabilidade.</p>
 <div id="distribuição-uniforme-discreta" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Distribuição Uniforme Discreta<a href="modelos-discretos.html#distribuição-uniforme-discreta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
@@ -239,7 +241,7 @@ Var(X) &amp;= E(X^2) - [E(X)]^2 = \frac{(n-1)(n+1)}{12}
 <p>Considere um ensaio de Bernoulli, e defina a v.a. <span class="math inline">\(X \in \{0,1\}\)</span> com distribuição de probabilidade:
 <span class="math display">\[P(X=1)=p \text{ e } P(X=0)=1-p,\]</span>
 de modo que <span class="math inline">\(\{X=1\}\)</span> corresponde ao evento em que ocorreu sucesso e o evento <span class="math inline">\(\{X=0\}\)</span> corresponde ao evento em que ocorreu fracasso.
-Dizemos que <span class="math inline">\(X\)</span> é a  da ocorrência de sucesso em um ensaio de Bernoulli. No exemplo do lançamento do dado, temos:
+Dizemos que <span class="math inline">\(X\)</span> é a da ocorrência de sucesso em um ensaio de Bernoulli. No exemplo do lançamento do dado, temos:
 <span class="math display">\[
 X(\omega)=\begin{cases}
 1, &amp; \omega \in A =\{6\}, \\
@@ -338,7 +340,7 @@ E(X) = np \text{ e } Var(X) = np(1-p)
 <p><span id="unlabeled-div-37" class="proof"><em>Prova</em>. </span>Usamos o fato que <span class="math inline">\(X=\sum_{i=1}^n X_i\)</span>, em que cada <span class="math inline">\(X_1, \ldots, X_n \sim\)</span> Bernoulli(<span class="math inline">\(p\)</span>) independentes. Logo
 <span class="math display">\[\begin{align*}
 E(X) = \sum_{i=1}^n E(X_i) = np, \\
-Var(X) = \sum_{i=1}^n Var(X_i) = np(1-p). 
+Var(X) = \sum_{i=1}^n Var(X_i) = np(1-p).
 \end{align*}\]</span></p>
 </div>
 <div class="example">
@@ -447,7 +449,7 @@ onde <span class="math inline">\(q=1-p\)</span>.</p>
 <div class="remark">
 <p><span id="unlabeled-div-43" class="remark"><em>Observação</em>. </span>Da <em>série binomial</em>
 <span class="math display">\[
-(1+x)^\beta = \sum_{y=0}^\infty \binom{\beta}{y} x^y, 
+(1+x)^\beta = \sum_{y=0}^\infty \binom{\beta}{y} x^y,
 \]</span>
 temos que
 <span class="math display">\[
@@ -514,7 +516,7 @@ p(x) = \frac{\binom{R}{x} \binom{N-R}{n-x}}{\binom{N}{n}}, \; x=0,1,\ldots n.
 <div class="proposition">
 <p><span id="prp:unnamed-chunk-123" class="proposition"><strong>Proposição 7.7  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Hipergeométrica(<span class="math inline">\(n,R,N\)</span>) e seja <span class="math inline">\(p=\frac{R}{N}\)</span>, então
 <span class="math display">\[
-E(X)=np \text{ e } Var(X) = \left(\frac{N-n}{N-1}\right) np(1-p) 
+E(X)=np \text{ e } Var(X) = \left(\frac{N-n}{N-1}\right) np(1-p)
 \]</span></p>
 </div>
 <div class="proof">
@@ -528,7 +530,7 @@ x\binom{R}{x} = R \binom{R-1}{x-1} \text{ e } n\binom{N}{n} = N \binom{N-1}{n-1}
 \end{align*}\]</span></p>
 <p>obtemos</p>
 <p><span class="math display">\[\begin{align*}
-E(X) &amp;=\frac{nR}{N} \sum_{x=1}^n 
+E(X) &amp;=\frac{nR}{N} \sum_{x=1}^n
 \end{align*}\]</span></p>
 </div>
 </div>

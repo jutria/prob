@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-30" />
+<meta name="date" content="2022-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,6 +164,8 @@
 </ul></li>
 <li class="chapter" data-level="9.10" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-cauchy-lorentz"><i class="fa fa-check"></i><b>9.10</b> Distribuição de Cauchy-Lorentz</a></li>
 <li class="chapter" data-level="9.11" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-beta"><i class="fa fa-check"></i><b>9.11</b> Distribuição Beta</a></li>
+<li class="chapter" data-level="9.12" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-log-normal"><i class="fa fa-check"></i><b>9.12</b> Distribuição log-normal</a></li>
+<li class="chapter" data-level="9.13" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-pareto"><i class="fa fa-check"></i><b>9.13</b> Distribuição de Pareto</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
 <ul>
@@ -246,7 +248,7 @@ Portanto, as duas funções são funções de densidade.</p>
 <div class="example">
 <p><span id="exm:unnamed-chunk-141" class="example"><strong>Exemplo 8.2  </strong></span>Suponha que <span class="math inline">\(X\)</span> seja uma variável aleatória contínua cuja função de densidade é dada por
 <span class="math display">\[
-f(x) = 
+f(x) =
 \begin{cases}
 c(4x - 2x^2) &amp; 0&lt;x&lt;2,\\
 0 &amp; \text{caso contrário}
@@ -260,7 +262,7 @@ c(4x - 2x^2) &amp; 0&lt;x&lt;2,\\
 <div class="solution">
 <p><span id="unlabeled-div-56" class="solution"><em>Solução</em>. </span>Para responder à letra a. usamos o fato que <span class="math inline">\(\int_{-\infty}^\infty f(x)=1\)</span>. Com efeito,</p>
 <p><span class="math display">\[\begin{align*}
-c\int_0^2 (4x - 2x^2) dx=1, 
+c\int_0^2 (4x - 2x^2) dx=1,
 \end{align*}\]</span>
 logo,
 <span class="math display">\[\begin{align*}
@@ -272,7 +274,7 @@ Portanto, <span class="math inline">\(c=\frac{3}{8}\)</span>.</p>
 <li></li>
 </ol>
 <p><span class="math display">\[\begin{align*}
-P(X &gt; 1) = \int_{1}^{2}  \frac{3}{8} (4x - 2x^2) = 0.5. 
+P(X &gt; 1) = \int_{1}^{2}  \frac{3}{8} (4x - 2x^2) = 0.5.
 \end{align*}\]</span></p>
 </div>
 <div class="example">
@@ -292,7 +294,7 @@ f(x) = \begin{cases}
 <div class="solution">
 <p><span id="unlabeled-div-57" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: A quantidade de tempo em horas que a bateria de um smartphone funciona sem desligar.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math display">\[\begin{align*} 
+<li><p><span class="math display">\[\begin{align*}
 P(10 &lt; X &lt; 15) &amp;= \int_5^{15} \frac{1}{10} e^{-x/10} dx \\
 &amp;=\left. -e^{-x/10} \right|_5^15 = -e^{-3/2} + e^{-1/2} \approx 0,384.
 \end{align*}\]</span></p></li>
@@ -384,7 +386,7 @@ x^3, \; 0\leq x\leq 1, \\
 <span class="math display">\[
 \frac{p}{100}= F(\eta(p)) =  \int_{-\infty}^{\eta(p)} f(x) dx  
 \]</span>
-O 50-ésimo percentil da distribuição <span class="math inline">\(F\)</span> de <span class="math inline">\(X\)</span> chama-se a  de <span class="math inline">\(F\)</span> (ou de <span class="math inline">\(X\)</span>), e é denotado por <span class="math inline">\(\tilde{\mu}\)</span>.</p>
+O 50-ésimo percentil da distribuição <span class="math inline">\(F\)</span> de <span class="math inline">\(X\)</span> chama-se a de <span class="math inline">\(F\)</span> (ou de <span class="math inline">\(X\)</span>), e é denotado por <span class="math inline">\(\tilde{\mu}\)</span>.</p>
 </div>
 <div class="remark">
 <p><span id="unlabeled-div-61" class="remark"><em>Observação</em>. </span><span class="math inline">\(\eta(p)\)</span> é o valor no eixo horizontal, tal que <span class="math inline">\(p\)</span>% da área sob o gráfico de <span class="math inline">\(f\)</span> está à esquerda de <span class="math inline">\(\eta(p)\)</span> e <span class="math inline">\((100-p)\)</span>% está à direita.</p>
@@ -408,7 +410,7 @@ Determine a mediana, <span class="math inline">\(\tilde{\mu}\)</span>, de <span 
 <span class="math display">\[\begin{align*}
 F(x) = \begin{cases}
 1-e^{-2x}, &amp; x\geq 0,\\
-0, &amp; x&lt;0 
+0, &amp; x&lt;0
 \end{cases}
 \end{align*}\]</span>
 Determine a mediana, <span class="math inline">\(\tilde{\mu}\)</span>, de <span class="math inline">\(F\)</span>.</p>

@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-30" />
+<meta name="date" content="2022-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,6 +164,8 @@
 </ul></li>
 <li class="chapter" data-level="9.10" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-cauchy-lorentz"><i class="fa fa-check"></i><b>9.10</b> Distribuição de Cauchy-Lorentz</a></li>
 <li class="chapter" data-level="9.11" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-beta"><i class="fa fa-check"></i><b>9.11</b> Distribuição Beta</a></li>
+<li class="chapter" data-level="9.12" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-log-normal"><i class="fa fa-check"></i><b>9.12</b> Distribuição log-normal</a></li>
+<li class="chapter" data-level="9.13" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-pareto"><i class="fa fa-check"></i><b>9.13</b> Distribuição de Pareto</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
 <ul>
@@ -249,11 +251,11 @@ A <em>intersecção</em> de dois eventos <span class="math inline">\(A\)</span> 
 <div class="definition">
 <p><span id="def:unnamed-chunk-5" class="definition"><strong>Definição 2.4  (Definição clássica) </strong></span>Seja <span class="math inline">\(\Omega =\{\omega_1,\ldots,\omega_N\}\)</span> finito, e suponhamos que cada evento elementar é igualmente provável, isto é,
 <span class="math display">\[
-P(\omega) = \frac{1}{N}, \, \omega \in \Omega. 
+P(\omega) = \frac{1}{N}, \, \omega \in \Omega.
 \]</span>
 Definimos a probabilidade do evento <span class="math inline">\(A\subset \Omega\)</span> como</p>
 <p><span class="math display">\[
-P(A) = \frac{|A|}{|\Omega|}. 
+P(A) = \frac{|A|}{|\Omega|}.
 \]</span></p>
 </div>
 <div class="definition">
@@ -304,11 +306,11 @@ P\left(\bigcup_{i=1}^n A_i \right) &amp;= \sum_{i=1}^n P(A_i) - \sum_{i&lt;j} P(
 \end{align*}\]</span></p></li>
 <li><p>Subaditividade finita: Para qualquer sequência finita <span class="math inline">\(A_1,A_2,\ldots, A_n\)</span> de eventos,
 <span class="math display">\[
-P\left(\bigcup_{i=1}^n A_i \right) \leq \sum_{i=1}^n P(A_i). 
+P\left(\bigcup_{i=1}^n A_i \right) \leq \sum_{i=1}^n P(A_i).
 \]</span></p></li>
 <li><p>Subaditividade enumerável: Para qualquer sequência <span class="math inline">\(A_1,A_2,\ldots\)</span> de eventos,
 <span class="math display">\[
-P\left(\bigcup_{i=1}^\infty A_i \right) \leq \sum_{i=1}^\infty P(A_i). 
+P\left(\bigcup_{i=1}^\infty A_i \right) \leq \sum_{i=1}^\infty P(A_i).
 \]</span>
 As propriedades (ix) e (x), são conhecidas como <em>Desigualdades de Boole</em>.</p></li>
 </ol>
@@ -321,7 +323,7 @@ As propriedades (ix) e (x), são conhecidas como <em>Desigualdades de Boole</em>
 <ol start="2" style="list-style-type: lower-roman">
 <li><p>Defina <span class="math inline">\(A_i = \emptyset\)</span>, <span class="math inline">\(i&gt;n\)</span>, logo
 <span class="math inline">\(\bigcup_{i=1}^\infty A_i = \bigcup_{i=1}^n A_i\)</span>,
-pelo axioma (iii) em  e a propriedade 1, segue que
+pelo axioma (iii) em <span class="math inline">\(\ref{}\)</span> e a propriedade 1, segue que
 <span class="math display">\[\begin{align*}
 P\left(\bigcup_{i=1}^n A_i\right)=P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^n P(A_i) + \sum_{i=n+1}^\infty P(\emptyset) = \sum_{i=1}^n P(A_i)
 \end{align*}\]</span></p></li>
@@ -346,7 +348,7 @@ P(A\cup B) &amp;= P(A\setminus B) + P(A \cap B) + P(B\setminus A) \\
 \end{align*}\]</span></p></li>
 <li><p>Use indução em <span class="math inline">\(n\)</span>. Note que para o caso <span class="math inline">\(n=3\)</span>, temos
 <span class="math display">\[\begin{align*}
-P(A\cup B\cup C) &amp;= P(A) + P(B) + P(C) - P(A\cap B) - P(A\cap C) - P(B \cap C) \\ &amp;+ P(A\cap B \cap C). 
+P(A\cup B\cup C) &amp;= P(A) + P(B) + P(C) - P(A\cap B) - P(A\cap C) - P(B \cap C) \\ &amp;+ P(A\cap B \cap C).
 \end{align*}\]</span></p></li>
 </ol>
 </div>
@@ -395,7 +397,7 @@ P(A) = \sum_{i: \omega_i \in A} p(\omega_i).
 <div class="solution">
 <p><span id="unlabeled-div-7" class="solution"><em>Solução</em>. </span>Neste caso o espaço amostral é dado pela quantidade de reais que você pode ganhar no jogo, ou seja,
 <span class="math display">\[
-\Omega = \{-1,0,1,2,\ldots\}, 
+\Omega = \{-1,0,1,2,\ldots\},
 \]</span>
 e <span class="math display">\[ P(\{\omega\})=P(\omega) = \left(\frac{1}{2}\right)^{\omega+2}, \; \omega \in \Omega.\]</span>
 Por exemplo, <span class="math inline">\(P(\{-1\}) = 1/2\)</span> e <span class="math inline">\(P(\{0\}) = 1/4\)</span>. O evento de interesse é
@@ -430,7 +432,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}.
 <li><p><span class="math inline">\(P(A|B) \geq 0\)</span>, para qualquer evento <span class="math inline">\(A\)</span> (trivial).</p></li>
 <li><p><span class="math inline">\(P(\Omega|B) = \frac{P(\Omega\cap B)}{P(B)} = \frac{P(B)}{P(B)} = 1\)</span>.</p></li>
 <li><p>Aditividade enumerável: Sejam <span class="math inline">\(A_1, A_2,\ldots\)</span> eventos disjuntos dois a dois, então
-<span class="math display">\[\begin{align*} 
+<span class="math display">\[\begin{align*}
 P\left(\bigcup_{i=1}^\infty A_i|B\right) &amp;= \frac{P\left(\left(\bigcup_{i=1}^\infty A_i\right) \cap B\right)}{P(B)}\\
 &amp;= \frac{P\left(\bigcup_{i=1}^\infty (A_i \cap B)\right)}{P(B)} \\
 &amp;= \frac{\sum_{i=1}^\infty P(A_i\cap B)}{P(B)} \\
@@ -482,7 +484,7 @@ P(A) = P(A|B)P(B) + P(A|B^c)P(B^c) = (6/10)(4/10) + (4/10)(6/10) = 24/50
 <div class="solution">
 <p><span id="unlabeled-div-11" class="solution"><em>Solução</em>. </span>Denote por <span class="math inline">\(A\)</span>: o estudante tenha respondido corretamente [acerta a resposta] e por <span class="math inline">\(B\)</span>: o estudante sabe a resposta, logo
 <span class="math display">\[
-P(A) = P(A|B)P(B) + P(A|B^c)P(B^c) = p\cdot 1 + (1-p) \cdot 1/m = p+(1-p)/m. 
+P(A) = P(A|B)P(B) + P(A|B^c)P(B^c) = p\cdot 1 + (1-p) \cdot 1/m = p+(1-p)/m.
 \]</span>
 Por exemplo, se <span class="math inline">\(p=1/2\)</span> e <span class="math inline">\(m=10\)</span>, temos que <span class="math inline">\(P(A) = \frac{11}{20}\)</span>.</p>
 </div>

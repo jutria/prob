@@ -23,7 +23,7 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-05-30" />
+<meta name="date" content="2022-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,6 +164,8 @@
 </ul></li>
 <li class="chapter" data-level="9.10" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-cauchy-lorentz"><i class="fa fa-check"></i><b>9.10</b> Distribuição de Cauchy-Lorentz</a></li>
 <li class="chapter" data-level="9.11" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-beta"><i class="fa fa-check"></i><b>9.11</b> Distribuição Beta</a></li>
+<li class="chapter" data-level="9.12" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-log-normal"><i class="fa fa-check"></i><b>9.12</b> Distribuição log-normal</a></li>
+<li class="chapter" data-level="9.13" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-pareto"><i class="fa fa-check"></i><b>9.13</b> Distribuição de Pareto</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
 <ul>
@@ -292,7 +294,7 @@ p(x) = P(X=x) = \frac{\binom{x-1}{2}}{\binom{20}{3}}.
 <span class="math display">\[\begin{align*}
 P(X\geq 17) &amp;= p(17) + p(18) + p(19) + p(20) \\
 &amp;= \frac{\binom{16}{2}}{\binom{20}{3}} + \frac{\binom{17}{2}}{\binom{20}{3}} + \frac{\binom{18}{2}}{\binom{20}{3}} + \frac{\binom{19}{2}}{\binom{20}{3}}\\
-&amp;\approx 0,105 + 0,119 + 0,134 + 0,150 = 0,508. 
+&amp;\approx 0,105 + 0,119 + 0,134 + 0,150 = 0,508.
 \end{align*}\]</span></p>
 </div>
 <div class="example">
@@ -321,9 +323,9 @@ Determine:
 <p>Para todo <span class="math inline">\(x\in \mathbb R\)</span>, defina <span class="math inline">\(F(x) = P(X\leq x)\)</span>, então
 <span class="math display">\[\begin{eqnarray*}
 F(0) &amp;=&amp; P(X \leq 0) = p(0) = 1/8, \\[0.2cm]
-F(1) &amp;=&amp; P(X \leq 1) = p(0) + p(1) = 4/8, \\[0.2cm] 
-F(2) &amp;=&amp; P(X \leq 2) = p(0) + p(1) + p(2) =7/8, \\[0.2cm] 
-F(3) &amp;=&amp; P(X \leq 3) = p(0) + p(1) + p(2) + p(3)= 1. 
+F(1) &amp;=&amp; P(X \leq 1) = p(0) + p(1) = 4/8, \\[0.2cm]
+F(2) &amp;=&amp; P(X \leq 2) = p(0) + p(1) + p(2) =7/8, \\[0.2cm]
+F(3) &amp;=&amp; P(X \leq 3) = p(0) + p(1) + p(2) + p(3)= 1.
 \end{eqnarray*}\]</span></p>
 <div class="definition">
 <p><span id="def:unnamed-chunk-51" class="definition"><strong>Definição 4.1  </strong></span>A <em>função de distribuição (acumulada)</em> de uma variável aleatória <span class="math inline">\(X\)</span> é a função <span class="math inline">\(F: \mathbb R \rightarrow \mathbb R\)</span> definida por
