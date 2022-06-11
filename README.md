@@ -1,3 +1,9 @@
+O "livro" trata sobre os fundamentos da probabilidade, distribuições de probabilidade discretas e contínuas, 
+e transformações de variáveis aleatórias no nível de um curso de graduação. 
+
+
+Original Readme:
+ 
 This is an example of a GitBook for teaching, generated using 
 R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
 
