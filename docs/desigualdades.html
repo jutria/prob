@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidade</title>
+  <title>Capítulo 10 Algumas desigualdades | Probabilidade</title>
   <meta name="description" content="Este é um material sobre o básico em Probabilidade" />
   <meta name="generator" content="bookdown 0.26.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidade" />
+  <meta property="og:title" content="Capítulo 10 Algumas desigualdades | Probabilidade" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este é um material sobre o básico em Probabilidade" />
   <meta name="github-repo" content="jutria/probandstat" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidade" />
+  <meta name="twitter:title" content="Capítulo 10 Algumas desigualdades | Probabilidade" />
   
   <meta name="twitter:description" content="Este é um material sobre o básico em Probabilidade" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="esp-prob.html"/>
+<link rel="prev" href="modelos-continuos.html"/>
+<link rel="next" href="transformaccoes.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -206,24 +206,55 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidade</h1>
-<p class="author"><em><a href="https://jaimeutria.com">Prof. Dr. Jaime Utria</a></em></p>
-<p class="date"><em>2022-06-11</em></p>
+<div id="desigualdades" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Capítulo 10</span> Algumas desigualdades<a href="desigualdades.html#desigualdades" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="desigualdade-de-markov" class="section level2 unnumbered hasAnchor">
+<h2>Desigualdade de Markov<a href="desigualdades.html#desigualdade-de-markov" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Se <span class="math inline">\(X\geq 0\)</span>, então para qualquer <span class="math inline">\(\lambda &gt; 0\)</span>,</p>
+<p><span class="math display">\[ P(X\geq \lambda) \leq \frac{E(X)}{\lambda}.\]</span></p>
 </div>
-<div id="introdução" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Introdução<a href="index.html#introdução" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Este material contém os conceitos básicos para um primeiro curso em Teoria das Probabilidades no nível universitário. O <em>Gitbook</em> visa server de apoio para a disciplina de Probabilidade I do curso de Estatística da Universidade Federal Fluminense.
-<!--![](./img/using_gitbook.jpeg)--></p>
+<div id="desigualdade-de-chebyshev" class="section level2 unnumbered hasAnchor">
+<h2>Desigualdade de Chebyshev<a href="desigualdades.html#desigualdade-de-chebyshev" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Seja <span class="math inline">\(X\)</span> uma v.a. com <span class="math inline">\(E(X) &lt; \infty\)</span>. Então, para qualquer <span class="math inline">\(\lambda &gt; 0\)</span>,</p>
+<p><span class="math display">\[ P(|X-E(X)| \geq \lambda) \leq \frac{Var(X)}{\lambda^2}.\]</span></p>
+</div>
+<div id="desigualdade-de-jensen" class="section level2 unnumbered hasAnchor">
+<h2>Desigualdade de Jensen<a href="desigualdades.html#desigualdade-de-jensen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suponha que <span class="math inline">\(\psi: \mathbb R \rightarrow \mathbb R\)</span> é uma função convexa. Se <span class="math inline">\(E(|X|) &lt; \infty\)</span>, enttão</p>
+<p><span class="math display">\[
+E(\psi(X)) \geq \psi(E(X)).
+\]</span></p>
+<p>Um caso de aplicação da Desigualdade de Chebyshev é apresentado no seguinte teorema.</p>
+</div>
+<div id="teorema-de-chebyshev" class="section level2 unnumbered hasAnchor">
+<h2>Teorema de chebyshev<a href="desigualdades.html#teorema-de-chebyshev" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-258" class="theorem"><strong>Teorema 10.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória com <span class="math inline">\(\mu = E(X)\)</span> e <span class="math inline">\(0&lt;\sigma^2 = Var(X) &lt; \infty\)</span>, então para qualquer <span class="math inline">\(k&gt;0\)</span>
+<span class="math display">\[P(|X-\mu| \geq k\sigma) \leq \frac{1}{k^2}.\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-95" class="proof"><em>Prova</em>. </span>Faremos a prova no caso em que <span class="math inline">\(X\)</span> é uma variável aleatória contínua com função de densidade <span class="math inline">\(f(x)\)</span>. De fato,
+<span class="math display">\[\begin{align*}
+\sigma^2 &amp;= \int_{-\infty}^\infty (x-\mu)^2 f(x) dx \\
+&amp;= \int_{-\infty}^{\mu - \sigma} (x-\mu)^2 f(x) dx + \int_{\mu -\sigma}^{\mu +\sigma} (x-\mu)^2 f(x) dx + \int_{\mu +\sigma}^\infty (x-\mu)^2 f(x) dx
+  \end{align*}\]</span>
+Note que a segunda integral é maior ou igual a 0, enquanto que primeira e a última integral é maior ou igual a <span class="math inline">\(k^2\sigma^2\)</span>. Daí,</p>
+<p><span class="math display">\[\begin{align*}
+\sigma^2 \geq k^2\sigma^2 \left[P(X\leq \mu -k\sigma) + P(X\geq \mu + k\sigma)\right],
+\end{align*}\]</span>
+Portanto,
+<span class="math display">\[P(|X-\mu| \geq k\sigma) \leq \frac{1}{k^2}.\]</span></p>
+</div>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="esp-prob.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="modelos-continuos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="transformaccoes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -254,7 +285,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/index.Rmd",
+"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/desigualdades.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Probabilidade</title>
+  <title>Capítulo 11 Transformações de variáveis aleatória | Probabilidade</title>
   <meta name="description" content="Este é um material sobre o básico em Probabilidade" />
   <meta name="generator" content="bookdown 0.26.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Probabilidade" />
+  <meta property="og:title" content="Capítulo 11 Transformações de variáveis aleatória | Probabilidade" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este é um material sobre o básico em Probabilidade" />
   <meta name="github-repo" content="jutria/probandstat" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Probabilidade" />
+  <meta name="twitter:title" content="Capítulo 11 Transformações de variáveis aleatória | Probabilidade" />
   
   <meta name="twitter:description" content="Este é um material sobre o básico em Probabilidade" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="esp-prob.html"/>
+<link rel="prev" href="desigualdades.html"/>
+<link rel="next" href="tabelas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -206,24 +206,120 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Probabilidade</h1>
-<p class="author"><em><a href="https://jaimeutria.com">Prof. Dr. Jaime Utria</a></em></p>
-<p class="date"><em>2022-06-11</em></p>
+<div id="transformaccoes" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Capítulo 11</span> Transformações de variáveis aleatória<a href="transformaccoes.html#transformaccoes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Motivação</strong>: Suponha que você possui uma amostra aleatória <span class="math inline">\(X_1, \ldots, X_n\)</span>. Definimos uma <em>estatística</em> como uma função <span class="math inline">\(T= T(X_1,\ldots,X_n) \in \mathbb R\)</span> da amostra aleatória. Como <span class="math inline">\(X_1,\ldots, X_n\)</span> são variáveis aleatórias então a estatística <span class="math inline">\(T\)</span> também é uma variável aleatória.</p>
+<p>Se por exemplo, <span class="math inline">\(X_1, \ldots, X_n\)</span> é uma amostra dos preços do aluguel (em reais) em uma certa região, <span class="math inline">\(T = X_{(n)} = \textrm{máx}\{X_1,\ldots,X_n\}\)</span> representa o valor máximo do aluguel. Portanto, se quisermos calcular a probabilidade de que o valor máximo não exceda os 2000 reais, <span class="math inline">\(P(X_{(n)} &lt; 2000)\)</span>, precisamos da distribuição de <span class="math inline">\(X_{(n)}\)</span> que por definição é uma <em>transformação de</em> <span class="math inline">\(X_1,\ldots, X_n\)</span>.</p>
+<p>Neste capítulo lidaremos com métodos para determinar a distribuição de probabilidade de transformações de variáveis aleatórias. Entre os método mais comuns encontramos:</p>
+<ol style="list-style-type: decimal">
+<li><p>O método da função de distribuição.</p></li>
+<li><p>O método das transformações.</p></li>
+</ol>
+<div id="método-da-função-de-distribuição" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Método da função de distribuição<a href="transformaccoes.html#método-da-função-de-distribuição" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ilustraremos o método da função de distribuição através de vários exemplos.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-260" class="example"><strong>Exemplo 11.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, e seja <span class="math inline">\(Y=X^n\)</span>. Determine a distribuição de <span class="math inline">\(Y\)</span>.</p>
 </div>
-<div id="introdução" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Introdução<a href="index.html#introdução" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Este material contém os conceitos básicos para um primeiro curso em Teoria das Probabilidades no nível universitário. O <em>Gitbook</em> visa server de apoio para a disciplina de Probabilidade I do curso de Estatística da Universidade Federal Fluminense.
-<!--![](./img/using_gitbook.jpeg)--></p>
+<div class="solution">
+<p><span id="unlabeled-div-96" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(Y = X^n\)</span>, então
+<span class="math display">\[\begin{align*}
+F_Y(y) &amp;= P(Y \leq y) \\
+&amp;=P(X \leq y^{1/n}) \\
+&amp;=F_X(y^{1/n}).
+\end{align*}\]</span></p>
+<p>Logo, derivando em relação a <span class="math inline">\(y\)</span>, temos que a densidade de <span class="math inline">\(Y\)</span> é dada por</p>
+<p><span class="math display">\[
+f_Y(y) = \frac{1}{n} y^{1/n - 1} f_X(y^{1/n})  
+\]</span></p>
+</div>
+<p>Se por exemplo, <span class="math inline">\(X \sim\)</span> Uniforme Contínua(0,1), temos que
+<span class="math display">\[
+f_Y(y) = \frac{1}{n} y^{1/n - 1}, \; y \in (0,1).
+\]</span></p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-262" class="example"><strong>Exemplo 11.2  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, e seja <span class="math inline">\(Y = X^2\)</span>. Determine a distribuição de <span class="math inline">\(Y\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-97" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(Y = X^2\)</span>, então
+<span class="math display">\[\begin{align*}
+F_Y(y) &amp;= P(Y \leq y) \\
+&amp;=P(X^2 \leq y) \\
+&amp;=P(|X| \leq \sqrt{y})\\
+&amp;=F_X(\sqrt{y}) - F_X(-\sqrt{y}).
+\end{align*}\]</span></p>
+<p>Logo, derivando em relação a <span class="math inline">\(y\)</span>, temos que a densidade de <span class="math inline">\(Y\)</span> é dada por</p>
+<p><span class="math display">\[
+f_Y(y) = \frac{1}{\sqrt{y}} f_X(\sqrt{y}) + \frac{1}{\sqrt{y}} f_X(-\sqrt{y}), \; y &gt;0.
+\]</span></p>
+</div>
+<p>Se por exemplo, <span class="math inline">\(X\sim N(0,1)\)</span>, então <span class="math inline">\(Y = X^2 \sim \chi^2_1\)</span>. Com efeito, a densidade da distribuição qui-quadrado com 1 grau de liberdade é dada por</p>
+<p><span class="math display">\[
+f_Y(y) = \frac{(1/2)^{1/2}}{\sqrt{\pi}} y^{-1/2}e^{-y/2}, \; y&gt;0.
+\]</span></p>
+<p>Para concluirmos a afirmação, basta usar o fato que <span class="math inline">\(f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}, x \in \mathbb R\)</span>.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-264" class="example"><strong>Exemplo 11.3  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, e seja <span class="math inline">\(Y = |X|\)</span>. Determine a distribuição de <span class="math inline">\(Y\)</span>.</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-98" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(Y = X^2\)</span>, então
+<span class="math display">\[\begin{align*}
+F_Y(y) &amp;= P(Y \leq y) \\
+&amp;=P(|X| \leq y)\\
+&amp;=F_X(y) - F_X(-y).
+\end{align*}\]</span></p>
+<p>Logo, derivando em relação a <span class="math inline">\(y\)</span>, temos que a densidade de <span class="math inline">\(Y\)</span> é dada por</p>
+<p><span class="math display">\[
+f_Y(y) = f_X(y) + f_X(-y), \; y &gt;0.
+\]</span></p>
+</div>
+<p>Se por exemplo <span class="math inline">\(X \sim N(0,1)\)</span>, a distribuição de <span class="math inline">\(Y= |X|\)</span> é conhecida como a <em>distribuição normal dobrada</em> e sua função de densidade é dada por</p>
+<p><span class="math display">\[\begin{align*}
+f_Y(y) &amp;= \frac{1}{\sqrt{2\pi}} e^{-y^2/2} + \frac{1}{\sqrt{2\pi}} e^{-y^2/2}\\
+&amp;=\frac{\sqrt 2}{\sqrt{\pi}} e^{-y^2/2}, \; y&gt;0.
+\end{align*}\]</span></p>
+</div>
+<div id="método-das-transformações" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Método das transformações<a href="transformaccoes.html#método-das-transformações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Continuamos interessados em determinar a distribuição de <span class="math inline">\(Y= g(X)\)</span>.
+O método das transformações é uma aplicação do método da função de distribuição, no caso em que <span class="math inline">\(g(x)\)</span> é uma função estritamente monótona.</p>
+<p>Primeiro, vamos supor que <span class="math inline">\(y=g(x)\)</span> é estritamente crescente, nesse caso note que <span class="math inline">\(x=g^{-1}(y)\)</span> também é estritamente crescente. Logo</p>
+<p><span class="math display">\[\begin{align*}
+F_Y(y) &amp;= P(g(X) \leq y) \\
+&amp;=P(X \leq g^{-1}(x)) \\
+&amp;=F_X(g^{-1}(x))
+\end{align*}\]</span></p>
+<p>Derivando em relação a <span class="math inline">\(y\)</span> e usando o fato que <span class="math inline">\(g^{-1}(y)\)</span> é estritamente crescente, temos que a densidade de <span class="math inline">\(Y\)</span> é dada por</p>
+<p><span class="math display">\[
+f_Y(y) = f_X(g^{-1}(y))\left|\frac{dg^{-1}(y)}{dy}\right|, \; y=g(x)
+\]</span></p>
+<p>Agora, suponha que <span class="math inline">\(g(x)\)</span> é estritamente decrescente, então</p>
+<p><span class="math display">\[\begin{align*}
+F_Y(y) &amp;= P(g(X) \leq y) \\
+&amp;=1 - P(X \leq g^{-1}(x)) \\
+&amp;=1 - F_X(g^{-1}(x))
+\end{align*}\]</span></p>
+<p>Derivando em relação a <span class="math inline">\(y\)</span> e usando o fato que <span class="math inline">\(g^{-1}(y)\)</span> é estritamente decrescente, temos que a densidade de <span class="math inline">\(Y\)</span> é dada por</p>
+<p><span class="math display">\[
+f_Y(y) = f_X(g^{-1}(y))\left|\frac{dg^{-1}(y)}{dy}\right|, \; y=g(x)
+\]</span></p>
+<p>Finalmente, temos o seguinte teorema.</p>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-266" class="theorem"><strong>Teorema 11.1  (método das transformações) </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua com função de densidade <span class="math inline">\(f_X\)</span>, e seja <span class="math inline">\(g(x)\)</span> uma função estritamente monótona, então a densidade de <span class="math inline">\(Y = g(X)\)</span> é dada por
+<span class="math display">\[
+f_Y(y) = f_X(g^{-1}(y))\left|\frac{dg^{-1}(y)}{dy}\right|, \; y=g(x)
+\]</span></p>
+</div>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="esp-prob.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="desigualdades.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tabelas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -254,7 +350,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/index.Rmd",
+"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/transformaccoes.Rmd",
 "text": "Edit"
 },
 "history": {

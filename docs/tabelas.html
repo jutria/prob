@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 10 Tabelas | Probabilidade</title>
+  <title>Capítulo 12 Tabelas | Probabilidade</title>
   <meta name="description" content="Este é um material sobre o básico em Probabilidade" />
   <meta name="generator" content="bookdown 0.26.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 10 Tabelas | Probabilidade" />
+  <meta property="og:title" content="Capítulo 12 Tabelas | Probabilidade" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este é um material sobre o básico em Probabilidade" />
   <meta name="github-repo" content="jutria/probandstat" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 10 Tabelas | Probabilidade" />
+  <meta name="twitter:title" content="Capítulo 12 Tabelas | Probabilidade" />
   
   <meta name="twitter:description" content="Este é um material sobre o básico em Probabilidade" />
   
@@ -23,14 +23,14 @@
 <meta name="author" content="Prof. Dr. Jaime Utria" />
 
 
-<meta name="date" content="2022-06-07" />
+<meta name="date" content="2022-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="modelos-continuos.html"/>
+<link rel="prev" href="transformaccoes.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -169,10 +169,22 @@
 <li class="chapter" data-level="9.14" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-weibull"><i class="fa fa-check"></i><b>9.14</b> Distribuição de Weibull</a></li>
 <li class="chapter" data-level="9.15" data-path="modelos-continuos.html"><a href="modelos-continuos.html#distribuição-de-laplace-dupla-exponencial"><i class="fa fa-check"></i><b>9.15</b> Distribuição de Laplace (dupla exponencial)</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>10</b> Tabelas</a>
+<li class="chapter" data-level="10" data-path="desigualdades.html"><a href="desigualdades.html"><i class="fa fa-check"></i><b>10</b> Algumas desigualdades</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="tabelas.html"><a href="tabelas.html#tabela-da-normal-padrão"><i class="fa fa-check"></i><b>10.1</b> Tabela da normal padrão</a></li>
-<li class="chapter" data-level="10.2" data-path="tabelas.html"><a href="tabelas.html#tabela-da-função-gama-incompleta-função-de-distribuição-da-gama-padrão"><i class="fa fa-check"></i><b>10.2</b> Tabela da função gama incompleta (Função de distribuição da gama padrão)</a></li>
+<li class="chapter" data-level="" data-path="desigualdades.html"><a href="desigualdades.html#desigualdade-de-markov"><i class="fa fa-check"></i>Desigualdade de Markov</a></li>
+<li class="chapter" data-level="" data-path="desigualdades.html"><a href="desigualdades.html#desigualdade-de-chebyshev"><i class="fa fa-check"></i>Desigualdade de Chebyshev</a></li>
+<li class="chapter" data-level="" data-path="desigualdades.html"><a href="desigualdades.html#desigualdade-de-jensen"><i class="fa fa-check"></i>Desigualdade de Jensen</a></li>
+<li class="chapter" data-level="" data-path="desigualdades.html"><a href="desigualdades.html#teorema-de-chebyshev"><i class="fa fa-check"></i>Teorema de chebyshev</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="transformaccoes.html"><a href="transformaccoes.html"><i class="fa fa-check"></i><b>11</b> Transformações de variáveis aleatória</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="transformaccoes.html"><a href="transformaccoes.html#método-da-função-de-distribuição"><i class="fa fa-check"></i><b>11.1</b> Método da função de distribuição</a></li>
+<li class="chapter" data-level="11.2" data-path="transformaccoes.html"><a href="transformaccoes.html#método-das-transformações"><i class="fa fa-check"></i><b>11.2</b> Método das transformações</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="tabelas.html"><a href="tabelas.html"><i class="fa fa-check"></i><b>12</b> Tabelas</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="tabelas.html"><a href="tabelas.html#tabela-da-normal-padrão"><i class="fa fa-check"></i><b>12.1</b> Tabela da normal padrão</a></li>
+<li class="chapter" data-level="12.2" data-path="tabelas.html"><a href="tabelas.html#tabela-da-função-gama-incompleta-função-de-distribuição-da-gama-padrão"><i class="fa fa-check"></i><b>12.2</b> Tabela da função gama incompleta (Função de distribuição da gama padrão)</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -194,10 +206,10 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tabelas" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">Capítulo 10</span> Tabelas<a href="tabelas.html#tabelas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="tabela-da-normal-padrão" class="section level2 hasAnchor" number="10.1">
-<h2><span class="header-section-number">10.1</span> Tabela da normal padrão<a href="tabelas.html#tabela-da-normal-padrão" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tabelas" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Capítulo 12</span> Tabelas<a href="tabelas.html#tabelas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tabela-da-normal-padrão" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Tabela da normal padrão<a href="tabelas.html#tabela-da-normal-padrão" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table style="width:100%;">
 <colgroup>
 <col width="10%" />
@@ -587,8 +599,8 @@
 </tbody>
 </table>
 </div>
-<div id="tabela-da-função-gama-incompleta-função-de-distribuição-da-gama-padrão" class="section level2 hasAnchor" number="10.2">
-<h2><span class="header-section-number">10.2</span> Tabela da função gama incompleta (Função de distribuição da gama padrão)<a href="tabelas.html#tabela-da-função-gama-incompleta-função-de-distribuição-da-gama-padrão" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tabela-da-função-gama-incompleta-função-de-distribuição-da-gama-padrão" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Tabela da função gama incompleta (Função de distribuição da gama padrão)<a href="tabelas.html#tabela-da-função-gama-incompleta-função-de-distribuição-da-gama-padrão" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table style="width:100%;">
 <colgroup>
 <col width="4%" />
@@ -824,7 +836,7 @@
           </div>
         </div>
       </div>
-<a href="modelos-continuos.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="transformaccoes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

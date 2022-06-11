@@ -146,6 +146,11 @@ def:unnamed-chunk-252
 prp:unnamed-chunk-255
 def:unnamed-chunk-256
 prp:unnamed-chunk-257
+thm:unnamed-chunk-258
+exm:unnamed-chunk-260
+exm:unnamed-chunk-262
+exm:unnamed-chunk-264
+thm:unnamed-chunk-266
 introdução
 esp-prob
 espaço-amostral
@@ -213,6 +218,10 @@ distribuição-log-normal
 distribuição-de-pareto
 distribuição-de-weibull
 distribuição-de-laplace-dupla-exponencial
+desigualdades
+transformaccoes
+método-da-função-de-distribuição
+método-das-transformações
 tabelas
 tabela-da-normal-padrão
 tabela-da-função-gama-incompleta-função-de-distribuição-da-gama-padrão
