@@ -23,7 +23,7 @@
 <meta name="author" content="Jaime Utria" />
 
 
-<meta name="date" content="2022-06-25" />
+<meta name="date" content="2022-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.4.1" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-da-probabilidade-total"><i class="fa fa-check"></i><b>1.4.1</b> Fórmula da probabilidade total</a></li>
 <li class="chapter" data-level="1.4.2" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-de-bayes"><i class="fa fa-check"></i><b>1.4.2</b> Fórmula de Bayes</a></li>
 </ul></li>
+<li class="chapter" data-level="1.5" data-path="esp-prob.html"><a href="esp-prob.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independência</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html"><i class="fa fa-check"></i><b>2</b> Conjuntos limites e continuidade da probabilidade</a>
 <ul>
@@ -214,7 +215,7 @@
 <div id="distribuição-uniforme-discreta" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Distribuição Uniforme Discreta<a href="modelos-discretos.html#distribuição-uniforme-discreta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-88" class="definition"><strong>Definição 6.1  </strong></span>Dizemos que a v.a. <span class="math inline">\(X\)</span> tem distribuição <em>uniforme discreta</em> sobre o conjunto <span class="math inline">\(\{x_1,\ldots,x_n\}\subset \mathbb R\)</span> se tem função de probabilidade dada por
+<p><span id="def:unnamed-chunk-98" class="definition"><strong>Definição 6.1  </strong></span>Dizemos que a v.a. <span class="math inline">\(X\)</span> tem distribuição <em>uniforme discreta</em> sobre o conjunto <span class="math inline">\(\{x_1,\ldots,x_n\}\subset \mathbb R\)</span> se tem função de probabilidade dada por
 <span class="math display">\[
 p(x_i) =  \frac{1}{n}, \; i =1,2,\ldots,n.
 \]</span>
@@ -222,18 +223,18 @@ p(x_i) =  \frac{1}{n}, \; i =1,2,\ldots,n.
 <p><strong>Notação:</strong> <span class="math inline">\(X\sim\)</span> Uniforme discreta<span class="math inline">\(\{x_1,\ldots,x_n\}\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-89" class="example"><strong>Exemplo 6.1  </strong></span>Seja <span class="math inline">\(X\)</span>: Número observado no lançamento de um dado honesto, temos que <span class="math display">\[
+<p><span id="exm:unnamed-chunk-99" class="example"><strong>Exemplo 6.1  </strong></span>Seja <span class="math inline">\(X\)</span>: Número observado no lançamento de um dado honesto, temos que <span class="math display">\[
 p(i)=\frac{1}{6}, \; i=1,2,3,4,5,6.
 \]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-90" class="proposition"><strong>Proposição 6.1  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Uniforme discreta<span class="math inline">\(\{1,\ldots,n\}\)</span>, então:
+<p><span id="prp:unnamed-chunk-100" class="proposition"><strong>Proposição 6.1  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Uniforme discreta<span class="math inline">\(\{1,\ldots,n\}\)</span>, então:
 <span class="math display">\[\begin{align*}
 E(X) = \frac{n+1}{2} \text{ e } Var(X) = \frac{(n-1)(n+1)}{12}
 \end{align*}\]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-34" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-38" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
 E(X) &amp;= \frac{1}{n} \sum_{i=1}^n i = \frac{1}{n} \frac{n(n+1)}{2} = \frac{n+1}{2} \\
 E(X^2) &amp;= \frac{1}{n} \sum_{i=1}^n i^2 = \frac{1}{n} \frac{n(n+1)(2n+1)}{6} \\
 Var(X) &amp;= E(X^2) - [E(X)]^2 = \frac{(n-1)(n+1)}{12}
@@ -243,10 +244,10 @@ Var(X) &amp;= E(X^2) - [E(X)]^2 = \frac{(n-1)(n+1)}{12}
 <div id="distribuição-de-bernoulli" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Distribuição de Bernoulli<a href="modelos-discretos.html#distribuição-de-bernoulli" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-92" class="definition"><strong>Definição 6.2  (Ensaio de Bernoulli) </strong></span>Um <em>ensaio de Bernoulli</em> é um experimento com somente dois resultados possíveis: <em>sucesso</em> ou <em>fracasso</em>, de modo que a probabilidade de sucesso é igual a <span class="math inline">\(p\in[0,1]\)</span>.</p>
+<p><span id="def:unnamed-chunk-102" class="definition"><strong>Definição 6.2  (Ensaio de Bernoulli) </strong></span>Um <em>ensaio de Bernoulli</em> é um experimento com somente dois resultados possíveis: <em>sucesso</em> ou <em>fracasso</em>, de modo que a probabilidade de sucesso é igual a <span class="math inline">\(p\in[0,1]\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-93" class="example"><strong>Exemplo 6.2  </strong></span>Exemplos de ensaios de Bernoulli são:</p>
+<p><span id="exm:unnamed-chunk-103" class="example"><strong>Exemplo 6.2  </strong></span>Exemplos de ensaios de Bernoulli são:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Lançamento de uma moeda: cara (sucesso) ou coroa (fracasso).</li>
 <li>Avaliação de um item: item bom (sucesso) ou item defeituoso (fracasso).</li>
@@ -265,14 +266,14 @@ X(\omega)=\begin{cases}
 \end{cases}
 \]</span></p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-94" class="definition"><strong>Definição 6.3  </strong></span>A variável aleatória <span class="math inline">\(X\)</span> definida como a indicadora da ocorrência de sucesso em um ensaio de Bernoulli tem uma <em>distribuição de Bernoulli</em> com parâmetro <span class="math inline">\(p\)</span>, cuja função de probabilidade de <span class="math inline">\(X\)</span> é dada por:
+<p><span id="def:unnamed-chunk-104" class="definition"><strong>Definição 6.3  </strong></span>A variável aleatória <span class="math inline">\(X\)</span> definida como a indicadora da ocorrência de sucesso em um ensaio de Bernoulli tem uma <em>distribuição de Bernoulli</em> com parâmetro <span class="math inline">\(p\)</span>, cuja função de probabilidade de <span class="math inline">\(X\)</span> é dada por:
 <span class="math display">\[
 p(x) = p^x (1-p)^{1-x}, \; x=0,1.
 \]</span></p>
 <p><strong>Notação:</strong> <span class="math inline">\(X \sim\)</span> Bernoulli(<span class="math inline">\(p\)</span>), onde <span class="math inline">\(p\)</span> é chamado de parâmetro de sucesso.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-95" class="example"><strong>Exemplo 6.3  </strong></span>A continuação apresentamos alguns exemplos de variáveis aleatórias com distribuição de Bernoulli:</p>
+<p><span id="exm:unnamed-chunk-105" class="example"><strong>Exemplo 6.3  </strong></span>A continuação apresentamos alguns exemplos de variáveis aleatórias com distribuição de Bernoulli:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Uma pessoa é selecionada ao acaso entre os moradores de uma cidade, e pergunta-se a ela se concorda com um projeto municipal. As respostas possíveis são SIM (sucesso) ou NÃO (fracasso). Defina:
 <span class="math display">\[
@@ -298,13 +299,13 @@ X=\begin{cases}
 </ol>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-96" class="proposition"><strong>Proposição 6.2  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Bernoulli(<span class="math inline">\(p\)</span>), temos que
+<p><span id="prp:unnamed-chunk-106" class="proposition"><strong>Proposição 6.2  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Bernoulli(<span class="math inline">\(p\)</span>), temos que
 <span class="math display">\[
 E(X) = p \text{ e } Var(X) = p(1-p)
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-35" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-39" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
 E(X) &amp;= \sum_{x=0}^1 x\, p^x (1-p)^{1-x} = p\\
 E(X^2) &amp;= \sum_{x=0}^1 x^2 \, p^x (1-p)^{1-x} = p \\
 Var(X) &amp;= E(X^2) - [E(X)]^2 = p-p^2= p(1-p)
@@ -334,72 +335,72 @@ p(x) = \binom{3}{x}(1/2)^x(1/2)^{n-x}, \; x=0,1,2,3.
 </ul>
 <p>Repare que se <span class="math inline">\(X\sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>), então <span class="math inline">\(X= X_1 + \ldots + X_n\)</span>, onde <span class="math inline">\(X_1,\ldots,X_n \overset{iid}{\sim}\)</span> Bernoulli(<span class="math inline">\(p\)</span>). De modo que <span class="math inline">\(X_i = 1\)</span> se o <span class="math inline">\(i\)</span>-ésimo ensaio for sucesso ou <span class="math inline">\(X_i=0\)</span> se o <span class="math inline">\(i\)</span>-ésimo ensaio for fracasso.</p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-98" class="definition"><strong>Definição 6.4  </strong></span>Considere <span class="math inline">\(n\geq 1\)</span> ensaios independentes de Bernoulli e seja <span class="math inline">\(p\)</span> a probabilidade de sucesso em cada ensaio. Logo, a variável aleatória <span class="math inline">\(X\)</span> definida como o número de sucessos nos <span class="math inline">\(n\)</span> ensaios tem uma distribuição binomial de parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, cuja função de probabilidade é dada por
+<p><span id="def:unnamed-chunk-108" class="definition"><strong>Definição 6.4  </strong></span>Considere <span class="math inline">\(n\geq 1\)</span> ensaios independentes de Bernoulli e seja <span class="math inline">\(p\)</span> a probabilidade de sucesso em cada ensaio. Logo, a variável aleatória <span class="math inline">\(X\)</span> definida como o número de sucessos nos <span class="math inline">\(n\)</span> ensaios tem uma distribuição binomial de parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, cuja função de probabilidade é dada por
 <span class="math display">\[
 p(x) = \binom{n}{x} p^x (1-p)^{n-x}, \, x=0,1,\ldots,n.
 \]</span>
 <strong>Notação:</strong> <span class="math inline">\(X\sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>).</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-36" class="remark"><em>Observação</em>. </span>Note que pelo Teorema Binomial <span class="math inline">\(p(x)\)</span> é de fato uma função de probabilidade. Com efeito:
+<p><span id="unlabeled-div-40" class="remark"><em>Observação</em>. </span>Note que pelo Teorema Binomial <span class="math inline">\(p(x)\)</span> é de fato uma função de probabilidade. Com efeito:
 <span class="math display">\[
 \sum_{x=0}^n \binom{n}{x} p^x (1-p)^{n-x} = (p+(1-p))^n = 1.
 \]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-100" class="proposition"><strong>Proposição 6.3  </strong></span>Seja <span class="math inline">\(X\sim\)</span>Binomial(<span class="math inline">\(n,p\)</span>), temos que
+<p><span id="prp:unnamed-chunk-110" class="proposition"><strong>Proposição 6.3  </strong></span>Seja <span class="math inline">\(X\sim\)</span>Binomial(<span class="math inline">\(n,p\)</span>), temos que
 <span class="math display">\[
 E(X) = np \text{ e } Var(X) = np(1-p)
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-37" class="proof"><em>Prova</em>. </span>Usamos o fato que <span class="math inline">\(X=\sum_{i=1}^n X_i\)</span>, em que cada <span class="math inline">\(X_1, \ldots, X_n \sim\)</span> Bernoulli(<span class="math inline">\(p\)</span>) independentes. Logo
+<p><span id="unlabeled-div-41" class="proof"><em>Prova</em>. </span>Usamos o fato que <span class="math inline">\(X=\sum_{i=1}^n X_i\)</span>, em que cada <span class="math inline">\(X_1, \ldots, X_n \sim\)</span> Bernoulli(<span class="math inline">\(p\)</span>) independentes. Logo
 <span class="math display">\[\begin{align*}
 E(X) = \sum_{i=1}^n E(X_i) = np, \\
 Var(X) = \sum_{i=1}^n Var(X_i) = np(1-p).
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-102" class="example"><strong>Exemplo 6.4  </strong></span>Suponha que 60% da população de uma cidade é a favor de um projeto proposto pelo prefeito. Seleciona-se uma amostra aleatória de 15 pessoas.</p>
+<p><span id="exm:unnamed-chunk-112" class="example"><strong>Exemplo 6.4  </strong></span>Suponha que 60% da população de uma cidade é a favor de um projeto proposto pelo prefeito. Seleciona-se uma amostra aleatória de 15 pessoas.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Qual a probabilidade de que a amostra contenha no máximo duas pessoas favoráveis ao projeto?</p></li>
 <li><p>Quais são o valor esperado e variância do número de pessoas a favor do projeto na amostra?</p></li>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-38" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span> o número de pessoas favoráveis ao projeto na amostra. Então, <span class="math inline">\(X\sim\)</span> Binomial(15,0.6).</p>
+<p><span id="unlabeled-div-42" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span> o número de pessoas favoráveis ao projeto na amostra. Então, <span class="math inline">\(X\sim\)</span> Binomial(15,0.6).</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(P(X\leq 2) = \binom{15}{0} (0.6)^0 (0.4)^{15} + \binom{15}{1} (0.6)^1 (0.4)^{14} + \binom{15}{0} (0.6)^2 (0.4)^{13}\)</span></p></li>
 <li><p><span class="math inline">\(E(X) = 15 \times 0.6 = 9\)</span> e <span class="math inline">\(Var(X)= 15 \times 0.6 \times 0.4 =3.6\)</span>.</p></li>
 </ol>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-104" class="proposition"><strong>Proposição 6.4  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>), então, à medida que <span class="math inline">\(x\)</span> varia de 0 a <span class="math inline">\(n\)</span>, <span class="math inline">\(p(x)\)</span> primeiro cresce e depois decresce, atingindo seu valor máximo quando <span class="math inline">\(x=\lfloor (n+1)p \rfloor\)</span>: maior inteiro menor ou igual que <span class="math inline">\((n+1)p\)</span>.</p>
+<p><span id="prp:unnamed-chunk-114" class="proposition"><strong>Proposição 6.4  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Binomial(<span class="math inline">\(n,p\)</span>), então, à medida que <span class="math inline">\(x\)</span> varia de 0 a <span class="math inline">\(n\)</span>, <span class="math inline">\(p(x)\)</span> primeiro cresce e depois decresce, atingindo seu valor máximo quando <span class="math inline">\(x=\lfloor (n+1)p \rfloor\)</span>: maior inteiro menor ou igual que <span class="math inline">\((n+1)p\)</span>.</p>
 </div>
 </div>
 <div id="distribuição-geométrica" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Distribuição Geométrica<a href="modelos-discretos.html#distribuição-geométrica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-105" class="definition"><strong>Definição 6.5  </strong></span>Consideremos um ensaio de Bernoulli com probabilidade de sucesso <span class="math inline">\(p\)</span> e realizações sucessivas e independentes desse experimento até que ocorra o primeiro sucesso. A variável aleatória definida como o número de ensaios necessários até o primeiro sucesso tem uma <em>distribuição geométrica</em> de parâmetro <span class="math inline">\(p\)</span>, cuja função de probabilidade é dada por
+<p><span id="def:unnamed-chunk-115" class="definition"><strong>Definição 6.5  </strong></span>Consideremos um ensaio de Bernoulli com probabilidade de sucesso <span class="math inline">\(p\)</span> e realizações sucessivas e independentes desse experimento até que ocorra o primeiro sucesso. A variável aleatória definida como o número de ensaios necessários até o primeiro sucesso tem uma <em>distribuição geométrica</em> de parâmetro <span class="math inline">\(p\)</span>, cuja função de probabilidade é dada por
 <span class="math display">\[
 p(x) = (1-p)^{x-1}p, \; x=1,2,3,\ldots
 \]</span>
 <strong>Notação:</strong> <span class="math inline">\(X\sim\)</span> Geom(<span class="math inline">\(p\)</span>)</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-39" class="remark"><em>Observação</em>. </span>Pela série geométrica vemos que <span class="math inline">\(p(x)\)</span> é de fato uma função de probabilidade. Com efeito:
+<p><span id="unlabeled-div-43" class="remark"><em>Observação</em>. </span>Pela série geométrica vemos que <span class="math inline">\(p(x)\)</span> é de fato uma função de probabilidade. Com efeito:
 <span class="math display">\[
 \sum_{x=1}^\infty (1-p)^{x-1}p = p\sum_{x=0} (1-p)^x = p \times \frac{1}{1-(1-p)} =1.
 \]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-107" class="proposition"><strong>Proposição 6.5  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Geom(<span class="math inline">\(p\)</span>), temos que
+<p><span id="prp:unnamed-chunk-117" class="proposition"><strong>Proposição 6.5  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Geom(<span class="math inline">\(p\)</span>), temos que
 <span class="math display">\[
 E(X) = \frac{1}{p} \text{ e } Var(X) = \frac{1-p}{p^2}
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-40" class="proof"><em>Prova</em>. </span>Seja <span class="math inline">\(q=1-p\)</span>, logo
+<p><span id="unlabeled-div-44" class="proof"><em>Prova</em>. </span>Seja <span class="math inline">\(q=1-p\)</span>, logo
 <span class="math display">\[\begin{align*}
 E(X) &amp;= \sum_{x=1}^\infty x q^{x-1} p \\
 &amp;= \sum_{x=1}^\infty (x-1 + 1) q^{x-1} p \\
@@ -421,7 +422,7 @@ Var(X) = E(X^2) - [E(X)]^2= \frac{q+1}{p^2} - \frac{1}{p^2} = \frac{q}{p^2} = \f
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-109" class="example"><strong>Exemplo 6.5  </strong></span>Um dado honesto é lançado repetidamente, de modo independente, até que se obtenha a face 6. Determine:</p>
+<p><span id="exm:unnamed-chunk-119" class="example"><strong>Exemplo 6.5  </strong></span>Um dado honesto é lançado repetidamente, de modo independente, até que se obtenha a face 6. Determine:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>a probabilidade de que sejam necessários exatamente 5 lançamentos.</p></li>
 <li><p>a probabilidade de que sejam necessários pelo menos 4 lançamentos.</p></li>
@@ -429,7 +430,7 @@ Var(X) = E(X^2) - [E(X)]^2= \frac{q+1}{p^2} - \frac{1}{p^2} = \frac{q}{p^2} = \f
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-41" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X:\)</span> Número de lançamentos feitos até obter a face 6. Então, <span class="math inline">\(X\sim\)</span> Geométrica(<span class="math inline">\(p = 1/6\)</span>).</p>
+<p><span id="unlabeled-div-45" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X:\)</span> Número de lançamentos feitos até obter a face 6. Então, <span class="math inline">\(X\sim\)</span> Geométrica(<span class="math inline">\(p = 1/6\)</span>).</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(P(X=5)= \left(\frac{1}{6}\right)\left(\frac{5}{6}\right)^4 = \frac{5^4}{6^5} \approx 0.0804\)</span>.</p></li>
 <li><p><span class="math inline">\(P(X\geq 4) = \sum_{x=4}^\infty \left(\frac{1}{6}\right)\left(\frac{5}{6}\right)^{x-1} = \left(\frac{5}{6}\right)^3 \approx 0.5787.\)</span></p></li>
@@ -440,14 +441,14 @@ Var(X) = E(X^2) - [E(X)]^2= \frac{q+1}{p^2} - \frac{1}{p^2} = \frac{q}{p^2} = \f
 <div id="distribuição-binomial-negativa-pascal" class="section level2 hasAnchor" number="6.5">
 <h2><span class="header-section-number">6.5</span> Distribuição Binomial Negativa (Pascal)<a href="modelos-discretos.html#distribuição-binomial-negativa-pascal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-111" class="definition"><strong>Definição 6.6  </strong></span>Consideremos um ensaio de Bernoulli com probabilidade de sucesso <span class="math inline">\(p\)</span> e realizações sucessivas e independentes desse experimento até que ocorra o <span class="math inline">\(r\)</span>-ésimo sucesso. A variável aleatória definida como o número de ensaios necessários até o <span class="math inline">\(r\)</span>-ésimo sucesso tem uma <em>distribuição binomial negativa</em> de parâmetros <span class="math inline">\(r\)</span> e <span class="math inline">\(p\)</span>, cuja função de probabilidade é dada por
+<p><span id="def:unnamed-chunk-121" class="definition"><strong>Definição 6.6  </strong></span>Consideremos um ensaio de Bernoulli com probabilidade de sucesso <span class="math inline">\(p\)</span> e realizações sucessivas e independentes desse experimento até que ocorra o <span class="math inline">\(r\)</span>-ésimo sucesso. A variável aleatória definida como o número de ensaios necessários até o <span class="math inline">\(r\)</span>-ésimo sucesso tem uma <em>distribuição binomial negativa</em> de parâmetros <span class="math inline">\(r\)</span> e <span class="math inline">\(p\)</span>, cuja função de probabilidade é dada por
 <span class="math display">\[
 p(x) = \binom{x-1}{r-1} p^r(1-p)^{x-r}, \; x=r,r+1,\ldots
 \]</span>
 <strong>Notação:</strong> <span class="math inline">\(X \sim\)</span> BN(<span class="math inline">\(r,p\)</span>)</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-42" class="remark"><em>Observação</em>. </span>Seja <span class="math inline">\(y=x-r\)</span>, <span class="math inline">\(x=r,r+1\ldots\)</span> ,
+<p><span id="unlabeled-div-46" class="remark"><em>Observação</em>. </span>Seja <span class="math inline">\(y=x-r\)</span>, <span class="math inline">\(x=r,r+1\ldots\)</span> ,
 <span class="math display">\[\begin{align*}
 \binom{x-1}{r-1} &amp;= \binom{y+r-1}{r-1}  \\
 &amp;=\frac{(y+r-1)\cdots r (r-1)!}{(r-1)! y!}\\
@@ -463,7 +464,7 @@ p(x) = (-1)^{x-r} \binom{-r}{x-r}p^rq^{x-r}, \; x=r,r+1,\ldots
 \]</span>
 onde <span class="math inline">\(q=1-p\)</span>.</p>
 <div class="remark">
-<p><span id="unlabeled-div-43" class="remark"><em>Observação</em>. </span>Da <em>série binomial</em>
+<p><span id="unlabeled-div-47" class="remark"><em>Observação</em>. </span>Da <em>série binomial</em>
 <span class="math display">\[
 (1+x)^\beta = \sum_{y=0}^\infty \binom{\beta}{y} x^y,
 \]</span>
@@ -478,26 +479,26 @@ p^{-r} = (1-q)^{-r} = \sum_{y=0}^\infty \binom{-r}{y} (-q)^y,
 \end{align*}\]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-44" class="remark"><em>Observação</em>. </span>Repare que se <span class="math inline">\(X\sim\)</span> BN(<span class="math inline">\(r,p\)</span>), então <span class="math inline">\(X=\sum_{i=1}^r X_i\)</span>, tal que <span class="math inline">\(X_1,\ldots,X_r \overset{iid}{\sim}\)</span> Geom(<span class="math inline">\(p\)</span>). A interpretação é a seguinte: <span class="math inline">\(X_1\)</span> representa o número de ensaios até o primeiro sucesso, <span class="math inline">\(X_2\)</span> representa o número de ensaios necessários depois do primeiro sucesso para obter o segundo sucesso e assim por diante.</p>
+<p><span id="unlabeled-div-48" class="remark"><em>Observação</em>. </span>Repare que se <span class="math inline">\(X\sim\)</span> BN(<span class="math inline">\(r,p\)</span>), então <span class="math inline">\(X=\sum_{i=1}^r X_i\)</span>, tal que <span class="math inline">\(X_1,\ldots,X_r \overset{iid}{\sim}\)</span> Geom(<span class="math inline">\(p\)</span>). A interpretação é a seguinte: <span class="math inline">\(X_1\)</span> representa o número de ensaios até o primeiro sucesso, <span class="math inline">\(X_2\)</span> representa o número de ensaios necessários depois do primeiro sucesso para obter o segundo sucesso e assim por diante.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-115" class="proposition"><strong>Proposição 6.6  </strong></span>Seja <span class="math inline">\(X\sim\)</span> BN(<span class="math inline">\(r,p\)</span>), temos que
+<p><span id="prp:unnamed-chunk-125" class="proposition"><strong>Proposição 6.6  </strong></span>Seja <span class="math inline">\(X\sim\)</span> BN(<span class="math inline">\(r,p\)</span>), temos que
 <span class="math display">\[
 E(X) = \frac{r}{p} \text{ e } Var(X) = \frac{r(1-p)}{p^2}
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-45" class="proof"><em>Prova</em>. </span><span class="math inline">\(X=\sum_{i=1}^r X_i\)</span>, tal que <span class="math inline">\(X_1,\ldots,X_r\overset{iid}{\sim}\)</span> Geom(<span class="math inline">\(p\)</span>), logo
+<p><span id="unlabeled-div-49" class="proof"><em>Prova</em>. </span><span class="math inline">\(X=\sum_{i=1}^r X_i\)</span>, tal que <span class="math inline">\(X_1,\ldots,X_r\overset{iid}{\sim}\)</span> Geom(<span class="math inline">\(p\)</span>), logo
 <span class="math display">\[\begin{align*}
 E(X) &amp;= \sum_{i=1}^r E(X_i) = \frac{r}{p}, \\
 Var(X) &amp;= \sum_{i=1}^r Var(X_i) = \frac{r(1-p)}{p^2}.
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-117" class="example"><strong>Exemplo 6.6  </strong></span>Um dado honesto é lançado repetidamente, de modo independente, até que a face 6 seja obtida 4 vezes. Qual a probabilidade de que sejam necessários exatamente 10 lançamentos?</p>
+<p><span id="exm:unnamed-chunk-127" class="example"><strong>Exemplo 6.6  </strong></span>Um dado honesto é lançado repetidamente, de modo independente, até que a face 6 seja obtida 4 vezes. Qual a probabilidade de que sejam necessários exatamente 10 lançamentos?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-46" class="solution"><em>Solução</em>. </span><span class="math inline">\(X:\)</span> Número de lançamentos necessários até que a face 6 seja obtida 4 vezes. Então <span class="math inline">\(X\sim\)</span> Binomial Negativa(<span class="math inline">\(r=4,p=1/6\)</span>). Logo
+<p><span id="unlabeled-div-50" class="solution"><em>Solução</em>. </span><span class="math inline">\(X:\)</span> Número de lançamentos necessários até que a face 6 seja obtida 4 vezes. Então <span class="math inline">\(X\sim\)</span> Binomial Negativa(<span class="math inline">\(r=4,p=1/6\)</span>). Logo
 <span class="math display">\[
 P(X=10) = p(10) =  \binom{10-1}{4-1} (1/6)^4(5/6)^{6} = \binom{9}{3} (1/6)^4(5/6)^{6} \approx 0,0217.
 \]</span></p>
@@ -506,37 +507,37 @@ P(X=10) = p(10) =  \binom{10-1}{4-1} (1/6)^4(5/6)^{6} = \binom{9}{3} (1/6)^4(5/6
 <div id="distribuição-hipergeométrica" class="section level2 hasAnchor" number="6.6">
 <h2><span class="header-section-number">6.6</span> Distribuição Hipergeométrica<a href="modelos-discretos.html#distribuição-hipergeométrica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-119" class="definition"><strong>Definição 6.7  </strong></span>Considere uma urna com <span class="math inline">\(N\)</span> bolas das quais <span class="math inline">\(R\leq N\)</span> são vermelhas e <span class="math inline">\(N-R\)</span> são pretas. Suponha que selecionamos uma amostra de tamanho <span class="math inline">\(n\leq N\)</span> sem reposição. A variável aleatória definida como o número de bolas vermelhas selecionadas na amostra tem uma <em>distribuição hipergeométrica</em> de parâmetros <span class="math inline">\(n\)</span>, <span class="math inline">\(R\)</span> e <span class="math inline">\(N\)</span> cuja função de probabilidade é dada por</p>
+<p><span id="def:unnamed-chunk-129" class="definition"><strong>Definição 6.7  </strong></span>Considere uma urna com <span class="math inline">\(N\)</span> bolas das quais <span class="math inline">\(R\leq N\)</span> são vermelhas e <span class="math inline">\(N-R\)</span> são pretas. Suponha que selecionamos uma amostra de tamanho <span class="math inline">\(n\leq N\)</span> sem reposição. A variável aleatória definida como o número de bolas vermelhas selecionadas na amostra tem uma <em>distribuição hipergeométrica</em> de parâmetros <span class="math inline">\(n\)</span>, <span class="math inline">\(R\)</span> e <span class="math inline">\(N\)</span> cuja função de probabilidade é dada por</p>
 <p><span class="math display">\[
 p(x) = \frac{\binom{R}{x} \binom{N-R}{n-x}}{\binom{N}{n}}, \; x=0,1,\ldots n.  
 \]</span>
 <strong>Notação:</strong> <span class="math inline">\(X\sim\)</span> Hipergeométrica(<span class="math inline">\(n,R,N\)</span>).</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-47" class="remark"><em>Observação</em>. </span>Embora tenhamos definido <span class="math inline">\(p(x)\)</span> para qualquer <span class="math inline">\(x\)</span> entre 0 e <span class="math inline">\(n\)</span> simplesmente por mera conveniência, o verdadeiro suporte da distribuição são os valores de <span class="math inline">\(x\)</span> inteiros tais que <span class="math inline">\(\textrm{máx}(0,n-(N-R))\leq x \leq \textrm{mín}(n,R).\)</span></p>
+<p><span id="unlabeled-div-51" class="remark"><em>Observação</em>. </span>Embora tenhamos definido <span class="math inline">\(p(x)\)</span> para qualquer <span class="math inline">\(x\)</span> entre 0 e <span class="math inline">\(n\)</span> simplesmente por mera conveniência, o verdadeiro suporte da distribuição são os valores de <span class="math inline">\(x\)</span> inteiros tais que <span class="math inline">\(\textrm{máx}(0,n-(N-R))\leq x \leq \textrm{mín}(n,R).\)</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-121" class="example"><strong>Exemplo 6.7  </strong></span>Um aluno estuda 12 exercícios, dos quais o professor vai escolher 6 aleatoriamente para uma prova. O estudante sabe resolver 9 dos 12 problemas. Seja <span class="math inline">\(X\)</span> o número de exercícios resolvidos por ele na prova.</p>
+<p><span id="exm:unnamed-chunk-131" class="example"><strong>Exemplo 6.7  </strong></span>Um aluno estuda 12 exercícios, dos quais o professor vai escolher 6 aleatoriamente para uma prova. O estudante sabe resolver 9 dos 12 problemas. Seja <span class="math inline">\(X\)</span> o número de exercícios resolvidos por ele na prova.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Qual a distribuição de <span class="math inline">\(X\)</span>?</p></li>
 <li><p>Calcule a probabilidade de que o aluno resolva ao menos 5 exercícios da prova.</p></li>
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-48" class="solution"><em>Solução</em>. </span>Seja X: Número de exercícios resolvidos pelo estudante na prova.</p>
+<p><span id="unlabeled-div-52" class="solution"><em>Solução</em>. </span>Seja X: Número de exercícios resolvidos pelo estudante na prova.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(X\sim\)</span> Hipergeométrica(6,9,12).</p></li>
 <li><p><span class="math inline">\(P(X\geq 5) = p(5) + p(6) = 1/2.\)</span></p></li>
 </ol>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-123" class="proposition"><strong>Proposição 6.7  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Hipergeométrica(<span class="math inline">\(n,R,N\)</span>) e seja <span class="math inline">\(p=\frac{R}{N}\)</span>, então
+<p><span id="prp:unnamed-chunk-133" class="proposition"><strong>Proposição 6.7  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Hipergeométrica(<span class="math inline">\(n,R,N\)</span>) e seja <span class="math inline">\(p=\frac{R}{N}\)</span>, então
 <span class="math display">\[
 E(X)=np \text{ e } Var(X) = \left(\frac{N-n}{N-1}\right) np(1-p)
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-49" class="proof"><em>Prova</em>. </span>Seja <span class="math inline">\(p=\frac{R}{N}\)</span>,
+<p><span id="unlabeled-div-53" class="proof"><em>Prova</em>. </span>Seja <span class="math inline">\(p=\frac{R}{N}\)</span>,
 <span class="math display">\[\begin{align*}
 E(X) &amp;= \sum_{x=1}^n x \frac{\binom{R}{x} \binom{N-R}{n-x}}{\binom{N}{n}}
 \end{align*}\]</span></p>
@@ -553,14 +554,14 @@ E(X) &amp;=\frac{nR}{N} \sum_{x=1}^n
 <div id="distribuição-de-poisson" class="section level2 hasAnchor" number="6.7">
 <h2><span class="header-section-number">6.7</span> Distribuição de Poisson<a href="modelos-discretos.html#distribuição-de-poisson" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:unnamed-chunk-125" class="definition"><strong>Definição 6.8  </strong></span>Uma variável aleatória tem <em>distribuição de Poisson</em> de parâmetro <span class="math inline">\(\lambda &gt;0\)</span> se sua função de probabilidade é
+<p><span id="def:unnamed-chunk-135" class="definition"><strong>Definição 6.8  </strong></span>Uma variável aleatória tem <em>distribuição de Poisson</em> de parâmetro <span class="math inline">\(\lambda &gt;0\)</span> se sua função de probabilidade é
 <span class="math display">\[
 p(x) = \frac{e^{-\lambda} \lambda^x}{x!}, \; x=0,1,2, \ldots
 \]</span>
 <strong>Notação:</strong> <span class="math inline">\(X\sim\)</span> Poisson(<span class="math inline">\(\lambda\)</span>)</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-126" class="example"><strong>Exemplo 6.8  </strong></span>Alguns exemplos de variáveis que podem ser modeladas por uma distribuição de Poisson são:</p>
+<p><span id="exm:unnamed-chunk-136" class="example"><strong>Exemplo 6.8  </strong></span>Alguns exemplos de variáveis que podem ser modeladas por uma distribuição de Poisson são:</p>
 <ul>
 <li><p>O número de erros de impressão em uma página.</p></li>
 <li><p>O número de clientes que chegam em uma agência bancária.</p></li>
@@ -569,16 +570,16 @@ p(x) = \frac{e^{-\lambda} \lambda^x}{x!}, \; x=0,1,2, \ldots
 </ul>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-50" class="remark"><em>Observação</em>. </span>Geralmente a distribuição de Poisson é usada para modelar uma contagem de indivíduos que se distribuem aleatoriamente no tempo ou no espaço.</p>
+<p><span id="unlabeled-div-54" class="remark"><em>Observação</em>. </span>Geralmente a distribuição de Poisson é usada para modelar uma contagem de indivíduos que se distribuem aleatoriamente no tempo ou no espaço.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-128" class="proposition"><strong>Proposição 6.8  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Poisson(<span class="math inline">\(\lambda\)</span>), temos que
+<p><span id="prp:unnamed-chunk-138" class="proposition"><strong>Proposição 6.8  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Poisson(<span class="math inline">\(\lambda\)</span>), temos que
 <span class="math display">\[
 E(X) = \lambda \text{ e } Var(X)=\lambda  
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-51" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
+<p><span id="unlabeled-div-55" class="proof"><em>Prova</em>. </span><span class="math display">\[\begin{align*}
 E(X) &amp;=\sum_{x=0}^\infty x  \frac{e^{-\lambda} \lambda^x}{x!} \\
 &amp;=\sum_{x=1}^\infty \frac{e^{-\lambda} \lambda^x}{(x-1)!}\\
 &amp;= \lambda \sum_{x=1}^\infty \frac{e^{-\lambda} \lambda^{x-1}}{(x-1)!}\\
@@ -595,19 +596,19 @@ E(X^2) &amp;=\sum_{x=0}^\infty x^2  \frac{e^{-\lambda} \lambda^x}{x!} \\
 <p>Portanto, <span class="math inline">\(Var(X) = \lambda(\lambda + 1) - \lambda^2 = \lambda\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-130" class="example"><strong>Exemplo 6.9  </strong></span>Suponha que o número de erros tipográficos em uma única página deste livro tenha uma distribuição de Poisson com <span class="math inline">\(\lambda = 1/2\)</span>. Calcule a probabilidade de que exista pelo menos um erro nesta página.</p>
+<p><span id="exm:unnamed-chunk-140" class="example"><strong>Exemplo 6.9  </strong></span>Suponha que o número de erros tipográficos em uma única página deste livro tenha uma distribuição de Poisson com <span class="math inline">\(\lambda = 1/2\)</span>. Calcule a probabilidade de que exista pelo menos um erro nesta página.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-52" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de erros nesta página, logo
+<p><span id="unlabeled-div-56" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de erros nesta página, logo
 <span class="math display">\[
 P(X\geq 1) = 1- P(X\leq 0) = 1-e^{-1/2} \approx 0,393.
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-132" class="example"><strong>Exemplo 6.10  </strong></span>O número de partículas que uma fonte radioativa emite por minuto é uma variável aleatória com distribuição de Poisson com média igual a 5. Qual a probabilidade de que pelo menos três partículas sejam emitidas em um minuto.</p>
+<p><span id="exm:unnamed-chunk-142" class="example"><strong>Exemplo 6.10  </strong></span>O número de partículas que uma fonte radioativa emite por minuto é uma variável aleatória com distribuição de Poisson com média igual a 5. Qual a probabilidade de que pelo menos três partículas sejam emitidas em um minuto.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-53" class="solution"><em>Solução</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-57" class="solution"><em>Solução</em>. </span><span class="math display">\[
 P(X\geq 3) = 1-e^{-5}-5e^{-5} -\frac{5^2e^{-5}}{2!} = 1-\frac{37}{2}e^{-5} \approx 0,8753.  
 \]</span></p>
 </div>
@@ -620,11 +621,11 @@ P(X=x) \approx P(Y=x) = \frac{e^{-np} (np)^x}{x!}
 \]</span></p>
 <p>Essa aproximação decorre do Teorema de Poisson (1832).</p>
 <div class="remark">
-<p><span id="unlabeled-div-54" class="remark"><em>Observação</em>. </span>Empiricamente, temos as seguintes regras práticas:
+<p><span id="unlabeled-div-58" class="remark"><em>Observação</em>. </span>Empiricamente, temos as seguintes regras práticas:
 <span class="math inline">\(n\geq 20\)</span> e <span class="math inline">\(p\leq 0,05\)</span> ou <span class="math inline">\(n\geq 100\)</span> e <span class="math inline">\(np \leq 10\)</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-135" class="example"><strong>Exemplo 6.11  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Binomial(100,0.065)
+<p><span id="exm:unnamed-chunk-145" class="example"><strong>Exemplo 6.11  </strong></span>Seja <span class="math inline">\(X\sim\)</span> Binomial(100,0.065)
 <span class="math display">\[
 P(X=10) = \binom{100}{10}  (0.065)^{10}(0.935)^{90} \approx 0.05502
 \]</span></p>

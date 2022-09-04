@@ -23,7 +23,7 @@
 <meta name="author" content="Jaime Utria" />
 
 
-<meta name="date" content="2022-06-25" />
+<meta name="date" content="2022-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.4.1" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-da-probabilidade-total"><i class="fa fa-check"></i><b>1.4.1</b> Fórmula da probabilidade total</a></li>
 <li class="chapter" data-level="1.4.2" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-de-bayes"><i class="fa fa-check"></i><b>1.4.2</b> Fórmula de Bayes</a></li>
 </ul></li>
+<li class="chapter" data-level="1.5" data-path="esp-prob.html"><a href="esp-prob.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independência</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html"><i class="fa fa-check"></i><b>2</b> Conjuntos limites e continuidade da probabilidade</a>
 <ul>
@@ -294,10 +295,10 @@ P(X=1) &amp;=&amp; P(\{\omega\in\Omega: X(\omega)=1\}) \\
 <div id="exemplos" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Exemplos<a href="vas.html#exemplos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="example">
-<p><span id="exm:unnamed-chunk-47" class="example"><strong>Exemplo 3.1  </strong></span>Três bolas são selecionadas aleatoriamente de uma urna que contém 20 bolas numeradas de 1 a 20. Se apostamos que pelo menos uma das bolas retiradas tem o número maior ou igual a 17, qual a probabilidade de ganharmos?</p>
+<p><span id="exm:unnamed-chunk-57" class="example"><strong>Exemplo 3.1  </strong></span>Três bolas são selecionadas aleatoriamente de uma urna que contém 20 bolas numeradas de 1 a 20. Se apostamos que pelo menos uma das bolas retiradas tem o número maior ou igual a 17, qual a probabilidade de ganharmos?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-20" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span> o maior número sorteado. Por exemplo,</p>
+<p><span id="unlabeled-div-24" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span> o maior número sorteado. Por exemplo,</p>
 <ul>
 <li><p>Se <span class="math inline">\(\omega = \{3,10,5,\}\)</span>, então <span class="math inline">\(X(\omega) = 10\)</span> (perdemos a aposta).</p></li>
 <li><p>Se <span class="math inline">\(\omega&#39; = \{2,5,16\}\)</span>, então <span class="math inline">\(X(\omega&#39;) = 16\)</span> (ganhamos a aposta).</p></li>
@@ -314,7 +315,7 @@ P(X\geq 17) &amp;= p(17) + p(18) + p(19) + p(20) \\
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-49" class="example"><strong>Exemplo 3.2  </strong></span>O número de pessoas que entram em uma academia durante um minuto é uma v.a. discreta <span class="math inline">\(X\)</span> com função de probabilidade dada por
+<p><span id="exm:unnamed-chunk-59" class="example"><strong>Exemplo 3.2  </strong></span>O número de pessoas que entram em uma academia durante um minuto é uma v.a. discreta <span class="math inline">\(X\)</span> com função de probabilidade dada por
 <span class="math display">\[
 p(k) = \frac{c \, 4^k}{k!}, \; k = 0,1,\ldots
 \]</span>
@@ -325,7 +326,7 @@ Determine:
 </ol>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-21" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de pessoas que entram naquela academia durante um minuto. Logo</p>
+<p><span id="unlabeled-div-25" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(X\)</span>: Número de pessoas que entram naquela academia durante um minuto. Logo</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(\displaystyle \sum_{k=0}^\infty p(k) = 1 \Rightarrow c \displaystyle \sum_{k=0}^\infty \frac{4^k}{k!} = 1 \Rightarrow c e^4 \Rightarrow c =e^{-4}\)</span>. Portanto,
 <span class="math display">\[p(k) = \frac{e^{-4}\, 4^k}{k!}, \; k = 0,1,\ldots \]</span></p></li>
@@ -344,7 +345,7 @@ F(2) &amp;=&amp; P(X \leq 2) = p(0) + p(1) + p(2) =7/8, \\[0.2cm]
 F(3) &amp;=&amp; P(X \leq 3) = p(0) + p(1) + p(2) + p(3)= 1.
 \end{eqnarray*}\]</span></p>
 <div class="definition">
-<p><span id="def:unnamed-chunk-51" class="definition"><strong>Definição 3.1  </strong></span>A <em>função de distribuição (acumulada)</em> de uma variável aleatória <span class="math inline">\(X\)</span> é a função <span class="math inline">\(F: \mathbb R \rightarrow \mathbb R\)</span> definida por
+<p><span id="def:unnamed-chunk-61" class="definition"><strong>Definição 3.1  </strong></span>A <em>função de distribuição (acumulada)</em> de uma variável aleatória <span class="math inline">\(X\)</span> é a função <span class="math inline">\(F: \mathbb R \rightarrow \mathbb R\)</span> definida por
 <span class="math display">\[\begin{equation*}
 F(x) = P(X\leq x) = P(\{s\in \Omega: X(s)\leq x\}), \; x\in \mathbb R.
 \end{equation*}\]</span></p>

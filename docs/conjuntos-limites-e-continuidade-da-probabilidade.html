@@ -23,7 +23,7 @@
 <meta name="author" content="Jaime Utria" />
 
 
-<meta name="date" content="2022-06-25" />
+<meta name="date" content="2022-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.4.1" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-da-probabilidade-total"><i class="fa fa-check"></i><b>1.4.1</b> Fórmula da probabilidade total</a></li>
 <li class="chapter" data-level="1.4.2" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-de-bayes"><i class="fa fa-check"></i><b>1.4.2</b> Fórmula de Bayes</a></li>
 </ul></li>
+<li class="chapter" data-level="1.5" data-path="esp-prob.html"><a href="esp-prob.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independência</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html"><i class="fa fa-check"></i><b>2</b> Conjuntos limites e continuidade da probabilidade</a>
 <ul>
@@ -211,7 +212,7 @@
 <div id="conjuntos-limites-e-continuidade-da-probabilidade" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Capítulo 2</span> Conjuntos limites e continuidade da probabilidade<a href="conjuntos-limites-e-continuidade-da-probabilidade.html#conjuntos-limites-e-continuidade-da-probabilidade" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="definition">
-<p><span id="def:unnamed-chunk-35" class="definition"><strong>Definição 2.1  (Sequências monótonas de eventos) </strong></span>Sejam <span class="math inline">\(A_1,A_2,\ldots\)</span> eventos em um espaço de probabilidade <span class="math inline">\((\Omega, \mathcal F, P)\)</span>.</p>
+<p><span id="def:unnamed-chunk-45" class="definition"><strong>Definição 2.1  (Sequências monótonas de eventos) </strong></span>Sejam <span class="math inline">\(A_1,A_2,\ldots\)</span> eventos em um espaço de probabilidade <span class="math inline">\((\Omega, \mathcal F, P)\)</span>.</p>
 <ol style="list-style-type: lower-roman">
 <li><p>Dizemos que <span class="math inline">\((A_n)_{n\geq 1}\)</span> é uma sequência de eventos <em>crescente</em> se
 <span class="math display">\[
@@ -223,10 +224,10 @@ A_1 \supset A_2 \supset A_3 \supset \cdots \]</span></p></li>
 </ol>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-15" class="remark"><em>Observação</em>. </span>Se <span class="math inline">\((A_n)_{n\geq 1}\)</span> é uma sequência crescente ou decrescente, dizemos que é monótona.</p>
+<p><span id="unlabeled-div-19" class="remark"><em>Observação</em>. </span>Se <span class="math inline">\((A_n)_{n\geq 1}\)</span> é uma sequência crescente ou decrescente, dizemos que é monótona.</p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-37" class="definition"><strong>Definição 2.2  (Limite de sequências monótonas de eventos) </strong></span>Seja <span class="math inline">\((A_n)_{n\geq 1}\)</span> uma sequência de eventos em um espaço de probabilidade <span class="math inline">\((\Omega,\mathcal F, P)\)</span>.</p>
+<p><span id="def:unnamed-chunk-47" class="definition"><strong>Definição 2.2  (Limite de sequências monótonas de eventos) </strong></span>Seja <span class="math inline">\((A_n)_{n\geq 1}\)</span> uma sequência de eventos em um espaço de probabilidade <span class="math inline">\((\Omega,\mathcal F, P)\)</span>.</p>
 <ol style="list-style-type: lower-roman">
 <li>Denotamos por <span class="math inline">\(A_n\uparrow A\)</span>, se <span class="math inline">\((A_n)_{n\geq 1}\)</span> é uma sequência crescente de eventos e<br />
 <span class="math display">\[
@@ -239,14 +240,14 @@ A = \bigcap_{n=1}^\infty A_n.
 </ol>
 </div>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-38" class="theorem"><strong>Teorema 2.1  (Continuidade monótona da probabilidade) </strong></span>Seja <span class="math inline">\((A_n)_{n\geq 1}\)</span> uma sequência de eventos em um espaço de probabilidade <span class="math inline">\((\Omega,\mathcal F, P)\)</span>.</p>
+<p><span id="thm:unnamed-chunk-48" class="theorem"><strong>Teorema 2.1  (Continuidade monótona da probabilidade) </strong></span>Seja <span class="math inline">\((A_n)_{n\geq 1}\)</span> uma sequência de eventos em um espaço de probabilidade <span class="math inline">\((\Omega,\mathcal F, P)\)</span>.</p>
 <ol style="list-style-type: lower-roman">
 <li><p>Se <span class="math inline">\(A_n \uparrow A\)</span>, então <span class="math inline">\(P(A_n) \uparrow P(A)\)</span> (continuidade por baixo).</p></li>
 <li><p>Se <span class="math inline">\(A_n \downarrow A\)</span>, então <span class="math inline">\(P(A_n) \downarrow P(A)\)</span> (continuidade por cima).</p></li>
 </ol>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-16" class="proof"><em>Prova</em>. </span>Para provar i. Defina <span class="math inline">\(B_1 = A_1\)</span>, <span class="math inline">\(B_k = A_k\setminus A_{k-1}\)</span>, <span class="math inline">\(k\geq 2\)</span> e note que os eventos <span class="math inline">\(B_1,B_2,\ldots\)</span> são disjuntos dois a dois. Além disso,<br />
+<p><span id="unlabeled-div-20" class="proof"><em>Prova</em>. </span>Para provar i. Defina <span class="math inline">\(B_1 = A_1\)</span>, <span class="math inline">\(B_k = A_k\setminus A_{k-1}\)</span>, <span class="math inline">\(k\geq 2\)</span> e note que os eventos <span class="math inline">\(B_1,B_2,\ldots\)</span> são disjuntos dois a dois. Além disso,<br />
 <span class="math display">\[
 A_n=\bigcup_{k=1}^n B_k \; \; \; \text{e} \; \; \; A = \bigcup_{n=1}^\infty A_n = \bigcup_{n=1}^\infty B_n
 \]</span>
@@ -262,7 +263,7 @@ Além disso, como <span class="math inline">\(A_n\subset A_{n+1},\)</span> <span
 </ol>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-40" class="definition"><strong>Definição 2.3  (conjuntos limites) </strong></span>Seja <span class="math inline">\(A_1,A_2,\ldots\)</span> uma sequência de eventos em um espaço de probabilidade <span class="math inline">\((\Omega, \mathcal F, P)\)</span>, definimos os eventos
+<p><span id="def:unnamed-chunk-50" class="definition"><strong>Definição 2.3  (conjuntos limites) </strong></span>Seja <span class="math inline">\(A_1,A_2,\ldots\)</span> uma sequência de eventos em um espaço de probabilidade <span class="math inline">\((\Omega, \mathcal F, P)\)</span>, definimos os eventos
 <span class="math display">\[\begin{align}
 {\lim\inf}_{n\to\infty} A_n = \bigcup_{n=1}^\infty \bigcap_{k=n}^\infty A_k \label{liminf} \\
 {\lim\sup}_{n\to\infty} A_n = \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \label{limsup}
@@ -284,16 +285,16 @@ Além disso, como <span class="math inline">\(A_n\subset A_{n+1},\)</span> <span
 <span class="math display">\[{\lim\sup}_{n\to\infty} A_n  = [A_n \text{ ocorre infinitas vezes}]\]</span>
 <span class="math display">\[{\lim\inf}_{n\to\infty} A_n  = [A_n \text{ ocorre para todo $n$ suficientemente grande}]\]</span></p>
 <div class="remark">
-<p><span id="unlabeled-div-17" class="remark"><em>Observação</em>. </span>Observe que <span class="math inline">\(\liminf_{n\to\infty} A_n \subset \limsup_{n\to\infty} A_n\)</span>, logo temos a seguinte definição.</p>
+<p><span id="unlabeled-div-21" class="remark"><em>Observação</em>. </span>Observe que <span class="math inline">\(\liminf_{n\to\infty} A_n \subset \limsup_{n\to\infty} A_n\)</span>, logo temos a seguinte definição.</p>
 </div>
 <div class="definition">
-<p><span id="def:unnamed-chunk-42" class="definition"><strong>Definição 2.4  (Limite de uma sequência) </strong></span>Se <span class="math inline">\(\limsup_{n\to\infty} A_n \subset \liminf_{n\to\infty} A_n\)</span>, então dizemos que <span class="math inline">\(\lim_{n\to\infty} A_n = A\)</span>, onde <span class="math inline">\(A = \liminf_{n\to\infty} A_n = \limsup_{n\to\infty} A_n\)</span>.</p>
+<p><span id="def:unnamed-chunk-52" class="definition"><strong>Definição 2.4  (Limite de uma sequência) </strong></span>Se <span class="math inline">\(\limsup_{n\to\infty} A_n \subset \liminf_{n\to\infty} A_n\)</span>, então dizemos que <span class="math inline">\(\lim_{n\to\infty} A_n = A\)</span>, onde <span class="math inline">\(A = \liminf_{n\to\infty} A_n = \limsup_{n\to\infty} A_n\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-43" class="theorem"><strong>Teorema 2.2  (Continuidade da probabilidade) </strong></span>Se <span class="math inline">\(\lim_{n\to\infty} A_n = A\)</span>, então <span class="math inline">\(\lim_{n\to\infty} P(A_n) = P(\lim_{n\to\infty} A_n) = P(A)\)</span>.</p>
+<p><span id="thm:unnamed-chunk-53" class="theorem"><strong>Teorema 2.2  (Continuidade da probabilidade) </strong></span>Se <span class="math inline">\(\lim_{n\to\infty} A_n = A\)</span>, então <span class="math inline">\(\lim_{n\to\infty} P(A_n) = P(\lim_{n\to\infty} A_n) = P(A)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-18" class="proof"><em>Prova</em>. </span>Para <span class="math inline">\(n\geq 1\)</span>, defina <span class="math inline">\(\displaystyle B_n = \bigcap_{k=n}^\infty A_k\)</span> e <span class="math inline">\(\displaystyle C_n = \bigcup_{k=n}^\infty A_k\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(B_n\subset A_n \subset C_n\)</span>, logo, <span class="math inline">\(P(B_n) \leq P(A_n) \leq P(C_n)\)</span>. Além disso, temos que <span class="math inline">\(B_n \uparrow \liminf A_n\)</span> e <span class="math inline">\(C_n \downarrow\limsup A_n\)</span>, logo <span class="math inline">\(P(\liminf A_n) = \lim P(B_n)\)</span> e <span class="math inline">\(\lim P(C_n) = P(\limsup A_n)\)</span>. Agora,</p>
+<p><span id="unlabeled-div-22" class="proof"><em>Prova</em>. </span>Para <span class="math inline">\(n\geq 1\)</span>, defina <span class="math inline">\(\displaystyle B_n = \bigcap_{k=n}^\infty A_k\)</span> e <span class="math inline">\(\displaystyle C_n = \bigcup_{k=n}^\infty A_k\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(B_n\subset A_n \subset C_n\)</span>, logo, <span class="math inline">\(P(B_n) \leq P(A_n) \leq P(C_n)\)</span>. Além disso, temos que <span class="math inline">\(B_n \uparrow \liminf A_n\)</span> e <span class="math inline">\(C_n \downarrow\limsup A_n\)</span>, logo <span class="math inline">\(P(\liminf A_n) = \lim P(B_n)\)</span> e <span class="math inline">\(\lim P(C_n) = P(\limsup A_n)\)</span>. Agora,</p>
 <p><span class="math display">\[
 P(\liminf A_n) \leq \liminf P(A_n) \leq \limsup P(A_n) \leq  P(\limsup A_n),
 \]</span>
@@ -318,10 +319,10 @@ Portanto <span class="math inline">\((b_n)_{n\geq 1}\)</span> é uma sequência 
 \end{align}\]</span>
 O limite dado em <span class="math inline">\(\eqref{liminfseq}\)</span> é chamado de <em>limite inferior</em> da sequência <span class="math inline">\((a_n)\)</span>, similarmente o limite dado em <span class="math inline">\(\eqref{limsupseq}\)</span> é chamado de <em>limite superior</em> de <span class="math inline">\((a_n)\)</span>.</p>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-45" class="theorem"><strong>Teorema 2.3  </strong></span>Uma sequência <span class="math inline">\((a_n)\)</span> de números reais converge para <span class="math inline">\(a\in\mathbb R\)</span> se, e somente se, <span class="math display">\[\liminf a_n= \limsup a_n = a.\]</span></p>
+<p><span id="thm:unnamed-chunk-55" class="theorem"><strong>Teorema 2.3  </strong></span>Uma sequência <span class="math inline">\((a_n)\)</span> de números reais converge para <span class="math inline">\(a\in\mathbb R\)</span> se, e somente se, <span class="math display">\[\liminf a_n= \limsup a_n = a.\]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-19" class="proof"><em>Prova</em>. </span>(<span class="math inline">\(\Leftarrow\)</span>) Suponha que <span class="math inline">\(\liminf a_n = \limsup a_n = a\)</span>. Pela definição, de <span class="math inline">\(\liminf\)</span> e <span class="math inline">\(\limsup\)</span> de uma sequência de números reais, temos que
+<p><span id="unlabeled-div-23" class="proof"><em>Prova</em>. </span>(<span class="math inline">\(\Leftarrow\)</span>) Suponha que <span class="math inline">\(\liminf a_n = \limsup a_n = a\)</span>. Pela definição, de <span class="math inline">\(\liminf\)</span> e <span class="math inline">\(\limsup\)</span> de uma sequência de números reais, temos que
 <span class="math display">\[
 a=\liminf a_n \leq a_n \leq \limsup a_n = a,
 \]</span>

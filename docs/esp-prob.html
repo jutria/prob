@@ -23,7 +23,7 @@
 <meta name="author" content="Jaime Utria" />
 
 
-<meta name="date" content="2022-06-25" />
+<meta name="date" content="2022-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.4.1" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-da-probabilidade-total"><i class="fa fa-check"></i><b>1.4.1</b> Fórmula da probabilidade total</a></li>
 <li class="chapter" data-level="1.4.2" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-de-bayes"><i class="fa fa-check"></i><b>1.4.2</b> Fórmula de Bayes</a></li>
 </ul></li>
+<li class="chapter" data-level="1.5" data-path="esp-prob.html"><a href="esp-prob.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independência</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html"><i class="fa fa-check"></i><b>2</b> Conjuntos limites e continuidade da probabilidade</a>
 <ul>
@@ -462,23 +463,33 @@ P\left(\bigcup_{i=1}^\infty A_i|B\right) &amp;= \frac{P\left(\left(\bigcup_{i=1}
 P(A_1 \cap A_2 \cap \ldots \cap A_n) = P(A_1)P(A_2|A_1) \cdots P(A_n|A_1 \cap \ldots \cap A_{n-1})
 \]</span></p>
 </div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-22" class="example"><strong>Exemplo 1.5  </strong></span>Um baralho comum com 52 cartas é dividido aleatoriamente em 4 pilhas de 13 cartas cada. Qual a probabilidade de que cada pilha tenha exatamente um ás?</p>
+</div>
+<div class="solution">
+<p><span id="unlabeled-div-9" class="solution"><em>Solução</em>. </span>Defina <span class="math inline">\(A_i = \{i-\text{ ésima pilha tem exatamente um ás}\}\)</span>, logo queremos calcular
+<span class="math display">\[\begin{align*}
+P(A_1\cap A_2 \cap A_3 \cap A_4) &amp;= P(A_1)P(A_2|A_1)P(A_3|A_2\cap A_1)P(A_4|A_3\cap A_2 \cap A_1 ) \\
+&amp;=\frac{\binom{4}{1}\binom{48}{12}}{\binom{52}{13}} \times \frac{\binom{3}{1}\binom{36}{12}}{\binom{39}{13}} \times \frac{\binom{2}{1}\binom{24}{12}}{\binom{26}{13}} \times 1 = 0,105
+\end{align*}\]</span></p>
+</div>
 <div id="fórmula-da-probabilidade-total" class="section level3 hasAnchor" number="1.4.1">
 <h3><span class="header-section-number">1.4.1</span> Fórmula da probabilidade total<a href="esp-prob.html#fórmula-da-probabilidade-total" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unnamed-chunk-22" class="definition"><strong>Definição 1.8  (Partição) </strong></span>Seja <span class="math inline">\(\Omega\neq \emptyset\)</span>, uma <em>partição</em> de <span class="math inline">\(\Omega\)</span> é uma sequencia finita de conjuntos (ou eventos) <span class="math inline">\(A_1,\ldots,A_n\)</span> tais que</p>
+<p><span id="def:unnamed-chunk-24" class="definition"><strong>Definição 1.8  (Partição) </strong></span>Seja <span class="math inline">\(\Omega\neq \emptyset\)</span>, uma <em>partição</em> de <span class="math inline">\(\Omega\)</span> é uma sequencia finita de conjuntos (ou eventos) <span class="math inline">\(A_1,\ldots,A_n\)</span> tais que</p>
 <ol style="list-style-type: lower-roman">
 <li><span class="math inline">\(A_i \cap A_j = \emptyset\)</span> para qualquer <span class="math inline">\(i\neq j\)</span>, <span class="math inline">\(i,j=1,\ldots,n\)</span>,</li>
 <li><span class="math inline">\(\displaystyle \bigcup_{i=1}^n A_i = \Omega\)</span>.</li>
 </ol>
 </div>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-23" class="theorem"><strong>Teorema 1.1  (Fórmula da probabilidade total) </strong></span>Seja <span class="math inline">\(\{A_i\}_{i=1}^n\)</span> uma partição do espaço amostral <span class="math inline">\(\Omega\)</span>, tal que <span class="math inline">\(P(A_i)&gt;0\)</span> para qualquer <span class="math inline">\(i=1,\ldots, n\)</span> e <span class="math inline">\(B\)</span> um evento qualquer, temos que
+<p><span id="thm:unnamed-chunk-25" class="theorem"><strong>Teorema 1.1  (Fórmula da probabilidade total) </strong></span>Seja <span class="math inline">\(\{A_i\}_{i=1}^n\)</span> uma partição do espaço amostral <span class="math inline">\(\Omega\)</span>, tal que <span class="math inline">\(P(A_i)&gt;0\)</span> para qualquer <span class="math inline">\(i=1,\ldots, n\)</span> e <span class="math inline">\(B\)</span> um evento qualquer, temos que
 <span class="math display">\[
 P(B) = \sum_{i=1}^n P(B|A_i)P(A_i).
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-9" class="proof"><em>Prova</em>. </span>Note que <span class="math inline">\(\displaystyle B = \bigcup_{i=1}^n (B\cap A_i)\)</span> e
+<p><span id="unlabeled-div-10" class="proof"><em>Prova</em>. </span>Note que <span class="math inline">\(\displaystyle B = \bigcup_{i=1}^n (B\cap A_i)\)</span> e
 <span class="math inline">\((B\cap A_i) \cap (B\cap A_j)\)</span> para qualquer <span class="math inline">\(i\neq j\)</span>. Logo
 <span class="math display">\[
 P(B) = \sum_{i=1}^n P(B\cap A_i) = \sum_{i=1}^n P(B|A_i) P(A_i),   
@@ -486,38 +497,38 @@ P(B) = \sum_{i=1}^n P(B\cap A_i) = \sum_{i=1}^n P(B|A_i) P(A_i),
 onde a ultima passagem decorre da regra da multiplicação para dois eventos.</p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-25" class="example"><strong>Exemplo 1.5  </strong></span>Durante o mês de outubro a probabilidade de chuva em um dia determinado é de 4/10. Um time de futebol ganha um jogo em um dia com chuva com probabilidade 6/10 e em um dia sem chuva com probabilidade de 4/10. Qual a probabilidade de que esse time ganhe um jogo naquele dia de outubro?</p>
+<p><span id="exm:unnamed-chunk-27" class="example"><strong>Exemplo 1.6  </strong></span>Durante o mês de outubro a probabilidade de chuva em um dia determinado é de 4/10. Um time de futebol ganha um jogo em um dia com chuva com probabilidade 6/10 e em um dia sem chuva com probabilidade de 4/10. Qual a probabilidade de que esse time ganhe um jogo naquele dia de outubro?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-10" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(A\)</span>: O time ganhe um jogo naquele dia de outubro e <span class="math inline">\(B\)</span>: teve chuva naquele dia de outubro, logo
+<p><span id="unlabeled-div-11" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(A\)</span>: O time ganhe um jogo naquele dia de outubro e <span class="math inline">\(B\)</span>: teve chuva naquele dia de outubro, logo
 <span class="math display">\[
 P(A) = P(A|B)P(B) + P(A|B^c)P(B^c) = (6/10)(4/10) + (4/10)(6/10) = 24/50
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-27" class="example"><strong>Exemplo 1.6  </strong></span>Ao responder uma questão em uma prova de múltipla escolha, um estudante sabe a resposta ou a chuta. Seja <span class="math inline">\(p\)</span> a probabilidade de que o estudante saiba a resposta e <span class="math inline">\(1-p\)</span> a probabilidade de que ele chute. Suponha que um estudante que chuta a resposta tem uma probabilidade de acerto de <span class="math inline">\(1/m\)</span>, onde <span class="math inline">\(m\)</span> é o número de alternativas em cada questão de múltipla escolha. Qual a probabilidade que ele a tenha respondido corretamente?</p>
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Exemplo 1.7  </strong></span>Ao responder uma questão em uma prova de múltipla escolha, um estudante sabe a resposta ou a chuta. Seja <span class="math inline">\(p\)</span> a probabilidade de que o estudante saiba a resposta e <span class="math inline">\(1-p\)</span> a probabilidade de que ele chute. Suponha que um estudante que chuta a resposta tem uma probabilidade de acerto de <span class="math inline">\(1/m\)</span>, onde <span class="math inline">\(m\)</span> é o número de alternativas em cada questão de múltipla escolha. Qual a probabilidade que ele a tenha respondido corretamente?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-11" class="solution"><em>Solução</em>. </span>Denote por <span class="math inline">\(A\)</span>: o estudante tenha respondido corretamente [acerta a resposta] e por <span class="math inline">\(B\)</span>: o estudante sabe a resposta, logo
+<p><span id="unlabeled-div-12" class="solution"><em>Solução</em>. </span>Denote por <span class="math inline">\(A\)</span>: o estudante tenha respondido corretamente [acerta a resposta] e por <span class="math inline">\(B\)</span>: o estudante sabe a resposta, logo
 <span class="math display">\[
 P(A) = P(A|B)P(B) + P(A|B^c)P(B^c) = p\cdot 1 + (1-p) \cdot 1/m = p+(1-p)/m.
 \]</span>
 Por exemplo, se <span class="math inline">\(p=1/2\)</span> e <span class="math inline">\(m=10\)</span>, temos que <span class="math inline">\(P(A) = \frac{11}{20}\)</span>.</p>
 </div>
-<div class="example">
-<p><span id="exm:unnamed-chunk-29" class="example"><strong>Exemplo 1.7  </strong></span>Em uma cidade, os motoristas são parados pela polícia para fazer um teste sobre o teor de álcool no sangue. Suponha que a probabilidade de que um motorista detido esteja embriagado é 5% e que o teste realizado acerta o estado de embriaguez em 80% das ocasiões. Qual a probabilidade de que o teste de um motorista detido resulte positivo?</p>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-31" class="exercise"><strong>Exercício 1.1  </strong></span>Em uma cidade, os motoristas são parados pela polícia para fazer um teste sobre o teor de álcool no sangue. Suponha que a probabilidade de que um motorista detido esteja embriagado é 5% e que o teste realizado acerta o estado de embriaguez em 80% das ocasiões. Qual a probabilidade de que o teste de um motorista detido resulte positivo?</p>
 </div>
 </div>
 <div id="fórmula-de-bayes" class="section level3 hasAnchor" number="1.4.2">
 <h3><span class="header-section-number">1.4.2</span> Fórmula de Bayes<a href="esp-prob.html#fórmula-de-bayes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-30" class="theorem"><strong>Teorema 1.2  (Fórmula de Bayes) </strong></span>Seja <span class="math inline">\(\{A_i\}_{i=1}^n\)</span> uma partição do espaço amostral <span class="math inline">\(\Omega\)</span>, tal que <span class="math inline">\(P(A_i)&gt;0\)</span> para qualquer <span class="math inline">\(i=1,\ldots, n\)</span> e <span class="math inline">\(B\)</span> um evento, temos que
+<p><span id="thm:unnamed-chunk-32" class="theorem"><strong>Teorema 1.2  (Fórmula de Bayes) </strong></span>Seja <span class="math inline">\(\{A_i\}_{i=1}^n\)</span> uma partição do espaço amostral <span class="math inline">\(\Omega\)</span>, tal que <span class="math inline">\(P(A_i)&gt;0\)</span> para qualquer <span class="math inline">\(i=1,\ldots, n\)</span> e <span class="math inline">\(B\)</span> um evento, temos que
 <span class="math display">\[
 P(A_i|B) = \frac{P(B|A_i)P(A_i)}{\sum_{i=1}^n P(B|A_i)P(A_i)}
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-12" class="proof"><em>Prova</em>. </span>Para cada <span class="math inline">\(i=1,2,\ldots,n\)</span>, temos que
+<p><span id="unlabeled-div-13" class="proof"><em>Prova</em>. </span>Para cada <span class="math inline">\(i=1,2,\ldots,n\)</span>, temos que
 <span class="math display">\[\begin{align*}
 P(A_i|B)&amp;=\frac{P(A_i\cap B)}{P(B)} \\
 &amp;=\frac{P(B|A_i)P(A_i)}{\sum_{i=1}^n P(B|A_i)P(A_i)}
@@ -525,14 +536,14 @@ P(A_i|B)&amp;=\frac{P(A_i\cap B)}{P(B)} \\
 Na primeira passagem aplicamos a definição de probabilidade condicional, na segunda passagem aplicamos, no numerador, a regra da multiplicação e no denominador o teorema da probabilidade total.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-13" class="solution"><em>Solução</em>. </span>Denote por <span class="math inline">\(A\)</span>: teste resulte positivo e por <span class="math inline">\(B\)</span>: o motorista está embriagado.
+<p><span id="unlabeled-div-14" class="solution"><em>Solução</em>. </span>Denote por <span class="math inline">\(A\)</span>: teste resulte positivo e por <span class="math inline">\(B\)</span>: o motorista está embriagado.
 <span class="math display">\[P(A) = P(A|B)P(B) + P(A|B^c)P(B^c) = (0,80)(0,05) + (0,20)(0,95) = 23/100.\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-33" class="example"><strong>Exemplo 1.8  </strong></span>Nas mesmas condições do exemplo 3, dado que o teste de um motorista resulto negativo, qual a probabilidade de que estava dirigindo com um índice alcoólico acima do permitido?</p>
+<p><span id="exm:unnamed-chunk-35" class="example"><strong>Exemplo 1.8  </strong></span>Nas mesmas condições do exemplo 3, dado que o teste de um motorista resulto negativo, qual a probabilidade de que estava dirigindo com um índice alcoólico acima do permitido?</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-14" class="solution"><em>Solução</em>. </span>Defina <span class="math inline">\(B\)</span>: embriagado, <span class="math inline">\(B^c\)</span>: sóbrio, <span class="math inline">\(A^c\)</span>: teste negativo, <span class="math inline">\(A\)</span>: teste positivo
+<p><span id="unlabeled-div-15" class="solution"><em>Solução</em>. </span>Defina <span class="math inline">\(B\)</span>: embriagado, <span class="math inline">\(B^c\)</span>: sóbrio, <span class="math inline">\(A^c\)</span>: teste negativo, <span class="math inline">\(A\)</span>: teste positivo
 Pelo Teorema de Bayes, temos que
 <span class="math display">\[\begin{align*}
 P(B|A^c) &amp;=\frac{P(A^c|B)P(B)}{P(A^c|B)P(B) + P(A^c|B^c)P(B^c)}\\
@@ -541,8 +552,67 @@ P(B|A^c) &amp;=\frac{P(A^c|B)P(B)}{P(A^c|B)P(B) + P(A^c|B^c)P(B^c)}\\
 \end{align*}\]</span>
 Ou seja, a probabilidade de ocorrer um <em>falso negativo</em> é aproximadamente de 1% .</p>
 </div>
-
+<div class="example">
+<p><span id="exm:unnamed-chunk-37" class="example"><strong>Exemplo 1.9  (Problema de Monty Hall) </strong></span>O problema de Monty Hall é um jogo famoso do programa <em>Let’s Make a Deal</em> apresentando por Monty Hall na década dos 60. Eis o jogo:</p>
+<ol style="list-style-type: decimal">
+<li>Há três portas: 1, 2, e 3.</li>
+<li>Detrás de uma das portas tinha um carro e nas outras duas uma cabra.</li>
+<li>O jogador escolhia uma porta, se o carro estava na porta escolhida pelo jogador então ganhava o carro.</li>
+<li>Depois do jogador escolher a porta, Monty abria uma porta (diferente da escolhida pelo jogador) e <em>sempre</em> revelava uma cabra.</li>
+</ol>
+<p>Uma vez revelada a cabra, Monty perguntava para o jogador se queria mudar para a porta ainda fechada ou ficar com a escolhida inicialmente. O que o jogador deveria fazer?</p>
 </div>
+<div class="solution">
+<p><span id="unlabeled-div-16" class="solution"><em>Solução</em>. </span>A resposta é que o jogador deveria mudar de porta se ele quer duplicar a probabilidade de ganhar o carro.
+Para entender isso, usaremos o Teorema de Bayes. Sem perda de generalidade vamos assumir que o jogador escolhe a porta 1 e que o Monty abre a porta 2 revelando uma cabra (lembre que ele sempre revela uma cabra).</p>
+<p>Seja <span class="math inline">\(A_i\)</span>: o carro está na i- ésima porta, <span class="math inline">\(i=1,2,3\)</span> e <span class="math inline">\(B\)</span>: Monty abre a porta 2. Logo,
+<span class="math display">\[\begin{align*}
+P(A_1)=P(A_2)=P(A_3)=1/3.
+\end{align*}\]</span>
+Atualizando as probabilidades pelo Teorema de Bayes:
+<span class="math display">\[\begin{align*}
+P(A_1|B) &amp;\propto P(B|A_1)P(A_1) = 1/2 \times 1/3 = 1/6.\\
+P(A_2|B) &amp;\propto P(B|A_2)P(A_2) = 0 \times 1/3 = 0.\\
+P(A_3|B) &amp;\propto P(B|A_3)P(A_3) = 1 \times 1/3 = 1/3.\\
+\end{align*}\]</span>
+Logo:
+<span class="math inline">\(P(B) = \sum_{i=1}^3 P(B|A_i)P(A_i)= 1/2\)</span>. Portanto,
+<span class="math inline">\(P(A_1|B) = 1/3\)</span> e <span class="math inline">\(P(A_3|B) = 2/3\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="independencia" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Independência<a href="esp-prob.html#independencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:unnamed-chunk-39" class="definition"><strong>Definição 1.9  </strong></span>Sejam <span class="math inline">\(A,B\)</span> dois eventos em um espaço de probabilidade <span class="math inline">\((\Omega, \mathcal F, P)\)</span> dizemos que <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são independentes se
+<span class="math display">\[
+P(A \cap B) = P(A) P(B).
+\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-17" class="remark"><em>Observação</em>. </span>Eventos disjuntos não são necessariamente independentes, a menos que um deles tenha probabilidade igual a 0. Considere, por exemplo, <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span> e os eventos <span class="math inline">\(A = \{\2,4,6\}\)</span> e <span class="math inline">\(B=\{1,3,5\}\)</span>, claramente,
+<span class="math display">\[
+0=P(A\cap B) = P(\emptyset) \neq P(A)P(B) = 1/4.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-41" class="definition"><strong>Definição 1.10  </strong></span>Sejam <span class="math inline">\(A_1,A_2,\ldots, A_n\)</span> eventos em um espaço de probabilidade <span class="math inline">\((\Omega, \mathcal F, P)\)</span> dizemos que <span class="math inline">\(A_1,A_2,\ldots, A_n\)</span> são independentes se para qualquer <span class="math inline">\(k=2,\ldots,n\)</span>
+<span class="math display">\[
+   P(A_{i_1}\cap A_{i_2} \cap \ldots \cap A_{i_n}) = P(A_{i_1})P(A_{i_2}) \cdots P(A_{i_k})
+  \]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unnamed-chunk-42" class="example"><strong>Exemplo 1.10  </strong></span>Considere um sistema em paralelo formado por 6 componentes como o mostrado na figura abaixo. Suponha que cada um dos componentes funciona de maneira independente com probabilidade <span class="math inline">\(p\)</span>. Qual a probabilidade que o sistema funcione?</p>
+</div>
+<p><img src="figuras/paralelo.png" /><!-- --></p>
+<div class="solution">
+<p><span id="unlabeled-div-18" class="solution"><em>Solução</em>. </span>Note que o sistema é formado por dois subsistemas com três componentes cada. Para que o sistema funcione pelo menos um desses dois subsistemas deve funcionar, ou seja, o sistema não funciona se os dois subsistemas não funcionam, logo, pela independência temos que
+<span class="math display">\[\begin{align*}
+P(\text{sistema funciona}) &amp;= 1 - P(\text{sistema não funciona})\\
+&amp;=1-[1-p^3]^2.
+\end{align*}\]</span></p>
+</div>
+
 </div>
 </div>
             </section>

@@ -23,7 +23,7 @@
 <meta name="author" content="Jaime Utria" />
 
 
-<meta name="date" content="2022-06-25" />
+<meta name="date" content="2022-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.4.1" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-da-probabilidade-total"><i class="fa fa-check"></i><b>1.4.1</b> Fórmula da probabilidade total</a></li>
 <li class="chapter" data-level="1.4.2" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-de-bayes"><i class="fa fa-check"></i><b>1.4.2</b> Fórmula de Bayes</a></li>
 </ul></li>
+<li class="chapter" data-level="1.5" data-path="esp-prob.html"><a href="esp-prob.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independência</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html"><i class="fa fa-check"></i><b>2</b> Conjuntos limites e continuidade da probabilidade</a>
 <ul>
@@ -231,11 +232,11 @@ E(\psi(X)) \geq \psi(E(X)).
 <div id="teorema-de-chebyshev" class="section level2 unnumbered hasAnchor">
 <h2>Teorema de chebyshev<a href="desigualdades.html#teorema-de-chebyshev" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-260" class="theorem"><strong>Teorema 9.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória com <span class="math inline">\(\mu = E(X)\)</span> e <span class="math inline">\(0&lt;\sigma^2 = Var(X) &lt; \infty\)</span>, então para qualquer <span class="math inline">\(k&gt;0\)</span>
+<p><span id="thm:unnamed-chunk-270" class="theorem"><strong>Teorema 9.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória com <span class="math inline">\(\mu = E(X)\)</span> e <span class="math inline">\(0&lt;\sigma^2 = Var(X) &lt; \infty\)</span>, então para qualquer <span class="math inline">\(k&gt;0\)</span>
 <span class="math display">\[P(|X-\mu| \geq k\sigma) \leq \frac{1}{k^2}.\]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-95" class="proof"><em>Prova</em>. </span>Faremos a prova no caso em que <span class="math inline">\(X\)</span> é uma variável aleatória contínua com função de densidade <span class="math inline">\(f(x)\)</span>. De fato,
+<p><span id="unlabeled-div-99" class="proof"><em>Prova</em>. </span>Faremos a prova no caso em que <span class="math inline">\(X\)</span> é uma variável aleatória contínua com função de densidade <span class="math inline">\(f(x)\)</span>. De fato,
 <span class="math display">\[\begin{align*}
 \sigma^2 &amp;= \int_{-\infty}^\infty (x-\mu)^2 f(x) dx \\
 &amp;= \int_{-\infty}^{\mu - \sigma} (x-\mu)^2 f(x) dx + \int_{\mu -\sigma}^{\mu +\sigma} (x-\mu)^2 f(x) dx + \int_{\mu +\sigma}^\infty (x-\mu)^2 f(x) dx

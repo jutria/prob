@@ -23,7 +23,7 @@
 <meta name="author" content="Jaime Utria" />
 
 
-<meta name="date" content="2022-06-25" />
+<meta name="date" content="2022-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.4.1" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-da-probabilidade-total"><i class="fa fa-check"></i><b>1.4.1</b> Fórmula da probabilidade total</a></li>
 <li class="chapter" data-level="1.4.2" data-path="esp-prob.html"><a href="esp-prob.html#fórmula-de-bayes"><i class="fa fa-check"></i><b>1.4.2</b> Fórmula de Bayes</a></li>
 </ul></li>
+<li class="chapter" data-level="1.5" data-path="esp-prob.html"><a href="esp-prob.html#independencia"><i class="fa fa-check"></i><b>1.5</b> Independência</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conjuntos-limites-e-continuidade-da-probabilidade.html"><a href="conjuntos-limites-e-continuidade-da-probabilidade.html"><i class="fa fa-check"></i><b>2</b> Conjuntos limites e continuidade da probabilidade</a>
 <ul>
@@ -221,10 +222,10 @@
 <h2><span class="header-section-number">10.1</span> Método da função de distribuição<a href="transformaccoes.html#método-da-função-de-distribuição" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ilustraremos o método da função de distribuição através de vários exemplos.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-262" class="example"><strong>Exemplo 10.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, e seja <span class="math inline">\(Y=X^n\)</span>. Determine a distribuição de <span class="math inline">\(Y\)</span>.</p>
+<p><span id="exm:unnamed-chunk-272" class="example"><strong>Exemplo 10.1  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, e seja <span class="math inline">\(Y=X^n\)</span>. Determine a distribuição de <span class="math inline">\(Y\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-96" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(Y = X^n\)</span>, então
+<p><span id="unlabeled-div-100" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(Y = X^n\)</span>, então
 <span class="math display">\[\begin{align*}
 F_Y(y) &amp;= P(Y \leq y) \\
 &amp;=P(X \leq y^{1/n}) \\
@@ -240,10 +241,10 @@ f_Y(y) = \frac{1}{n} y^{1/n - 1} f_X(y^{1/n})
 f_Y(y) = \frac{1}{n} y^{1/n - 1}, \; y \in (0,1).
 \]</span></p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-264" class="example"><strong>Exemplo 10.2  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, e seja <span class="math inline">\(Y = X^2\)</span>. Determine a distribuição de <span class="math inline">\(Y\)</span>.</p>
+<p><span id="exm:unnamed-chunk-274" class="example"><strong>Exemplo 10.2  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, e seja <span class="math inline">\(Y = X^2\)</span>. Determine a distribuição de <span class="math inline">\(Y\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-97" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(Y = X^2\)</span>, então
+<p><span id="unlabeled-div-101" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(Y = X^2\)</span>, então
 <span class="math display">\[\begin{align*}
 F_Y(y) &amp;= P(Y \leq y) \\
 &amp;=P(X^2 \leq y) \\
@@ -261,10 +262,10 @@ f_Y(y) = \frac{(1/2)^{1/2}}{\sqrt{\pi}} y^{-1/2}e^{-y/2}, \; y&gt;0.
 \]</span></p>
 <p>Para concluirmos a afirmação, basta usar o fato que <span class="math inline">\(f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}, x \in \mathbb R\)</span>.</p>
 <div class="example">
-<p><span id="exm:unnamed-chunk-266" class="example"><strong>Exemplo 10.3  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, e seja <span class="math inline">\(Y = |X|\)</span>. Determine a distribuição de <span class="math inline">\(Y\)</span>.</p>
+<p><span id="exm:unnamed-chunk-276" class="example"><strong>Exemplo 10.3  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória, e seja <span class="math inline">\(Y = |X|\)</span>. Determine a distribuição de <span class="math inline">\(Y\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-98" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(Y = X^2\)</span>, então
+<p><span id="unlabeled-div-102" class="solution"><em>Solução</em>. </span>Seja <span class="math inline">\(Y = X^2\)</span>, então
 <span class="math display">\[\begin{align*}
 F_Y(y) &amp;= P(Y \leq y) \\
 &amp;=P(|X| \leq y)\\
@@ -307,18 +308,18 @@ f_Y(y) = f_X(g^{-1}(y))\left|\frac{dg^{-1}(y)}{dy}\right|, \; y=g(x)
 \]</span></p>
 <p>Por fim, temos o seguinte teorema.</p>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-268" class="theorem"><strong>Teorema 10.1  (método das transformações) </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua com função de densidade <span class="math inline">\(f_X\)</span>, e seja <span class="math inline">\(g(x)\)</span> uma função estritamente monótona e derivável, então a densidade de <span class="math inline">\(Y = g(X)\)</span> é dada por
+<p><span id="thm:unnamed-chunk-278" class="theorem"><strong>Teorema 10.1  (método das transformações) </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua com função de densidade <span class="math inline">\(f_X\)</span>, e seja <span class="math inline">\(g(x)\)</span> uma função estritamente monótona e derivável, então a densidade de <span class="math inline">\(Y = g(X)\)</span> é dada por
 <span class="math display">\[
 f_Y(y) = f_X(g^{-1}(y))\left|\frac{dg^{-1}(y)}{dy}\right|, \; y=g(x) \text{ para algum } x.
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-269" class="example"><strong>Exemplo 10.4  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua com função de densidade dada por
+<p><span id="exm:unnamed-chunk-279" class="example"><strong>Exemplo 10.4  </strong></span>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua com função de densidade dada por
 <span class="math display">\[f(x) = 2x, \; x \in [0,1].\]</span></p>
 <p>Encontre a função de densidade de <span class="math inline">\(Y = -4X + 3\)</span>.</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-99" class="solution"><em>Solução</em>. </span>Podemos proceder como segue:</p>
+<p><span id="unlabeled-div-103" class="solution"><em>Solução</em>. </span>Podemos proceder como segue:</p>
 <ol style="list-style-type: decimal">
 <li><p>Determine o conjunto de valores de <span class="math inline">\(y\)</span>:
 <span class="math display">\[y = -4x + 3 \iff x=g^{-1}(y) = \frac{3 - y}{4}, \; y \in [-1,3]\]</span></p></li>
@@ -338,10 +339,10 @@ f_Y(y) &amp;= f_X(g^{-1}(y))\left|\frac{dg^{-1}(y)}{dy}\right|\\
 <h2><span class="header-section-number">10.3</span> Método da transformação inversa<a href="transformaccoes.html#método-da-transformação-inversa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Apresenteramos um método geral para gerar uma variável aleatória contínua, o método é baseado no seguinte resultado e é conhecido como o <em>método da função inversa</em>.</p>
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-271" class="theorem"><strong>Teorema 10.2  </strong></span>Seja <span class="math inline">\(U\)</span> uma variável aleatória uniforme em (0,1). Seja <span class="math inline">\(F_X\)</span> a função de distribuição de uma variável aleatória contínua <span class="math inline">\(X\)</span>, se definimos a transformação <span class="math inline">\(Y = F_X^{-1}(U)\)</span>, então <span class="math inline">\(Y\)</span> tem a mesma distribuição de <span class="math inline">\(X\)</span>.</p>
+<p><span id="thm:unnamed-chunk-281" class="theorem"><strong>Teorema 10.2  </strong></span>Seja <span class="math inline">\(U\)</span> uma variável aleatória uniforme em (0,1). Seja <span class="math inline">\(F_X\)</span> a função de distribuição de uma variável aleatória contínua <span class="math inline">\(X\)</span>, se definimos a transformação <span class="math inline">\(Y = F_X^{-1}(U)\)</span>, então <span class="math inline">\(Y\)</span> tem a mesma distribuição de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-100" class="proof"><em>Prova</em>. </span>Seja <span class="math inline">\(U\sim\)</span> Uniforme em (0,1) e defina <span class="math inline">\(Y = F_X^{-1}(U)\)</span>. Logo</p>
+<p><span id="unlabeled-div-104" class="proof"><em>Prova</em>. </span>Seja <span class="math inline">\(U\sim\)</span> Uniforme em (0,1) e defina <span class="math inline">\(Y = F_X^{-1}(U)\)</span>. Logo</p>
 <p><span class="math display">\[\begin{align*}
 F_Y(y)&amp;=P(Y \leq y)\\
 &amp;=P(F_X^{-1}(U) \leq y)\\
@@ -350,7 +351,7 @@ F_Y(y)&amp;=P(Y \leq y)\\
 \end{align*}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unnamed-chunk-273" class="example"><strong>Exemplo 10.5  </strong></span>Suponha que queiramos gerar uma variável aleatória com distribuição exponencial de parâmetro <span class="math inline">\(\lambda &gt;0\)</span>. Então podemos proceder como segue:</p>
+<p><span id="exm:unnamed-chunk-283" class="example"><strong>Exemplo 10.5  </strong></span>Suponha que queiramos gerar uma variável aleatória com distribuição exponencial de parâmetro <span class="math inline">\(\lambda &gt;0\)</span>. Então podemos proceder como segue:</p>
 <p>Considere <span class="math inline">\(U\)</span> uma variável aleatória uniforme em (0,1) e lembrando que <span class="math inline">\(F_X(x) = 1- e^{-\lambda x}, \; x &gt;0\)</span>, temos que <span class="math inline">\(F_X^{-1}(u) = -\frac{\ln(1-u)}{\lambda}\)</span>. Logo, a transformação <span class="math inline">\(X = -\frac{\ln(1-U)}{\lambda}\)</span> tem distribuição exponencial de parâmetro <span class="math inline">\(\lambda\)</span>.</p>
 </div>
 
